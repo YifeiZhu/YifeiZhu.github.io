@@ -1,0 +1,4 @@
+A set X is said to be finite if there is a bijection between X and {1,2,...,n} 
+for some positive integer n. The empty set is also finite. Show that a set X 
+is infinite (i.e. not finite) if and only if there exists a bijective map of 
+X to a proper subset of X. Find a bijective map from (0,1) to [0,1].
