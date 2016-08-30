@@ -1,0 +1,244 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[all]{xy}
+\xyoption{arc}
+
+\bibliographystyle{amsalpha}
+\parskip 0.7pc
+\parindent 0pt
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{case}[thm]{Case}
+\newtheorem{remark}[thm]{Working Remark}
+
+\def\co{\colon\thinspace}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+
+\newcommand{\NB}[1]{{\bf (NB: #1)}}
+
+\newcommand{\Ext}{\ensuremath{{\rm Ext}}}
+\newcommand{\Coext}{\ensuremath{{\rm Coext}}}
+\newcommand{\Hom}{\ensuremath{{\rm Hom}}}
+\newcommand{\Tor}{\ensuremath{{\rm Tor}}}
+\newcommand{\Ind}{\ensuremath{{\rm Ind}}}
+\newcommand{\Res}{\ensuremath{{\rm Res}}}
+\newcommand{\colim}{\ensuremath{\mathop{\rm colim}}}
+\newcommand{\hocolim}{\ensuremath{\mathop{\rm hocolim}}}
+\newcommand{\holim}{\ensuremath{\mathop{\rm holim}}}
+\newcommand{\overto}{\mathop\rightarrow}
+\newcommand{\overfrom}{\mathop\leftarrow}
+\newcommand{\into}{\mathop\hookrightarrow}
+\newcommand{\longoverto}{\mathop{\longrightarrow}}
+\newcommand{\Irr}{\ensuremath{\mathop{\rm Irr}}}
+\newcommand{\Rep}{\ensuremath{\mathop{\rm Rep}}}
+\newcommand{\Map}{\ensuremath{{\rm Map}}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\Uni}{{\rm U}}
+\newcommand{\Sp}{{\cal S}p}
+\newcommand{\Sym}{{\rm Sym}}
+\newcommand{\thh}{{\rm thh}}
+\newcommand{\TAF}{{\rm TAF}}
+\newcommand{\TAQ}{{\rm TAQ}}
+\newcommand{\End}{{\rm End}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\md}{{\rm mod}}
+\newcommand{\As}{{\cal As}}
+\newcommand{\Spec}{{\rm Spec}}
+\newcommand{\Spf}{{\rm Spf}}
+\newcommand{\tmf}{{\rm tmf}}
+%\newcommand{\tmf}{\mathit{tmf}}
+\newcommand{\ftmf}{{\rm ftmf}}
+\newcommand{\FTMF}{{\rm FTMF}}
+\newcommand{\TMF}{{\rm TMF}}
+\newcommand{\Lie}{{\rm Lie}}
+\newcommand{\Sh}{{\rm Sh}}
+\newcommand{\HF}{{\rm H}{\mb F}}
+\newcommand{\cF}{\overline {\mb F}}
+\newcommand{\cQ}{\overline {\mb Q}}
+\newcommand{\Tr}{{\rm Tr}}
+\newcommand{\Nm}{{\rm N}}
+\newcommand{\PGL}{{\rm PGL}}
+\newcommand{\Cl}{{\rm Cl}}
+\newcommand{\mass}[1]{\left|{#1}\right|}
+\newcommand{\card}[1]{\#\left\{#1\right\}}
+\newcommand{\lsym}[2]{\left\{\frac{#1}{#2}\right\}}
+
+\newcommand{\Zos}{\mb Z[1/6]}
+\newcommand{\Zoh}{\mb Z[1/2]}
+\newcommand{\rt}{{{}^R \otimes}}
+\newcommand{\lt}{{\otimes^L}}
+\newcommand{\dt}{{{}^R \otimes^L}}
+\newcommand{\divi}[1]{{\rm div}\left(#1\right)}
+\newcommand{\dlog}[1]{{\rm dlog}\left(#1\right)}
+
+\newcommand{\eilm}[1]{\ensuremath{{\mb H} #1}}
+\newcommand{\smsh}[1]{\ensuremath{\mathop{\wedge}_{#1}}}
+\newcommand{\tens}[1]{\ensuremath{\mathop{\otimes}_{#1}}}
+\newcommand{\susp}{\ensuremath{\Sigma}}
+\newcommand{\mapset}[3]{\ensuremath{\left[#2,#3\right]_{#1}}}
+\newcommand{\form}[2]{\ensuremath{\left\langle#1,#2\right\rangle}}
+\newcommand{\bilin}[2]{\ensuremath{\left(#1,#2\right)}}
+\newcommand{\comp}[1]{\ensuremath{#1^\wedge}}
+\newcommand{\loca}[3]{\ensuremath{L^{#1}_{#2}(#3)}}
+\newcommand{\tc}[3]{\ensuremath{\Omega_{#2 / #1}^{#3}}}
+\newcommand{\atc}[3]{\ensuremath{\L_{#2 / #1}^{#3}}}
+\newcommand{\pow}[1]{\left\llbracket{#1}\right\rrbracket}
+
+\newcommand{\xym}[1]{
+\vskip 0.7pc
+\centerline{\xymatrix{#1}}
+\vskip 0.7pc
+}
+
+\newcommand{\xynm}[1]
+{\vskip 0.7pc
+\centerline{\xy #1 \endxy}
+\vskip 0.7pc}
+
+\begin{document}
+
+\textbf{The standard resolution of $A$ as an $(A,\Gamma)$-comodule}
+
+Let's progress from general to specific.  Fix a Hopf algebroid
+$(A,\Gamma)$ with units $\eta_L$ and $\eta_R$ and comultiplication
+$\Delta\co \Gamma \to \Gamma \dt_A \Gamma$, and a comodule $N$ over this
+Hopf algebroid with structure map (of left $A$-modules) $\phi\co N \to \Gamma \rt_A N$.
+(From now on all the tensor products will be implicitly over $A$; if
+$\Gamma$ appears on the left side of the tensor it is implicitly using
+$\eta_R$, the right unit, as the right module structure, and similarly
+using $\eta_L$ if it appears on the opposite side.) Cf def 5.12 on p18 of [coctalos]. In particular, $\phi = \eta_L$ if $N = A$ (see below), and $\phi = \Delta$ if $N = \Gamma$.
+
+We have an augmented cosimplicial object $C(\Gamma,\Gamma,N) = X$ with
+\[
+X^p = \Gamma \otimes \underbrace{\Gamma \otimes \cdots \otimes \Gamma}_{p\text{
+    times}} \otimes N
+\]
+The coface maps $d^i\co X^p \to X^{p+1}$ for $0 \leq i \leq p+1$ are
+given by
+\[
+d^i = \begin{cases}
+1 \otimes \cdots \otimes \Delta \otimes \cdots
+\otimes 1 &\text{if }i \leq p\\
+1 \otimes \cdots \otimes \phi &\text{if }i = p+1
+\end{cases}
+\]
+For example, when $p=0$ the two maps $\Gamma \otimes N \to \Gamma
+\otimes \Gamma \otimes N$ are $d^0 = \Delta \otimes 1$ and $d^1 = 1
+\otimes \phi$.  The augmentation of this cosimplicial object $X$ is the
+structure map $\phi\co N \to \Gamma \otimes N$ (cf pp274-5 of [ha]; in particular, $d^0\phi = d^1\phi$ by coassociativity).  Codegeneracies are given by applying the augmentation of the Hopf algebroid $\epsilon\co \Gamma \to A$ to one of the middle factors of $\Gamma$.
+
+(If you prefer, a cosimplicial object is supposed to be a functor from
+nonempty finite ordered sets.  In this case, if $S = \{0,1,\ldots,p\}$,
+then the tensor symbols in $X^p$ are in bijection with the elements of
+$S$; this helps me to remember the effect of a general map of ordered
+sets.)
+
+We thus get a cobar \textbf{resolution}
+\[
+0 \to N \to \Gamma \otimes N \to \Gamma \otimes \Gamma \otimes N \to
+\cdots
+\]
+where the coboundary maps are $\phi$, $\Delta \otimes 1 - 1 \otimes
+\phi$, $\Delta \otimes 1 \otimes 1 - 1 \otimes \Delta \otimes 1 + 1
+\otimes 1 \otimes \phi$, et cetera. (Cf pp274-5 of [ha]. Generally we just get an augmented cochain complex. The exactness comes from the extra degeneracy, ie applying the augmentation $\epsilon\co \Gamma \to A$ to the leftmost factor of $\Gamma$.) If $N$ is $A$ (whose comodule
+structure $A \to \Gamma$ is the {\em   left} unit $\eta_L$ because
+it's supposed to be a map of left $A$-modules), then you simply
+replace $\phi$ with $\eta_L$.
+\\
+\hrule
+
+Before talking about the specific quadratic Hopf algebroid, let me
+just say what happens when we're going to compute Ext.
+
+Applying $\Hom_{(A,\Gamma)}(A,-)$ takes an induced comodule $\Gamma
+\otimes N$ to $A \otimes N \cong N$, and has a straightforward effect
+on maps - specifically, $f\co \Gamma \otimes N \to \Gamma \otimes N'$
+becomes $(\epsilon \otimes 1) \circ f \circ (\eta_R \otimes 1)$. (Lemma 12.4 on p38 of [coctalos] says that we have an adjoint pair $forget \co (A,\Gamma)$-comodules $\leftrightarrow A$-modules $\co \Gamma \otimes_A -$. In particular, $\Hom_{(A,\Gamma)}(A,\Gamma \otimes N) \cong \Hom_A(A,N) \cong N \cong A \otimes N$ (cf Wed-12/23-1). To see $\Hom_{(A,\Gamma)}(A,-)$ takes $\Gamma \otimes N \stackrel{f}{\to} \Gamma \otimes N'$ to $A \otimes N \stackrel{\eta_R \otimes 1}{\to} \Gamma \otimes N \stackrel{f}{\to} \Gamma \otimes N' \stackrel{\epsilon \otimes 1}{\to} A \otimes N'$, we can interpret $\eta_R \otimes 1$ as the functor $\Gamma \otimes_A -$ because $\Gamma$ becomes a right $A$-module via $\eta_R$, and $\epsilon \otimes 1$ as the forgetful functor because of the counital property: $N \stackrel{\phi}{\to} \Gamma \otimes N \stackrel{\epsilon \otimes 1}{\to} N$ is the identity.)
+Applying this to the cobar resolution we get
+\[
+0 \to \Hom_{(A,\Gamma)}(A,N) \to A \otimes N \to A \otimes \Gamma \otimes N \to
+\cdots
+\]
+and we drop the left-hand term (cf p50 of [ha]) and have the cobar complex
+\[
+0 \to A \otimes N \to A \otimes \Gamma \otimes N \to A \otimes \Gamma
+\otimes \Gamma \otimes N \to \cdots,
+\]
+which computes Ext.
+
+The coface maps, after applying $\Hom_{(A,\Gamma)}(A,-)$, are mostly
+the same, with the exception of $\Delta \otimes \cdots \otimes 1$; it
+becomes $\eta_R \otimes \cdots \otimes 1$.  So the coboundary maps in
+the cobar complex are: $\eta_R \otimes 1 - 1 \otimes \phi$, $\eta_R
+\otimes 1 \otimes 1 - 1 \otimes \Delta \otimes 1 + 1 \otimes 1 \otimes
+\phi$, et cetera.
+
+There's a lot of redundant notation here when I leave the tensor
+factors of $A$ on either side; it's more compact to write the cobar
+complex when $N=A$ as
+\[
+0 \to A \to \Gamma \to \Gamma \otimes \Gamma \to \cdots
+\]
+with coboundary maps
+\begin{eqnarray*}
+&&\eta_R - \eta_L\\
+&&\eta_R \otimes 1 - \Delta + 1 \otimes \eta_L\\
+&&\eta_R \otimes 1 \otimes 1 - \Delta \otimes 1 + 1 \otimes \Delta - 1
+\otimes 1 \otimes \eta_L,
+\end{eqnarray*}
+et cetera.  But it's sometimes handy to remember the implicit factors
+of $A$ on either side.  By convention, we use the shorthand $[\gamma_1 |
+\cdots | \gamma_p]$ for the representative elements $1 \otimes
+\gamma_1 \otimes \cdots \otimes \gamma_p \otimes 1$ in the cobar
+complex.  Under these conventions, the coboundary maps are:
+\begin{eqnarray*}
+&&a \mapsto [\eta_R(a)] - [\eta_L(a)]\\
+&&[\gamma] \mapsto [1|\gamma] - [\Delta \gamma] + [\gamma|1]\\
+&&[\gamma_1|\gamma_2] \mapsto [1|\gamma_1|\gamma_2] - [\Delta \gamma_1
+| \gamma_2] + [\gamma_1 | \Delta \gamma_2 ] - [\gamma_1 | \gamma_2 | 1]
+\end{eqnarray*}
+Note that the left-right tensor product notation means that you can
+move an element $a \in A$ across the tensor product, but it switches
+from the left to right units; e.g. $[\gamma_1 | \eta_L(a) \gamma_2] =
+[\eta_R(a) \gamma_1 | \gamma_2]$.
+\\
+\hrule
+
+OK.
+
+Let's specifically talk about the quadratic Hopf algebroid, which has
+$A = \mb Z[b,c]$, $\Gamma = A[r]$, $\eta_L\co A \to A[r]$ being the
+standard inclusion, $\eta_R(b) = b + 2r$, $\eta_R(c) = c + br + r^2$,
+$\Delta(a) = \stackrel{\text{1st}}{a} \otimes \stackrel{\text{2nd}}{1}$ for $a \in A$, $\Delta(r) = r \otimes 1 + 1 \otimes r$. Cf Sat-11/14.
+
+Our cobar resolution is isomorphic to
+\[
+0 \to \mb Z[b,c] \to \mb Z[b,c,r] \stackrel{d^0}{\to} \mb Z[b,c,r'_1, r'_2] \stackrel{d^1}{\to} \mb Z[b,c,r''_1,r''_2,r''_3]
+\to \cdots
+\]
+where we've collapsed some identifications.  The cobar representatives
+are given by $r = r$, $r'_1 = r\otimes 1$, $r'_2 = 1\otimes r$, et cetera.
+
+The coboundary $d^0$ is $\Delta \otimes 1 - 1 \otimes \eta_L$.  This
+sends $a$ to $a\otimes 1 - a \otimes 1 = 0$ for $a \in A$, and sends $r$
+to $1 \otimes r = r'_2$.  You can calculate the image of any element
+but a general formula is kind of annoying to write down.
+
+The coboundary $d^1$ is $\Delta \otimes 1 \otimes 1 - 1 \otimes \Delta
+\otimes 1 + 1 \otimes 1 \otimes \eta_L$.  For example, it sends $a
+\otimes 1$ to $a \otimes 1 \otimes 1$ (which I called ``$a$'' in the
+above identification) for $a \in A$, and $r'_1 = r \otimes 1$ to $r
+\otimes 1 \otimes 1 + 1 \otimes r \otimes 1 = r''_1 + r''_2$.
+
+For a similar discussion of the cobar complex, cf Sat-11/14.
+\end{document}
