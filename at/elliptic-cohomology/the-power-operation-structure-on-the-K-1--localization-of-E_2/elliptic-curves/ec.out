@@ -1,0 +1,59 @@
+\BOOKMARK [1][-]{section.1}{1 History}{}
+\BOOKMARK [2][-]{subsection.1.1}{1.1 Mon-10/12/09: Elliptic curves}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{1.2 [tmf3]}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{1.3 [h2p2]}{section.1}
+\BOOKMARK [2][-]{subsection.1.4}{1.4 Power operations ``on'' elliptic curves}{section.1}
+\BOOKMARK [1][-]{section.2}{2 Elliptic curves}{}
+\BOOKMARK [1][-]{section.3}{3 Calculations at the prime 3}{}
+\BOOKMARK [2][-]{subsection.3.1}{3.1 Step 1: The universal elliptic curve with a choice of 4-torsion point [red clip]}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{3.2 Step 2}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{3.3 Step 3: K\(1\)-localize}{section.3}
+\BOOKMARK [1][-]{section.4}{4 Structure of E-Dyer-Lashof algebra}{}
+\BOOKMARK [2][-]{subsection.4.1}{4.1 Formulas}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{4.2 Reduction mod p}{section.4}
+\BOOKMARK [2][-]{subsection.4.3}{4.3 A uniform presentation of the Dyer-Lashof algebra for Morava E-theory at height 2}{section.4}
+\BOOKMARK [3][-]{subsubsection.4.3.1}{4.3.1 Formulas}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.2}{4.3.2 New model}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.3}{4.3.3 Old model}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.4}{4.3.4 [can]}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.5}{4.3.5 Cusps}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.6}{4.3.6 Canonical modular polynomials}{subsection.4.3}
+\BOOKMARK [3][-]{subsubsection.4.3.7}{4.3.7 More about p}{subsection.4.3}
+\BOOKMARK [1][-]{section.5}{5 Ext groups over the Dyer-Lashof algebra}{}
+\BOOKMARK [2][-]{subsection.5.1}{5.1 Bousfield-Kuhn functors on odd-dimensional spheres}{section.5}
+\BOOKMARK [3][-]{subsubsection.5.1.1}{5.1.1 Calculations}{subsection.5.1}
+\BOOKMARK [3][-]{subsubsection.5.1.2}{5.1.2 Identifying BKOS}{subsection.5.1}
+\BOOKMARK [3][-]{subsubsection.5.1.3}{5.1.3 Patching up the odd spheres}{subsection.5.1}
+\BOOKMARK [2][-]{subsection.5.2}{5.2 Strict units}{section.5}
+\BOOKMARK [1][-]{section.6}{6 [level3]}{}
+\BOOKMARK [1][-]{section.7}{7 Hecke operators}{}
+\BOOKMARK [2][-]{subsection.7.1}{7.1 How Hecke operators act}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.1.1}{7.1.1 h-operators}{subsection.7.1}
+\BOOKMARK [3][-]{subsubsection.7.1.2}{7.1.2 Hecke operators}{subsection.7.1}
+\BOOKMARK [3][-]{subsubsection.7.1.3}{7.1.3 Hecke operators in terms of individual power operations}{subsection.7.1}
+\BOOKMARK [3][-]{subsubsection.7.1.4}{7.1.4 q-operators}{subsection.7.1}
+\BOOKMARK [2][-]{subsection.7.2}{7.2 Logarithms}{section.7}
+\BOOKMARK [3][-]{subsubsection.7.2.1}{7.2.1 Kernel of log at h = 2}{subsection.7.2}
+\BOOKMARK [3][-]{subsubsection.7.2.2}{7.2.2 h = 1}{subsection.7.2}
+\BOOKMARK [1][-]{section.8}{8 Functoriality}{}
+\BOOKMARK [2][-]{subsection.8.1}{8.1 \(Re\)visiting [cong] and [h2p2]}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.1.1}{8.1.1 [cong]}{subsection.8.1}
+\BOOKMARK [3][-]{subsubsection.8.1.2}{8.1.2 [h2p2]}{subsection.8.1}
+\BOOKMARK [2][-]{subsection.8.2}{8.2 Deformation structures and norm coherence}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.2.1}{8.2.1 Wide categories of formal groups [email-4/14/16]}{subsection.8.2}
+\BOOKMARK [3][-]{subsubsection.8.2.2}{8.2.2 Pushforward deformation structures}{subsection.8.2}
+\BOOKMARK [3][-]{subsubsection.8.2.3}{8.2.3 Norm-coherent coordinates}{subsection.8.2}
+\BOOKMARK [3][-]{subsubsection.8.2.4}{8.2.4 Ando's construction of norm-coherent coordinates in greater generality}{subsection.8.2}
+\BOOKMARK [1][-]{section.9}{9 Move on}{}
+\BOOKMARK [2][-]{subsection.9.1}{9.1 Application to computation with tmf with level structure}{section.9}
+\BOOKMARK [2][-]{subsection.9.2}{9.2 Study power operations in related cohomology theories}{section.9}
+\BOOKMARK [2][-]{subsection.9.3}{9.3 Reduction mod p}{section.9}
+\BOOKMARK [2][-]{subsection.9.4}{9.4 Revisit [h2p2, esp 2] and [slides], and extensions}{section.9}
+\BOOKMARK [2][-]{subsection.9.5}{9.5 K\(1\)-local applications}{section.9}
+\BOOKMARK [2][-]{subsection.9.6}{9.6 Functoriality}{section.9}
+\BOOKMARK [2][-]{subsection.9.7}{9.7 Study the ``dual'' Dyer-Lashof algebra and related structures}{section.9}
+\BOOKMARK [2][-]{subsection.9.8}{9.8 Experiments}{section.9}
+\BOOKMARK [2][-]{subsection.9.9}{9.9 Thu-2/21/13}{section.9}
+\BOOKMARK [2][-]{subsection.9.10}{9.10 Tue-3/5/13}{section.9}
+\BOOKMARK [2][-]{subsection.9.11}{9.11 Tue-3/19/13}{section.9}
+\BOOKMARK [2][-]{subsection.9.12}{9.12 Tue-9/10/13}{section.9}

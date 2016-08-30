@@ -1,0 +1,1113 @@
+\documentclass[12pt,titlepage]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{mathbbol}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+%\usepackage{xparse}
+\usepackage{hyperref}
+
+%----Macros----------
+%
+% Unresolved issues:
+%
+%  \righttoleftarrow
+%  \lefttorightarrow
+%
+%  \color{} with HTML colorspec
+%  \bgcolor
+%  \array with options (without options, it's equivalent to the matrix environment)
+
+% Of the standard HTML named colors, white, black, red, green, blue and yellow
+% are predefined in the color package. Here are the rest.
+\definecolor{aqua}{rgb}{0, 1.0, 1.0}
+\definecolor{fuschia}{rgb}{1.0, 0, 1.0}
+\definecolor{gray}{rgb}{0.502, 0.502, 0.502}
+\definecolor{lime}{rgb}{0, 1.0, 0}
+\definecolor{maroon}{rgb}{0.502, 0, 0}
+\definecolor{navy}{rgb}{0, 0, 0.502}
+\definecolor{olive}{rgb}{0.502, 0.502, 0}
+\definecolor{purple}{rgb}{0.502, 0, 0.502}
+\definecolor{silver}{rgb}{0.753, 0.753, 0.753}
+\definecolor{teal}{rgb}{0, 0.502, 0.502}
+
+% Because of conflicts, \space and \mathop are converted to
+% \itexspace and \operatorname during preprocessing.
+
+% itex: \space{ht}{dp}{wd}
+%
+% Height and baseline depth measurements are in units of tenths of an ex while
+% the width is measured in tenths of an em.
+\makeatletter
+\newdimen\itex@wd%
+\newdimen\itex@dp%
+\newdimen\itex@thd%
+\def\itexspace#1#2#3{\itex@wd=#3em%
+\itex@wd=0.1\itex@wd%
+\itex@dp=#2ex%
+\itex@dp=0.1\itex@dp%
+\itex@thd=#1ex%
+\itex@thd=0.1\itex@thd%
+\advance\itex@thd\the\itex@dp%
+\makebox[\the\itex@wd]{\rule[-\the\itex@dp]{0cm}{\the\itex@thd}}}
+\makeatother
+
+% \tensor and \multiscript
+\makeatletter
+\newif\if@sup
+\newtoks\@sups
+\def\append@sup#1{\edef\act{\noexpand\@sups={\the\@sups #1}}\act}%
+\def\reset@sup{\@supfalse\@sups={}}%
+\def\mk@scripts#1#2{\if #2/ \if@sup ^{\the\@sups}\fi \else%
+  \ifx #1_ \if@sup ^{\the\@sups}\reset@sup \fi {}_{#2}%
+  \else \append@sup#2 \@suptrue \fi%
+  \expandafter\mk@scripts\fi}
+\def\tensor#1#2{\reset@sup#1\mk@scripts#2_/}
+\def\multiscripts#1#2#3{\reset@sup{}\mk@scripts#1_/#2%
+  \reset@sup\mk@scripts#3_/}
+\makeatother
+
+% \slash
+\makeatletter
+\newbox\slashbox \setbox\slashbox=\hbox{$/$}
+\def\itex@pslash#1{\setbox\@tempboxa=\hbox{$#1$}
+  \@tempdima=0.5\wd\slashbox \advance\@tempdima 0.5\wd\@tempboxa
+  \copy\slashbox \kern-\@tempdima \box\@tempboxa}
+\def\slash{\protect\itex@pslash}
+\makeatother
+
+% math-mode versions of \rlap, etc
+% from Alexander Perlis, "A complement to \smash, \llap, and lap"
+%   http://math.arizona.edu/~aprl/publications/mathclap/
+\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+\def\mathllap{\mathpalette\mathllapinternal}
+\def\mathrlap{\mathpalette\mathrlapinternal}
+\def\mathclap{\mathpalette\mathclapinternal}
+\def\mathllapinternal#1#2{\llap{$\mathsurround=0pt#1{#2}$}}
+\def\mathrlapinternal#1#2{\rlap{$\mathsurround=0pt#1{#2}$}}
+\def\mathclapinternal#1#2{\clap{$\mathsurround=0pt#1{#2}$}}
+
+% Renames \sqrt as \oldsqrt and redefine root to result in \sqrt[#1]{#2}
+\let\oldroot\root
+\def\root#1#2{\oldroot #1 \of{#2}}
+\renewcommand{\sqrt}[2][]{\oldroot #1 \of{#2}}
+
+% Manually declare the txfonts symbolsC font
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\SetSymbolFont{symbolsC}{bold}{U}{txsyc}{bx}{n}
+\DeclareFontSubstitution{U}{txsyc}{m}{n}
+
+% Manually declare the stmaryrd font
+\DeclareSymbolFont{stmry}{U}{stmry}{m}{n}
+\SetSymbolFont{stmry}{bold}{U}{stmry}{b}{n}
+
+% Declare specific arrows from txfonts without loading the full package
+\makeatletter
+\def\re@DeclareMathSymbol#1#2#3#4{%
+    \let#1=\undefined
+    \DeclareMathSymbol{#1}{#2}{#3}{#4}}
+\re@DeclareMathSymbol{\neArrow}{\mathrel}{symbolsC}{116}
+\re@DeclareMathSymbol{\neArr}{\mathrel}{symbolsC}{116}
+\re@DeclareMathSymbol{\seArrow}{\mathrel}{symbolsC}{117}
+\re@DeclareMathSymbol{\seArr}{\mathrel}{symbolsC}{117}
+\re@DeclareMathSymbol{\nwArrow}{\mathrel}{symbolsC}{118}
+\re@DeclareMathSymbol{\nwArr}{\mathrel}{symbolsC}{118}
+\re@DeclareMathSymbol{\swArrow}{\mathrel}{symbolsC}{119}
+\re@DeclareMathSymbol{\swArr}{\mathrel}{symbolsC}{119}
+\re@DeclareMathSymbol{\nequiv}{\mathrel}{symbolsC}{46}
+\re@DeclareMathSymbol{\Perp}{\mathrel}{symbolsC}{121}
+\re@DeclareMathSymbol{\Vbar}{\mathrel}{symbolsC}{121}
+\re@DeclareMathSymbol{\sslash}{\mathrel}{stmry}{12}
+\re@DeclareMathSymbol{\bigsqcap}{\mathop}{stmry}{"64}
+\re@DeclareMathSymbol{\biginterleave}{\mathop}{stmry}{"6}
+\re@DeclareMathSymbol{\invamp}{\mathrel}{symbolsC}{77}
+\re@DeclareMathSymbol{\parr}{\mathrel}{symbolsC}{77}
+\makeatother
+
+% Widecheck
+\makeatletter
+\DeclareRobustCommand\widecheck[1]{{\mathpalette\@widecheck{#1}}}
+\def\@widecheck#1#2{%
+    \setbox\z@\hbox{\m@th$#1#2$}%
+    \setbox\tw@\hbox{\m@th$#1%
+       \widehat{%
+          \vrule\@width\z@\@height\ht\z@
+          \vrule\@height\z@\@width\wd\z@}$}%
+    \dp\tw@-\ht\z@
+    \@tempdima\ht\z@ \advance\@tempdima2\ht\tw@ \divide\@tempdima\thr@@
+    \setbox\tw@\hbox{%
+       \raise\@tempdima\hbox{\scalebox{1}[-1]{\lower\@tempdima\box
+\tw@}}}%
+    {\ooalign{\box\tw@ \cr \box\z@}}}
+\makeatother
+
+% \mathraisebox{voffset}[height][depth]{something}
+% \makeatletter
+% \NewDocumentCommand\mathraisebox{moom}{%
+% \IfNoValueTF{#2}{\def\@temp##1##2{\raisebox{#1}{$\m@th##1##2$}}}{%
+% \IfNoValueTF{#3}{\def\@temp##1##2{\raisebox{#1}[#2]{$\m@th##1##2$}}%
+% }{\def\@temp##1##2{\raisebox{#1}[#2][#3]{$\m@th##1##2$}}}}%
+% \mathpalette\@temp{#4}}
+% \makeatletter
+
+% udots (taken from yhmath)
+\makeatletter
+\def\udots{\mathinner{\mkern2mu\raise\p@\hbox{.}
+\mkern2mu\raise4\p@\hbox{.}\mkern1mu
+\raise7\p@\vbox{\kern7\p@\hbox{.}}\mkern1mu}}
+\makeatother
+
+%% Fix array
+\newcommand{\itexarray}[1]{\begin{matrix}#1\end{matrix}}
+%% \itexnum is a noop
+\newcommand{\itexnum}[1]{#1}
+
+%% Renaming existing commands
+\newcommand{\underoverset}[3]{\underset{#1}{\overset{#2}{#3}}}
+\newcommand{\widevec}{\overrightarrow}
+\newcommand{\darr}{\downarrow}
+\newcommand{\nearr}{\nearrow}
+\newcommand{\nwarr}{\nwarrow}
+\newcommand{\searr}{\searrow}
+\newcommand{\swarr}{\swarrow}
+\newcommand{\curvearrowbotright}{\curvearrowright}
+\newcommand{\uparr}{\uparrow}
+\newcommand{\downuparrow}{\updownarrow}
+\newcommand{\duparr}{\updownarrow}
+\newcommand{\updarr}{\updownarrow}
+\newcommand{\gt}{>}
+\newcommand{\lt}{<}
+\newcommand{\map}{\mapsto}
+\newcommand{\embedsin}{\hookrightarrow}
+\newcommand{\Alpha}{A}
+\newcommand{\Beta}{B}
+\newcommand{\Zeta}{Z}
+\newcommand{\Eta}{H}
+\newcommand{\Iota}{I}
+\newcommand{\Kappa}{K}
+\newcommand{\Mu}{M}
+\newcommand{\Nu}{N}
+\newcommand{\Rho}{P}
+\newcommand{\Tau}{T}
+\newcommand{\Upsi}{\Upsilon}
+\newcommand{\omicron}{o}
+\newcommand{\lang}{\langle}
+\newcommand{\rang}{\rangle}
+\newcommand{\Union}{\bigcup}
+\newcommand{\Intersection}{\bigcap}
+\newcommand{\Oplus}{\bigoplus}
+\newcommand{\Otimes}{\bigotimes}
+\newcommand{\Wedge}{\bigwedge}
+\newcommand{\Vee}{\bigvee}
+\newcommand{\coproduct}{\coprod}
+\newcommand{\product}{\prod}
+\newcommand{\closure}{\overline}
+\newcommand{\integral}{\int}
+\newcommand{\doubleintegral}{\iint}
+\newcommand{\tripleintegral}{\iiint}
+\newcommand{\quadrupleintegral}{\iiiint}
+\newcommand{\conint}{\oint}
+\newcommand{\contourintegral}{\oint}
+\newcommand{\infinity}{\infty}
+\newcommand{\bottom}{\bot}
+\newcommand{\minusb}{\boxminus}
+\newcommand{\plusb}{\boxplus}
+\newcommand{\timesb}{\boxtimes}
+\newcommand{\intersection}{\cap}
+\newcommand{\union}{\cup}
+\newcommand{\Del}{\nabla}
+\newcommand{\odash}{\circleddash}
+\newcommand{\negspace}{\!}
+\newcommand{\widebar}{\overline}
+\newcommand{\textsize}{\normalsize}
+\renewcommand{\scriptsize}{\scriptstyle}
+\newcommand{\scriptscriptsize}{\scriptscriptstyle}
+\newcommand{\mathfr}{\mathfrak}
+\newcommand{\statusline}[2]{#2}
+\newcommand{\tooltip}[2]{#2}
+\newcommand{\toggle}[2]{#2}
+
+\newcommand{\rd}[1]{{\textcolor{red}{#1}}}
+\newcommand{\bl}[1]{{\textcolor{blue}{#1}}}
+
+% Theorem Environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem*{utheorem}{Theorem}
+\newtheorem*{ulemma}{Lemma}
+\newtheorem*{uprop}{Proposition}
+\newtheorem*{ucor}{Corollary}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{example}{Example}
+\newtheorem*{udefn}{Definition}
+\newtheorem*{uexample}{Example}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{note}{Note}
+\newtheorem*{uremark}{Remark}
+\newtheorem*{unote}{Note}
+
+%-------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------
+
+\section{Cohomology operations and power operations}
+
+\hypertarget{cohomology_operations_and_power_operations_1}{}\subsection{{Cohomology operations and power operations}}\label{cohomology_operations_and_power_operations_1}
+
+\rd{The Steenrod operations in ordinary cohomology can be viewed in at least two ways: as stable operations and as power operations. It'{}s an unusual aspect in that most discussions of them use their properties as the former, but define them as the latter.}
+
+Stable cohomology operations are natural additive operations on cohomology elements. If a cohomology theory is represented by a spectrum $E$, then cohomology operations are represented by the graded ring of homotopy classes of maps $[E, E]_*$. Stable operations always preserve addition.
+
+Power operations are operations on cohomology elements that take multiplicative structure into account. They classically arose in two situations: in the cohomology of spaces (the Steenrod operations) and in the homology of loop spaces (the Araki-Kudo-Dyer-Lashof operations). To make these work, we need a spectrum $E$ with a highly structured multiplication; then there are natural transformations of the homotopy groups of $E$-algebras $A$ (such as $E^X$ for $X$ a space, or $E \wedge \Sigma^\infty_+ Y$ for $Y$ a multiple loop space). These can be calculated by looking at free algebras, which serve as universal examples.
+
+Both of these induce operations on $E$-cohomology of spaces, and the interaction between them seems to be interesting and hard to predict. \rd{[Tyler Lawson 9/23/13?]}
+
+There are relatively few cohomology theories where we can obtain a complete determination of all such operations. Ordinary cohomology is one, and $K$-theory is another. In both of these cases this knowledge has been critical to many subsequent developments.
+
+\hypertarget{operations_on_known_theories_2}{}\subsubsection{{Operations on known theories}}\label{operations_on_known_theories_2}
+
+There has been quite a bit of work (under the header of ``{}Hopf rings''{}) on the determination of unstable cohomology operations on such theories as the Morava $K$-theories. However, there are some prominent cohomology theories that don'{}t have algebras of cohomology operations that are fully understood.
+
+\textbf{Question}: What are the algebras of \emph{stable} power operations on topological modular forms and its variants?
+
+Note that since Milnor'{}s work on the dual Steenrod algebra, rather than studying $E^* E = [E,E]_*$, it is common to study the dual $E_*
+E$. Behrens and coauthors have thought about these for $tmf$ in some detail.
+
+\rd{\textbf{Question}: What are the \emph{unstable} operations on Morava $E$-theory?}
+
+Previous work (e.g. the Hopkins-Miller theorem) has described the stable operations between Morava $E$-theories as essentially based on isomorphisms between formal group laws, and work of Ando, Hopkins, Strickland, Rezk, and others on operations on $E$-algebras has described them as based on certain special types of isogenies between formal group laws. It seems conceivable that general operations on $E$-cohomology are, instead, connected to general isogenies between formal group laws.
+
+However, it does not seem to be clear what kinds of \rd{instability relations [?, cf.~May (6)]} will arise in the \rd{$E$-cohomology of \emph{spaces}}.
+
+\hypertarget{secondary_operations_3}{}\subsubsection{{Secondary operations}}\label{secondary_operations_3}
+
+Secondary operations arise due to relations between operations. The typical instance is as follows: one has a cohomology element $x$ in the $E$-cohomology of $X$ and operations $f$ and $g$ on $E$-cohomology such that $fg$ and $gx$ are zero. In this case, there is a secondary operation, which is only defined up to indeterminacy. These played a prominent role Adams'{} orginal solution to the Hopf invariant one problem.
+
+In the case of secondary cohomology operations, these can be described using representing objects. This data is equivalent to a composite
+
+\begin{displaymath}
+\Sigma^\infty X \stackrel{x}{\to} E \stackrel{g}{\to} E\stackrel{f}{\to} E
+\end{displaymath}
+in which all two-fold composites are trivial. One can then form the Toda bracket $\langle f,g,x\rangle$, which represents the secondary operation. (This describes a \emph{stable} secondary operation, but generalizes to unstable operations perfectly well.)
+
+\textbf{Question}: Are there any interesting families of secondary operations in prominent cohomology theories?
+
+The Morava $K$-theories possess some of these: there are Bockstein operators and higher-order Bocksteins which detect multiplication-by-$v_i$ operations in a fashion similar to the Milnor primitives $Q^i$.
+
+As stable cohomology operations can be described as Toda brackets, we can also determine relations between them using juggling formulas such as $\langle f,g,h\rangle x = f\langle g,h,x\rangle$.
+
+For example, there are relations $Sq^{2n-1} Sq^n = 0$ in the mod-$2$ Steenrod algebra. This means that there are secondary operations $\langle Sq^{2n-1}, Sq^n, -\rangle$ which we can apply to elements annihilated by $Sq^n$, and an operation $\langle Sq^{4n-3}, Sq^{2n-1},
+Sq^n\rangle$ which satisfies the juggling formula
+
+\begin{displaymath}
+\langle Sq^{4n-3}, Sq^{2n-1}, Sq^n\rangle x = Sq^{4n-3}\langle Sq^{2n-1},
+Sq^n,x\rangle
+\end{displaymath}
+whenever $x$ is annihilated by $Sq^n$.
+
+(These triple brackets in the Steenrod algebra were introduced by Kristensen, and can be viewed as Massey products in the homotopy of the function spectrum $F(H\mathbb{Z}/p,H\mathbb{Z}/p)$. Some of the real content in Adams work on secondary operations is the calculation of a nontrivial triple product with matrix entries.)
+
+Previous work announced by Kraines asserts that not only are these brackets $\langle Sq^{4n-3}, Sq^{2n-1}, Sq^n\rangle$ zero up to indeterminacy, but so are an infinite sequence of 4-fold and higher Toda brackets.
+
+\textbf{Question}: What is the Massey product structure in the Steenrod algebra? To what extent can higher brackets be calculated?
+
+In Baues'{} book on secondary operations they determine a method for calculating such triple products. At the back, there is a table where they calculate all the simple triple Massey products in the Steenrod algebra through a decent-sized range. The \emph{only} one they find which is not zero up to indeterminacy is the triple Massey product of the element $P_2^1 = Sq(0,2)$. The elements $P_t^s$, which are $Sq(0,0,\ldots,0,2^s)$ in the dual to Milnor'{}s basis, are used to define Margolis homology when $s \lt t$, and when $s=0$ all the iterated Massey products of $P_t^0$ with itself must contain zero (which is closely related to the existence of a corresponding Morava $K$-theory).
+
+\textbf{Question}: Can we understand when the iterated Massey products of these elements defining Margolis homology contain zero?
+
+\hypertarget{secondary_power_operations_4}{}\subsubsection{{Secondary power operations}}\label{secondary_power_operations_4}
+
+Secondary power operations are philosophically the same as secondary stable operations, but are set up differently. Typically, power operations on $E$-cohomology (where $E$ is $p$-local) arise from studying the $E$-cohomology of the symmetric groups $\Sigma_p$. Composites of these operations are detected in the cohomology of the wreath product $\Sigma_p \wr \Sigma_p$. This is a $p$-Sylow subgroup of $\Sigma_{p^2}$, and the $E$-cohomology of $\Sigma_{p^2}$ is a subgroup of the $E$-cohomology of the wreath product.
+
+\rd{The difference between $E^*(B\Sigma_{p^2})$ and $E^*(B\Sigma_p
+\wr \Sigma_p)$ detects the relations between power operations}, and these relations determine secondary operations. For example, there are $2$-primary Araki-Kudo operations $Q^s$ and relations $Q^{2s+1} Q^s = 0$. These give rise to secondary power operations which might be named $\langle Q^{2s+1}, Q^s, -\rangle$. (As an aside, the indeterminacy in these secondary operations is slightly different than that for secondary cohomology operations.)
+
+We can also determine relations between secondary power operations.
+
+Adams alludes to this possibility in his paper on Hopf invariant one, but I haven'{}t been able to track down a reference in the literature where this is even worked out for mod-$2$ homology (most of them use the perspective of cohomology operations and maps between Eilenberg-Mac Lane spaces, rather than secondary power operations).
+
+\rd{\textbf{Program}: Develop the theory of secondary power operations from this perspective.}
+
+This has the advantage that it will generalize to secondary Dyer-Lashof operations in other cohomology theories. Some interesting secondary operations should show up for Morava $E$-theory at height $2$. 
+\rd{[E-DL alg is quadratic]}
+
+Roughly, one should look at the $E$-(co)homology of the commutative diagram:
+
+\begin{displaymath}
+\begin{matrix}
+ B\Sigma_p \wr \Sigma_p \wr \Sigma_p & \longrightarrow & B\Sigma_p \wr \Sigma_{p^2} \\
+ \downarrow & & \downarrow\\
+ B\Sigma_{p^2} \wr \Sigma_p & \longrightarrow & B\Sigma_{p^3}
+ \end{matrix}
+\end{displaymath}
+This determines something like a ``{}Mayer-Vietoris''{} connecting map (with indeterminacy) from certain classes in the $E$-cohomology of the lower right to the $E$-cohomology of the upper left (which governs triple composites), and this determines secondary products of power operations.
+
+\textbf{Question}: Can one develop Adams'{} work on secondary operations from this perspective? How many secondary products of Dyer-Lashof operations can be calculated this way?
+
+This method has the advantage that it then applies equally well to determining secondary power operations in the cohomology of spaces, the homology of infinite loop spaces, and the homology of $E_\infty$ ring spectra.
+
+\section{Units and orientations}
+
+\hypertarget{unit_groups_1}{}\subsection{{Unit groups}}\label{unit_groups_1}
+
+An object $R$ with a highly associative ($A_\infty$) multiplication has a space of units $GL_1(R)$ which is a grouplike $A_\infty$ space, and spaces $GL_n(R)$ with the same structure. The data is equivalent to the existence of classifying spaces $BGL_1(R)$ and $BGL_n(R)$. (Work of Ando-Blumberg-Gepner-Hopkins-Rezk identifies these with spaces of automorphisms of $R$-modules.)
+
+If $R$ has a highly commutative ($E_n$) multiplication then $GL_1(R)$ is, further, a grouplike $E_n$ space, and so it has an $n$-fold delooping $B^n GL_1(R)$. In the $E_\infty$ case, there is an associated spectrum denoted $gl_1(R)$.
+
+This process reverses: associated to a connected space $X$ we have $A_\infty$ group algebras $\mathbb{S}[\Omega X]$ and associated to a spectrum $x$ we have $E_\infty$ group algebras $\mathbb{S}[\Omega^\infty x]$, with versions in between. \rd{These are in line with thinking of loop spaces as roughly analogous to topological groups and spectra as analogous to abelian groups. [?]}
+
+\rd{[koandtmf, thm 2.2]} Homotopically we think of $GL_1/gl_1$ as right adjoint to the group algebra functors, though there are significant technical issues involved in saying this from a classical point of view (Strickland has a paper on this).
+
+The functors $GL$ and $gl$ are mysterious from many perspectives.
+
+\hypertarget{differential_graded_algebras_2}{}\subsubsection{{Differential graded algebras}}\label{differential_graded_algebras_2}
+
+\textbf{Question}: For commutative differential graded algebras, does there exist a simplified model for $gl$ the case of chain complexes?
+
+It seems like, in this purely algebraic case, there should be a lot than can be said. However, it should be noted that there is not a model in the category of chain complexes. This suggests the following.
+
+\textbf{Question}: What kinds of homotopy types can arise as the unit group of a commutative differential graded algebra? Of an $E_\infty$ differential graded algebra?
+
+\hypertarget{connection_to_postnikov_towers_3}{}\subsubsection{{Connection to Postnikov towers}}\label{connection_to_postnikov_towers_3}
+
+One of the difficulties with $GL$ and $gl$, as visible above, is that their Postnikov towers can have entirely different structures. However, an $A_\infty$ or $E_\infty$ ring spectrum has a Postnikov tower whose $k$-invariants lift from ordinary cohomology to more structured groups: namely, topological Hochschild cohomology and topological André-Quillen cohomology groups respectively. In many cases we do not have a clear picture of exactly how different these $k$-invariants are.
+
+\textbf{Question}: Can we understand $k$-invariants in topological Andre-Quillen cohomology in terms of underlying $k$-invariants, along with those for $gl_1$?
+
+This is likely to be an oversimplified idea. For example, an $E_\infty$ ring $R$ has essentially unique localizations $S^{-1} R$ for any family of elements in $\pi_0 R$, and so the $k$-invariants will also determine $k$-invariants on all localizations. More generally, there are essentially unique algebras $R \to A$ determined by any étale extension $\pi_0 R \to \pi_0 A$. The TAQ $k$-invariants must therefore determine these $k$-invariants uniquely, too.
+
+\hypertarget{morava_theories_4}{}\subsubsection{{Morava $E$-theories}}\label{morava_theories_4}
+
+One particularly interesting family of examples has to do with the unit groups of Lubin-Tate spectra $E$. Using Rezk'{}s logarithm, Ando-Hopkins-Rezk described a ``{}discrepancy spectrum''{} which is the fiber of the map $gl_1(E) \to L_{E(n)} gl_1(E)$, and found that it has only finitely many nonzero homotopy groups $gl_1(E)$. Moreover, \rd{work of Westerland and Sati identifies the ``{}top''{} of this discrepancy spectrum using canonical maps $\Sigma^{n+1} H\mathbb{Z}_p \to
+gl_1(E)$; this is core to Westerland'{}s work on higher analogues of the image of $J$.}
+
+In the case of complex $K$-theory, this is highly relevant to the splitting of $BGL_1(KU)$ which allows one to define twisted $K$-theory using elements in $H^3$. \rd{At chromatic height $2$, Rezk has shown that the space of maps $\mathbb{S}[\mathbb{Z}] \to E$, or equivalently $H\mathbb{Z} \to gl_1(E)$, is a disjoint union of Eilenberg-Mac Lane spaces.}
+
+\rd{\textbf{Question}: How can one naturally describe the space of maps $\mathbb{S}[\mathbb{Z}] \to E$ for a Morava $E$-theory? For a general $E(n)$-local spectrum? Can one explicitly construct a space-level model for them?}
+
+Westerland and Sati made the following conjecture on further structure of the spectrum $gl_1(BP\langle n\rangle)$.
+
+\textbf{Conjecture}: (At $p=2$) Assuming that $BP\langle n\rangle$ admits the structure of an $E_\infty$ ring spectrum, there are maps of spectra $\Sigma^{2^{n+1}-2} BP\langle{n-1}\rangle \to gl_1 BP\langle
+n\rangle$ whose induced map in homotopy is $x \mapsto x v_n$.
+
+Theorem 4.11 in Ando-Hopkins-Rezk'{}s paper on orientation theory essentially says that, for $E(n)$-local spectra, the fiber of the map $gl_1(R) \to L_n gl_1(R)$ has only has finitely many nonzero homotopy groups, and they'{}re finite. Moreover, \rd{Rezk'{}s logarithm establishes a relationship between the maps in the chromatic fracture cube and certain combinations of power operations.} When applied to $tmf$ their analysis tells us that, in high degrees, certain $p$-adic power series near the supersingular locus which have the properties of Eisenstein series near the almost \emph{are} Eisenstein series.
+
+\rd{\textbf{Question}: How does this story generalize, and what number-theoretic content is present at height greater than two (or for some of the other examples at height two)?}
+
+There are some cases where we have complete descriptions of the power operations for certain Lubin-Tate spectra now (at $p=2$ and $p=3$).
+
+\rd{\textbf{Question}: In these examples, what is the homotopy type of the discrepancy spectrum?}
+
+\rd{In the future} it might be possible to ask how this varies as a \rd{functor} of the formal group law over a finite field.
+
+\hypertarget{additional_structure_on__5}{}\subsubsection{{Additional structure on $gl_1$}}\label{additional_structure_on__5}
+
+Simplicial commutative rings $R$ have unit groups which are easy to write down: one takes units levelwise, and obtains a simplicial abelian group modeling $gl_1(R)$. In particular, $gl_1(R)$ naturally takes values in $H\mathbb{Z}$-modules.
+
+Similarly, there are several varying degrees of strength of $E_\infty$ $G$-spectra, and the unit groups of them take values in differing categories of $G$-spectra.
+
+There are several other intermediary categories of ring spectra which we don'{}t understand, such as commutative $\Gamma$-rings and the like.
+
+\textbf{Question}:How does structure on $R$ naturally give extra structure on $gl_1(R)$?
+
+\hypertarget{multiplicative_monoids_6}{}\subsubsection{{Multiplicative monoids}}\label{multiplicative_monoids_6}
+
+The unit group is simply the grouplike subspace of the multiplicative monoid of an object $R$. Rognes'{} work on topological logarithmic structures explicitly studies categories of rings $R$ with extra structure on this multiplicative monoid. However, these are often difficult to work with because they are merely $E_\infty$ spaces. Not being grouplike, we don'{}t have the crutch of being able to view them as being equivalent to spectra.
+
+\textbf{Question}: Can we develop computational tools for the understanding of the homotopy theory of $E_\infty$ spaces?
+
+For instance, one might consider the Postnikov tower. Here you have to contend with the fact that an $E_\infty$ space should properly be regarded not having a fundamental group, or a fundamental groupoid, but instead a fundamental symmetric monoidal groupoid, and the higher homotopy groups are functors on it. The $k$-invariants need an appropriate notion of cohomology, using abelian group objects. One might hope that this would be enough to develop an obstruction theory.
+
+\hypertarget{orientation_theory_7}{}\subsection{{Orientation theory}}\label{orientation_theory_7}
+
+Orientations classically refer to orientations for vector bundles in ordinary cohomology of some type. This can be moved forward to generalized cohomology theories: the following is the perspective of Ando-Blumberg-Gepner-Hopkins-Rezk.
+
+If $\xi$ is a vector bundle on $X$, $\xi$ determines a stable spherical fibration $X \to BGL_1(\mathbb{S})$. If $R$ is an $A_\infty$ ring spectrum, an orientation is then a nullhomotopy of the composite $X \to BGL_1(\mathbb{S}) \to BGL_1(E)$. (Such an orientation determines a Thom isomorphism for the vector bundle $\xi$ in $R$-cohomology.)
+
+\hypertarget{complex_orientations_8}{}\subsubsection{{Complex orientations}}\label{complex_orientations_8}
+
+The term ``{}orientation''{} is also applied to complex orientations. We say $R$ is complex oriented if it has compatible orientations for all complex vector bundles. (From the above perspective, this arises if the composite map $BU \to BGL_1(R)$ has a chosen nullhomotopy, but this requires more structure on $R$ than generally.) Such complex orientations are equivalant to maps of ring spectra $MU \to R$.
+
+An $A_\infty$ orientation is an $A_\infty$ map $MU \to R$, and an $E_\infty$ orientation is an $E_\infty$ map $MU \to R$. In the latter case, because $MU$ is a Thom spectrum $\mathbb{S}
+\wedge_{\mathbb{S}[U]} \mathbb{S}$, an $E_\infty$ orientation is equivalent to a choice of nullhomotopy of a spectrum map $u \to
+gl_1(R)$, where $u \simeq \Sigma ku$ is the spectrum associated to the infinite loop $U$.
+
+\rd{We can calculate relatively few examples of space of commutative orientations. People who have worked in this area include Ando, Baker-Richter, and Walker.}
+
+\hypertarget{morava_theories_again_9}{}\subsubsection{{Morava $E$-theories again}}\label{morava_theories_again_9}
+
+\textbf{Question}: Which Morava $E$-theory spectra $E$ admit $E_\infty$ orientations? How canonical are they?
+
+It'{}s really annoying how difficult this problem seems to be. Matthew Ando has thought a lot about this, and his student Barry Walker did quite a bit of work on it at height 1. Complex $K$-theory admits an $E_\infty$ orientation.
+
+This is double annoying because there are many indicators that Lubin-Tate spectra are pretty close to the ``{}fields''{} in commutative ring spectra, but it seems quite difficult to understand better how to construct maps into them.
+
+\hypertarget{_orientation_theory_10}{}\subsubsection{{$E_\infty$ orientation theory}}\label{_orientation_theory_10}
+
+Two of the more important instances of orientation theory are the Atiyah-Bott-Shapiro orientation of $KO$ and the String orientation of $Tmf$, both of which are $E_\infty$ orientations by work of Ando-Hopkins-Strickland and Ando-Hopkins-Rezk. When we extend from $KO$ to $KU$, the Spin orientation extends to a Spin{\tt \symbol{94}}c orientation.
+
+\rd{Mark Behrens and others have thought in some detail about trying to extend these orientations to various other examples related to Eisenstein series on certain moduli of abelian varieties. At height $1$ the relation to Bernoulli numbers and $p$-adic interpolation is fundamental to our connection to number theory, and it would be really interesting to know how this generalizes. I think it'{}s fairly safe to say that we don'{}t really understand the form that orientation theory should take even at height $2$.}
+
+\rd{\textbf{Program}: Gain a more full understanding of $E_\infty$ orientation theory at any height which is not $0$ or $1$.}
+
+In particular, we have several examples at height $2$ now which we could use as test cases.
+
+\rd{\textbf{Question}: If we extend from $Tmf$ to various extension algebras, such as $Tmf(n)$, do the $MU\langle 6\rangle$ or $MO\langle
+8\rangle$ orientations extend to orientations on larger classes of manifolds?}
+
+\rd{I believe that Nitu Kitchloo has some conjectures, at least in the case of $Tmf_1(3)$ at $p=2$, for what the appropriate class of manifolds should be.}
+
+\textbf{Question}: What can we determine about the homotopy types of $gl_1(Tmf)$ and its various extensions $gl_1(Tmf(n))$, $gl_1(Tmf_0(n))$, and $gl_1(Tmf_1(n))$, together with relations between them?
+
+The equivariant $k$-invariants in low degree are of particular interest for computing Picard and Brauer groups.
+
+There are also examples at height $2$ from automorphic forms that are orthogonal to $Tmf$: namely, spectra associated to Shimura curves.
+
+\textbf{Question}: Are there obstructions to constructing orientations of the spectra of topological automorphic forms associated to Shimura curves?
+
+In these cases, the associated moduli are compact, and there are no $q$-expansion principle or natural Eisenstein series to begin immediate work with. It seems quite likely that some kind of genuine obstruction to producing an orientation does exist, but it would be good to be specific about it. \rd{We might understand enough about the geometry of some of these moduli that we could determine the power operation structure necessary to do some of these calculations.}
+
+\section{Multiplicative structures on chromatic spectra}
+
+\hypertarget{the_problem_1}{}\subsection{{The problem}}\label{the_problem_1}
+
+There are several spectra that appear regularly in chromatic homotopy theory. This might be because they have useful properties, convenient formal group laws, or section out an interesting portion of the chromatic filtration.
+
+\textbf{Question}: Which such spectra admit highly structured multiplications, and how much?
+
+In other words, we ask whether these admit some form of structured multiplication, such as a strictly associative ($A_\infty$) structure, or a strictly commutative ($E_\infty$) structure, or something in between. These allow one to talk about categories of modules, about $K$-theory, and generally gain a pretty large toolbox when using these objects when using them to study stable homotopy theory.
+
+Such multiplicative versions of these spectra play a significant role in the Ausoni-Rognes program for studying algebraic $K$-theory via the chromatic filtration.
+
+\rd{If you are interested in pursuing any of this, you need to talk to someone, because they may be able to dissuade you from a dead end. Good candidate people probably include Andrew Baker, Paul Goerss, Igor Kriz, Peter May, Neil Strickland, or someone else.}
+
+\hypertarget{examples_of_interest_2}{}\subsection{{Examples of interest}}\label{examples_of_interest_2}
+
+Several important examples here include:
+
+\begin{itemize}%
+\item The complex bordism spectrum $MU$
+
+
+\item The $p$-local Brown-Peterson spectrum $BP$ (note that most of the following examples are explicitly $p$-local), with homotopy groups $\mathbb{Z}_{(p)}[v_1,v_2,\ldots]$
+
+
+\item The truncated Brown-Peterson spectra $BP\langle n\rangle$, with homotopy groups $\mathbb{Z}_{(p)}[v_1,v_2,\ldots, v_n]$
+
+
+\item The periodic spectra $E(n)$ introduced by Johnson and Wilson, with homotopy groups $\mathbb{Z}_{(p)}[v_1,v_2,\ldots, v_n^{\pm 1}]$
+
+
+\item The completed Johnson-Wilson spectra $\widehat{E(n)}$, obtained by completing the \emph{graded} ring $E(n)_*$ at the ideal generated by $(p,v_1,\ldots,v_{n-1})$
+
+
+\item The Morava $K$-theories $K(n)$ and their 2-periodic versions
+
+
+\item The Lubin-Tate spectra $E_n$
+
+
+
+\end{itemize}
+\hypertarget{warning_on_choices_3}{}\subsubsection{{Warning on choices}}\label{warning_on_choices_3}
+
+Note that, at the very least, the ring structure on several of these examples depends on choices. For example, the truncated Brown-Peterson spectra depend on choices of a sequence of graded generators $v_i$, as do the $E(n)$; the ideal generated by the ``{}higher $v_i$''{} is not well-defined up to isomorphism. The Lubin-Tate spectra $E_n$ come from a choice of a perfect field of characteristic $p$ and a formal group law of height $n$ over it. If $\mathbb{S}_n$ is the Morava stabilizer group, the isomorphism classes of this over a finite field $k$ are parametrized by the nonabelian cohomology group
+
+\begin{displaymath}
+H^1(Gal(k), \mathbb{S}_n)
+\end{displaymath}
+which (for $n \gt 1$) is pretty large, and \rd{includes formal group laws that don'{}t become isomorphic over any \textbf{finite} extension}.
+
+\hypertarget{status_4}{}\subsection{{Status}}\label{status_4}
+
+The largest open problem in this area is whether the Brown-Peterson spectra $BP$ admit $E_\infty$ ring structures; this problem is over 30 years old, at least.
+
+\hypertarget{associative_structures_5}{}\subsubsection{{Associative structures}}\label{associative_structures_5}
+
+By obstruction theory, all of the spectra listed previously are known to admit $A_\infty$ ring structures. (get proper historical references)
+
+\hypertarget{core_results_6}{}\subsubsection{{Core results}}\label{core_results_6}
+
+It has been known that $MU$ admitted an $E_\infty$ ring structure since before the concept really existed.
+
+The spectra $BP\langle n\rangle$ and $E(n)$ admit $E_\infty$ ring structures when $n=-1$ (mod-p homology), $n=0$ (p-local homology), and $n=1$ (p-local $K$-theory) classically.
+
+Hopkins and Miller proved that the Lubin-Tate spectra admit $A_\infty$ ring structures, and this was extended by Goerss and Hopkins to a proof that they admit $E_\infty$ ring structures. Moreover, these are canonical: they are completely functorial on a category of formal group laws over perfect fields.
+
+This functoriality, when applied to certain groups of automorphisms of the Honda formal group law $H_n$, allows one to construct $E_\infty$ ring structures on $\widehat{E(n)}$ and its variants.
+
+\hypertarget{negative_results_7}{}\subsubsection{{Negative results}}\label{negative_results_7}
+
+The Morava $K$-theories $K(n)$ and their periodic versions do not admit an $E_2$ ring structure, because $p=0$ in their homotopy groups.
+
+\textbf{Question}: (more general suspicions about the chromatic levels that can be occupied by the group law on a commutative ring object --{} see Hovey'{}s list)
+
+Strickland, in his paper on products on $MU$-modules, describes nontrivial obstructions to making the $BP\langle n\rangle$ homotopy commutative when using the Araki or Hazewinkel generators at the prime $2$.
+
+Hu and Kriz have shown that $MU_{(p)}$ cannot admit the structure of an $E_\infty$ algebra over $BP$, because this would contradict the Dyer-Lashof operation structure on $H_* MU$.
+
+Noel-Johnson have shown that $BP$ cannot admit the structure of an $E_\infty$ algebra over $MU$ using the $p$-typical orientation (though results of this type were known to Ando).
+
+\textbf{Question}: Does $BP$ admit the structure of a commutative $MU$-algebra using a non-$p$-typical orientation?
+
+\hypertarget{thom_spectrum_methods_8}{}\subsubsection{{Thom spectrum methods}}\label{thom_spectrum_methods_8}
+
+$BP$ is not a Thom spectrum of an infinite loop map. Here we need to be slightly flexible, because it'{}s obviously not the Thom spectrum of a map $X \to BGL_1(\mathbb{S})$ (the result would not be $p$-local), but it is not the Thom spectrum of an infinite loop map $X \to GL_1(\mathbb{S}_{(p)})$ either.
+
+\textbf{Question}: Does there exist a natural choice of an $E_\infty$ ring $R$ and an infinite loop map $X \to BGL_1(R)$ such that $BP$ is the associated $R$-algebra Thom spectrum?
+
+Note that if $BP$, or any of the other examples, does admit an $E_\infty$ ring structure, then such an $R$ exists: we could take $R =
+BP$, and $X = *$.
+
+\hypertarget{restricted_algebras_9}{}\subsubsection{{Restricted algebras}}\label{restricted_algebras_9}
+
+The example of Thom spectra suggests the following.
+
+\textbf{Question}: Does there exist some smaller category of commutative algebras where $BP$ can be realized?
+
+Candidate categories include things like algebras over some fixed base ring $R$, or spectra with slightly more unusual structure (such as divided power structures, extra structure on their units, extra structure on their multiplicative monoid such as a logarithmic structure, or the like).
+
+Working in such a category can make the problem more difficult (because we are trying to put even more structure on $BP$) or easier (because if we are working in a restricted category of algebras, there may be fewer choices and fewer ways to make incorrect choices). As such, a method like this is a delicate balancing act and would require some really new insight into what the target category should be.
+
+\hypertarget{idempotents_10}{}\subsubsection{{Idempotents}}\label{idempotents_10}
+
+May wrote an April Fool'{}s paper about trying to use idempotent endomorphisms of $MU_{(p)}$ to prove this. The Hu-Kriz result excludes this possibility.
+
+Basterra-Mandell have shown the Quillen idempotent is a map of $E_4$-ring spectra, and so this does provide $BP$ with an $E_4$-ring structure.
+
+\hypertarget{killing_torsion_11}{}\subsubsection{{Killing torsion}}\label{killing_torsion_11}
+
+There is a very odd construction of $BP$ due to Priddy: you take the $p$-local sphere spectrum, and you progressively attach cells in a minimal way to kill off all the torsion in its homotopy groups, starting at the bottom and working your way up. The result is $BP$.
+
+\textbf{Question}: Is there a natural way to construct $BP$ in a ``{}cellular''{} fashion, by attaching $E_\infty$ cells in a certain systematic manner?
+
+Another April Fool'{}s paper suggests killing torsion using $E_\infty$ cell attachment to kill the torsion. Again, the Hu-Kriz result rules out the possibility that this works, because if it did then one would obtain a map $BP \to MU_{(p)}$. Andrew Baker has thought quite a bit about extending this ``{}core''{} method, universally killing homotopy elements, and has a recent preprint on this as well. \bl{There is a tempting argument to be made along these lines,} related to killing off maps from a mod-$p$ Moore spectrum, \bl{which runs into some difficulty.}
+
+\hypertarget{divisible_groups_12}{}\subsubsection{{$p$-divisible groups}}\label{divisible_groups_12}
+
+\textbf{Question}: Can we use Lurie'{}s $p$-divisible group machine to construct such spectra?
+
+Specifically, one could try and construct $p$-divisible groups on certain stacks, in the hopes of applying Lurie'{}s theorem to construct $BP\langle n\rangle$ or $E(n)$. Constructing $BP$ is not directly possible because the height of a formal group constructed by this method would be capped at the height of the $p$-divisible group.
+
+The most straightforward attempts would ask for the following. In either of these cases, we have a graded ring, and this graded ring with its graded formal group law gives us a stack (a weighted projective space for $BP\langle n\rangle$, or an open subset of same for $E(n)$) together with a formal group on it.
+
+\textbf{Question}: Does the formal group on this weighted projective space extend to a $p$-divisible group that satisfies Lurie'{}s universal deformation criterion?
+
+This seems more difficult than one might expect. There are strictly commutative versions of $BP\langle 2\rangle$, constructed by realizing similar ``{}geometric''{} problems. But they come from from $tmf_1(3)$ when $p=2$, \rd{whose $p$-divisible group doesn'{}t extend to the cusp [?]}, and from a Shimura curve at $p=3$, which has a more complicated stack-level structure that includes points with more automorphisms than the weighted projective space that it maps to.
+
+(Warning: there are some indications suggest that the weighted projective spaces may not work at all, but I'{}ve never been able to make this definite.)
+
+\hypertarget{isogeny_obstructions_13}{}\subsubsection{{Isogeny obstructions}}\label{isogeny_obstructions_13}
+
+The $BP\langle n\rangle$ potentially run into an obstruction to realizing them. Namely, Ando'{}s work on power operations and numerous followups show us that if a ring $R$ can be realized as the coefficient ring of a nice enough complex orientable cohomology theory which is $E_\infty$, then formal groups of ``{}type $R$''{} are closed under quotients: if there is a ring map $R \to S$ where the image of the formal group law $\mathbb{G}$ of $R$ has a subgroup $H$, then the quotient formal group law $\mathbb{G}/H$ becomes one which is an image under a canonical new map $R \to S$.
+
+Effectively, if $R$ parametrizes ``{}structures of type $X$''{} which are equipped with formal group laws, then you get a canonical way to take the quotient by a subgroup of the formal group law and get a new structure of type $X$. When $R$ is the Lazard ring, it parametrizes formal group laws, and there is a canonical way to take a quotient of a formal group law and get a new formal group law that Ando calculated. When $R$ is the coefficient ring of $BP$, it parametrizes $p$-typical formal group laws. You do know that a quotient of $p$-typical formal group law is isomorphic to another $p$-typical formal group law, but \rd{writing it down explicitly is nontrivial, and it'{}s not compatible with Ando'{}s calculation [?].}
+
+When $R$ is the coefficient ring of some version of $BP\langle
+n\rangle$, it parametrizes formal group laws where the ideal $(v_{n+1}, v_{n+2}, \ldots)$ is sent to zero. This ideal is not invariant under isomorphism in any way, and so this leads to the following:
+
+\textbf{Question}: Under what condiditions can we pick a sequence of generators $v_i$ of $BP_*$ so that any quotient of a formal group law factoring through $BP_*/(v_{n+1},\ldots)$ is always isomorphic to a formal group law factoring through $BP_*/(v_{n+1},\ldots)$?
+
+\hypertarget{topological_andrequillen_obstruction_theory_14}{}\subsubsection{{Topological Andre-Quillen obstruction theory}}\label{topological_andrequillen_obstruction_theory_14}
+
+Kriz developed a lot of the theory of topological Andre-Quillen cohomology in an unpublished paper, with the goal of proving that the Brown-Peterson spectrum admits an $E_\infty$ ring structure. Most of this was fleshed out rigorously in Basterra'{}s work, and Basterra-Mandell have calculated the natural operations in topological Andre-Quillen cohomology.
+
+The basic method is to try and construct $BP$ as an $E_\infty$ ring object via its Postnikov tower; this requires iteratively lifting its $k$-invariants from cohomology to TAQ-cohomology.
+
+\textbf{Question}: Is it possible to show directly that the $k$-invariants of $BP$ all lift to topological Andre-Quillen cohomology?
+
+The difficulty one seems to run into is that one must exclude the possibility of certain failures of our ability to lift elements to TAQ-cohomology, such as secondary Dyer-Lashof operations. One can see from carrying out calculations that if one can build $BP$ by starting with the sphere and attaching $E_\infty$ cells, the procedure is much more complex than the corresponding procedure for $MU$ (and certainly not governed by it).
+
+\textbf{Question}: Can one replace the Postnikov tower by a more adapted filtration, such as the one induced by ``{}filtering by powers of $v_n$''{}?
+
+The problem you run into is that this seems to make computing the obstruction groups much harder.
+
+Systematizing the possible places where obstructions can \emph{actually} occur requires some nontrivial work. Here is an example.
+
+\textbf{Question}: Does the mod-$p$ homology of $BP$ or $BP\langle
+n\rangle$, which is a subalgebra of the dual Steenrod algebra, admit an $E_\infty$ structure which gives rise to its power operation structure?
+
+I don'{}t know that this is known either way. However, if the answer to this question is positive then that only tells us that ''{}$H \wedge BP$''{} admits a commutative structure, and then we have to address whether it can be lifted up to one on $BP$ (which is a very strong compatibility with the Steenrod action). Kriz'{}s methods also seem to show that the first obstruction in the Postnikov tower to the existence of $BP$ would not be visible as an obstruction on the level of homology.
+
+This leads into the next method.
+
+\hypertarget{goersshopkins_obstruction_theory_15}{}\subsubsection{{Goerss-Hopkins obstruction theory}}\label{goersshopkins_obstruction_theory_15}
+
+\textbf{Question}: Can one use Goerss-Hopkins obstruction theory to construct $p$-complete $BP$ or $BP\langle n\rangle$ as an $E_\infty$ ring spectrum, using mod-$p$ homology as the coefficient homology theory?
+
+If you do this, you end up with obstruction groups which are Ext groups of $H_* BP$ with itself in a category of algebras equipped with Dyer-Lashof operations and a dual Steenrod coaction satisfying the Nishida relations.
+
+One can, in principle, compute this Ext via a number of steps --{} the answer is a little more tractable if you iteratively compute it for the $BP\langle n\rangle$. There is a Koszul complex that computes the $E_2$-term of this obstruction spectral sequence (which will ultimately compute topological Andre-Quillen cohomology as well). The obstruction groups at $E_2$ are usually not all zero. Even for $H\mathbb{Z}$ this spectral sequence is going to have differentials, however.
+
+The method by which this whole story settles out is not clear, and seems to require some insight into how some differentials might be computed. Getting some kind of cap on the exponent that elements can have in the $H\mathbb{Z}$ version would be helpful, because then one can deduce information about operations in TAQ with $H\mathbb{Z}$ coefficients, and possibly bootstrap that up to deduce information about operations further on. One might also be able to get some mileage by looking at various infinite loop spaces whose spectra have known homology, and computing how their TAQ spectral sequence must be sorted out.
+
+The \emph{easiest} way to use this spectral sequence would be to use it to nail down a ``{}no''{} answer. Specifically, it can isolate exactly where a nontrivial obstruction might occur, and give us some cohomological class which would detect it, and then we can cook up some simpler version of the story where we can detect this obstruction.
+
+\section{Connections to algebraic geometry}
+
+\begin{itemize}%
+\item It'{}s still an important point that we still don'{}t have geometric representatives for classes in things like $tmf$-cohomology, or a lot of the other ``{}designer''{} cohomology theories we'{}re using. In an ideal world this kind of knowledge would lead us towards understanding a construction of the associated infinite loop spaces.
+
+
+\item There are quite a few examples of spectra now that are connected to arithmetic geometry and open to a number of angles of computational attack. There are further computations with modular curves and Shimura curves: in the former case, for quadratic imaginary fields of many discriminants, and for the latter case, Shimura curves of discriminants greater than 15. For chromatic height greater than two, we should get some integral analysis of Picard modular surfaces, which connect via the automorphic forms story to chromatic level 3. (Sebastian Thyssen is actively working on some cases of these last.)
+
+
+\item Similarly, by doing some more in-depth calculations with modular curves of higher level we should be recovering a number of connective spectra related to $tmf$. Ideally we'{}d like to be able to calculate some information about these, such as (as a start) their homology.
+
+
+\item \rd{[Dylan Wilson]} Understand if the string orientation $MString \to tmf$ can be refined when you move the target to $tmf_1(3)$, $tmf_0(3)$, and other related versions. Do they factor through $MU$, $MSpin$, or some other more complicated bordism theory expressible in terms of characteristic classes? (Nitu Kitchloo has a conjecture about the form this takes for $BP\langle 2\rangle$ which I cannot exactly remember, but my recollection was that it was expressible in terms of vanishing of just a couple of characteristic classes.)
+
+
+\item Figure out appropriate Hopf algebras for $eo_n$, or if that'{}s even a sensible idea, by analogy with $A(2)$ and the one at the prime $3$.
+
+
+\item Gain enough understanding of $p$-divisible groups with an etale part to decide if Lurie'{}s machine can or cannot produce some variants of $E(n)$ or $BP\langle n\rangle$. There may be restrictions on $p$ and $n$. Apparently there is \rd{recent progress [Scholze-Weinstein?]} made on understanding the full moduli of $p$-divisible groups of height $n$, and I would like to understand that better from our point of view too.
+
+
+\item Various moduli of higher-dimensional abelian varieties have compactifications that parametrize extensions of abelian varieties by torii. It would be useful to get some general analysis of ``{}higher Tate curves''{} by looking in a neighborhood of the compactification portion of some of these higher moduli. Can we understand the geometry well enough here to obtain some constructive methods, like we can carry out with the Tate curve?
+
+
+\item \rd{One perspective on $tmf$ is that it is some kind of functor. It takes certain elliptic curves, and produces elliptic cohomology theories, and it'{}s functorial in isomorphisms of elliptic curves and base change. It should be functorial in \emph{isogenies} of elliptic curves. The obstruction theory, at current, just doesn'{}t seem to be an adequate tool for this job. Not having this obstructs a couple of important things, like an ``{}adelic''{} perspective or like certain diagrams produced using maps of modular curves (at least away from the $K(2)$-local part).}
+
+
+\item Lifting Rapoport-Zink moduli for $p$-divisible groups of height $n$ and formal height $t$. These come with some kind of group scheme of automorphisms but it seems like one could lift this up to some kind of cosimplicial spectrum without being terribly clever.
+
+
+\item What on earth are appropriate generalizations of ``{}Weierstrass curves''{} for level structure? How can we make these fit into what we'{}re already observing for connective versions of $tmf_1(3)$, $tmf_0(3)$, etc? (One point to make is that variants of $Tmf$, which parametrize curves with additive degeneration, can be viewed (via the grading) as some kind of principal $\mathbb{G}_m$-torsors, usually acting on something like $\mathbb{A}^2 \setminus 0$. Allowing additive degeneration (in the examples we understand) closes this up to $\mathbb{A}^2$ with an extension to an action of the full multiplicative monoid $\mathbb{A}^1$. This looks like these moduli objects have some property of closing up this action. However, it may be that the object we want is not actually $\mathbb{A}^2$. It may be an object with some completely distinct structure at the origin such as a blowup, which might not alter the resulting cohomological behavior.)
+
+
+\item Ravenel had a problem for generalizing the Artin-Schreier curves, which capture a maximal finite subgroup of the Morava stablizer at height $p-1$ and should come from spectra $eo_{p-1}$, and generalize them to higher heights. The project of realizing these objects as spectra stalled at some point, which is a shame, and it would be great to complete it (both by constructing them and carrying out analysis of the homotopy groups).
+
+
+\item $K3$ surfaces in homotopy theory. There'{}s Szymik'{}s work on this, and Nogami'{}s thesis. This has the strange aspect that the dimension of the deformation space is much larger than that of the formal group because the additive terms are stratified by some Artin invariant. Is this something that makes sense from our perspective?
+
+
+\item A question that'{}s not about homotopy theory. For any $n$ and $d$, there'{}s a moduli of finite flat group schemes of height $n$ and dimension $d$, which forms an Artin stack (you can explicitly write down a Hopf algebroid which is pretty much useless calculationally). We at least have a library of techniques for computing cohomology of unpleasant stacks. Is there a way for us to analyze these, and perhaps make some headway into analyzing these moduli?
+
+
+
+\end{itemize}
+\section{Monochromatic homotopy theory}
+
+\hypertarget{monochromatic_homotopy_theory_1}{}\subsection{{Monochromatic homotopy theory}}\label{monochromatic_homotopy_theory_1}
+
+The chromatic perspective divides the $p$-local stable homotopy category into a sequence of layers: these are the $K(n)$-local categories, which correspond to a specific height $n$ of formal group law. We would like to understand these categories better.
+
+The important players in this scenario are the Morava $K$-theories $K(n)$ and the Morava $E$-theories $E$. Typically one studies the objects $X$ in the $K(n)$-local category by either their Morava $K$-theory $K(n)_*(X)$ or their $K(n)$-localized Morava $E$-theory $E^\vee_*(X)$.
+
+For the time being, see also [[Problems from the E-theory seminar]].
+
+\hypertarget{homotopical_description_of_the_local_category_2}{}\subsection{{Homotopical description of the $K(n)$-local category}}\label{homotopical_description_of_the_local_category_2}
+
+\textbf{Program}: (M. Hovey) Elucidate the connection between the Morava stabilizer groups and the K(n)-local category.
+
+\hypertarget{twisted_group_algebras_3}{}\subsubsection{{Twisted group algebras}}\label{twisted_group_algebras_3}
+
+The following states results of Hovey on operations and co-operations in $E$-theory (see his HHA paper from 2004).
+
+Take $E$ to be the Morava $E$-theory associated to the Honda formal group law over $\mathbb{F}_{p^n}$, or possibly some extension. The algebra of cohomology operations $E^*E$ is the twisted completed group ring $E_*\langle\!\langle \mathbb{G}_n\rangle\!\rangle$ of the Morava stabilizer group--{}the stabilizer group acts on $E$, and that is where the twisting comes in. The completion procedure is with respect to both the filtration by powers of the maximal ideal of $E_*$ and by the open normal subgroups of $\mathbb{G}_n$. Similarly, $E^\vee_*E = \pi_*(L_{K(n)} (E \wedge E))$ is the ring of continuous functions from $\mathbb{G}_n$ to $E_\ast$.
+
+\textbf{Question}: Generalize this proof to a slightly more complicated description which is similar in spirit, but which applies to operations and co-operations between two Morava $E$-theories of the same height.
+
+\textbf{Question}: (M. Hovey) Can one form a category of modules over $E$ with a compatible action of $\mathbb{G}_n$?
+
+These should be modules over a (completed) twisted group algebra $E\langle\!\langle\mathbb{G}_n\rangle\!\rangle$. The spectrum $E\langle\!\langle\mathbb{G}_n\rangle\!\rangle$ can be defined to be the function spectrum $F(E, E)$, but one would like a model for it that is a (homotopy) inverse limit of twisted group algebras (which are defined, in general, in Section 6.1 of Rognes'{} Memoir on Galois theory). The ``{}obvious''{} way to build such a model fails: if $E/I$ denotes $E \wedge M_I$, where $M_I$ is a generalized Moore spectrum, then the twisted group algebra $E/I\langle\mathbb{G}_n/N\rangle$ fails to exist for all open normal subgroups $N$ in $\mathbb{G}_n$ (this follows immediately from a result, evidently due to Hopkins, that is recorded as Lemma 6.2 in the 2006 JPAA paper of Davis).
+
+One significant point is that this category is a target for the functor sending a $K(n)$-local object $X$ to its ``{}Morava module''{} $L_{K(n)} (E \wedge X)$. More, this should land in some kind of category of ``{}complete''{} objects.
+
+\textbf{Question}: Is the functor $X \mapsto L_{K(n)}(E \wedge X)$ an equivalence to a category of ``{}complete''{} modules over the twisted group algebra $E\langle\!\langle\mathbb{G}_n\rangle\!\rangle$?
+
+Rognes establishes the map $L_{K(n)} \mathbb{S} \to E$ as a $K(n)$-local pro-Galois extension, and the description of module categories should be some manifestation of this procedure. Davis and Torii have shown that every $K(n)$-local spectrum is the homotopy fixed-point object of its Morava module, so the functor should at least be the inclusion of a retract.
+
+A good portion of the difficulty here is in defining and dealing on a foundational level with what the appropriate notion of a ``{}complete module with a continuous action of $\mathbb{G}_n$''{} should be. There are several possible directions. Quick has done recent significant work on profinite spectra. Lurie'{}s work suggests that it might be easier to think of pro-objects as certain types of $\infty$-categorical sheaves of spaces.
+
+\hypertarget{colocalization_description_4}{}\subsubsection{{Colocalization description}}\label{colocalization_description_4}
+
+It'{}s well known that one can switch between ``{}localization''{} and ``{}colocalization''{} perspectives on the monochromatic layers in stable homotopy theory. The colocalization perspective switches out $K(n)$-local objects for objects whose homotopy groups are, roughly, torsion with respect to $v_0,\ldots,v_{n-1}$ and acted on invertibly with respect to $v_n$. This suggests a dodge around the issue of studying completed modules over $E$.
+
+\textbf{Question}: Is there an equivalence between the $K(n)$-local category and the category of $E\langle\!\langle\mathbb{G}_n\rangle\!\rangle$-modules whose homotopy is torsion with respect to the maximal ideal of $E_*$?
+
+One problem with this type of category is that it is not, strictly speaking, symmetric monoidal. There is a monoidal product, but no unit: there is only an object $I$ with a natural \emph{map} $X \wedge I
+\to X$ which is a weak equivalence for appropriately flat $X$.
+
+\textbf{Question}: Can one develop a theory of monoidal model categories with a ``{}lax''{} unit of this type, such that an appropriate equivalence with the $K(n)$-local category is a monoidal Quillen equivalence?
+
+These kinds of lax units are also visible in algebra: for example, $\Sigma^{-1} \mathbb{Q}/\mathbb{Z}$ is such a unit in the category of chain complexes of abelian groups with torsion homology.
+
+\hypertarget{the_picard_group_of_the_local_category_5}{}\subsection{{The Picard group of the $K(n)$-local category}}\label{the_picard_group_of_the_local_category_5}
+
+\textbf{Question}: (M. Hovey) Show that the Picard group is finitely generated over the p-adics. (What is the current state of this problem?)
+
+The study of the Picard group typically proceeds by examining an algebraic Picard group, as pioneered in Hopkins-Mahowald-Sadofsky. We study invertible objects $X$ by studying their Morava modules $E^\vee_* X$ with the action of the extended Morava stabilizer $\mathbb{G}_n$. This leads to an invariant in $H^1(\mathbb{G}_n,
+(E^0)^\times)$.
+
+\textbf{Conjecture}: (Dwyer-Greenlees-Iyengar) This invariant is an edge morphism in a spectral sequence computing part of the Picard group of the $K(n)$-local category, starting with
+
+\begin{displaymath}
+H^s(\mathbb{G}_n, \pi_t BGL_1(E)).
+\end{displaymath}
+(Their statement is more definite about which portion of the Picard group, I should go look it up so that it'{}s not misquoted.)
+
+In an ideal world, this should actually follow from a categorical analysis of the equivalence of categories conjectured above: it would be an obstruction theory spectral sequence for putting a continuous $\mathbb{G}_n$-action on an invertible $E$-module. Such spectral sequences
+
+\begin{displaymath}
+H^s(G, \pi_t Pic(S)) \Rightarrow \pi_{t-s} Pic(R)
+\end{displaymath}
+exist for faithful $G$-Galois extensions $R \to S$ when $G$ is finite. However, the ``{}pro''{} issue is a significant one for the reasons already stated.
+
+\textbf{Question}: Can we find explicit descriptions of invertible elements in the Picard group of the $K(n)$-local category?
+
+\section{Transchromatic homotopy theory}
+
+\hypertarget{transchromatic_homotopy_theory_1}{}\subsection{{Transchromatic homotopy theory}}\label{transchromatic_homotopy_theory_1}
+
+The chromatic filtration stratifies the $p$-local stable homotopy category into layers, the $K(n)$-local categories, for each $n \geq 0$. The process of moving from local to global involves patching together these $K(n)$-localizations.
+
+\hypertarget{chromatic_assembly_2}{}\subsubsection{{Chromatic assembly}}\label{chromatic_assembly_2}
+
+The [[Chromatic splitting conjecture|chromatic splitting conjecture]] is a high-profile instance of studying the interaction between chromatic layers.
+
+\hypertarget{chromatic_fracture_3}{}\subsubsection{{Chromatic fracture}}\label{chromatic_fracture_3}
+
+The $E(n)$-localization $L_n X$ of a spectrum fits into a chromatic fracture square, which is a homotopy pullback:
+
+\begin{displaymath}
+\begin{matrix}
+L_n X & \to & L_{n-1} X \\
+\downarrow && \downarrow \\
+L_{K(n)} X & \to & L_{n-1} L_{K(n)} X
+\end{matrix}
+\end{displaymath}
+This canonically allows us to specify an $E(n)$-local spectrum as a $K(n)$-local spectrum, an $E(n-1)$-local spectrum, and the lower structure map.
+
+\textbf{Question}: Can one extend this description of the $E(n)$-local stable homotopy category to a description on the level of model categories?
+
+(There is work of Röndigs and Huettemann describing model structures on categories of twisted diagrams which seems like it might be applicable here.)
+
+\hypertarget{morava_modules_4}{}\subsubsection{{Morava modules}}\label{morava_modules_4}
+
+As described [[Monochromatic homotopy theory|on this page]], the typical method for studying $K(n)$-local spectra is via their Morava modules.
+
+\textbf{Question}: Is there a process for converting Morava modules of $K(n)$-local spectra to those of their $K(t)$-localizations? What is the algebro-geometric procedure underlying this?
+
+(The relations between adjacent chromatic layers have been taken up by Ando-Morava-Sadofsky and in many papers of Takeshi Torii.)
+
+\section{Calculations in stable homotopy theory}
+
+\hypertarget{calculations_in_stable_homotopy_theory_1}{}\subsection{{Calculations in stable homotopy theory}}\label{calculations_in_stable_homotopy_theory_1}
+
+\hypertarget{smithtoda_complexes_2}{}\subsubsection{{Smith-Toda complexes}}\label{smithtoda_complexes_2}
+
+For any prime $p$, the mod-$p$ Moore spectrum is the cofiber of the multiplication by $p$ map: call it $V(0)$. For $p \gt 2$, this is a ring spectrum and it has a $v_1$-self map of degree $2p-2$, whose cofiber is called the Smith-Toda complex $V(1)$. At $p=2$ this is obstructed, and no such Smith-Toda complex exists.
+
+Similar things occur for higher primes: there is a ring spectrum structure on $V(1)$ and a $v_2$-self map for $p \gt 5$, but not at $p=3$, and Nave showed a significant family of nonexistence results at all primes. Thus far these existence or nonexistence results have hinged on the existence or nonexistence of certain differentials in the Adams-Novikov spectral sequence, and they'{}re closely tied to the structure of periodic families in the stable homotopy groups of spheres.
+
+Ravenel observed that at all primes, there are phenomena in the Adams-Novikov spectral sequence that might obstruct the existence of a Smith-Toda complex $V(4)$.
+
+\textbf{Question}: Does $V(4)$ ever exist? If so, at which primes?
+
+This occurs in a fairly ``{}busy''{} calculational range and so it seems that, if a differential were to be detected on a $v_4$ class, it would be useful to detect it using an auxiliary homology theory that clears out some of the clutter. However, I don'{}t know if there is anyone who has any significant idea as to what kind of nature this should have.
+
+In addition, there are generalized Moore spectra $M_I$ whose $BP$-homology is a quotient by an ideal $I =
+(p^{i_0},v_1^{i_1},\ldots,v_k^{i_k})$ for some admissible sequences of generators. If the ideal is ``{}too large''{}, there has been a visible pattern of difficulty constructing multiplications on these Moore spectra, and even more trouble constructing multiplications with good properties.
+
+\textbf{Question}: Are there any generalized Moore spectra $M_I$, for a nontrivial ideal $I$, which admit a highly structured multiplication ($A_\infty$)?
+
+\hypertarget{the_kervaire_invariant_3}{}\subsubsection{{The Kervaire invariant}}\label{the_kervaire_invariant_3}
+
+The solution to the Kervaire invariant problem by Hill-Hopkins-Ravenel leaves open one case. They proved that differentials must exist on the Kervaire invariant classes $h_i^2$ in dimensions 254 and higher.
+
+\textbf{Question}: (M. Hill) Does the Kervaire invariant one class in dimension 126 support a differential?
+
+Based on my understanding, it seems conceivable that the slice spectral sequence for the spectrum used by Hill-Hopkins-Ravenel could detect a differential, but you get no help from the 256-periodic structure.
+
+In dimension 254 and higher, we know that differentials on the Kervaire invariant classes exist, but comparatively little about their targets.
+
+\textbf{Question}: (M. Hill) Can we get information about the exact nature of the Kervaire differentials?
+
+In the highest case where we do know the existence of a Kervaire invariant one manifold, in dimension 62, only the existence is known by a computation in homotopy theory. We don'{}t yet have a geometric model for this manifold.
+
+\textbf{Question}: What is an explicit model for a 62-dimensional manifold of Kervaire invariant one?
+
+\hypertarget{tate_spectra_4}{}\subsubsection{{Tate spectra}}\label{tate_spectra_4}
+
+Tate spectra are closely connected to algebraic $K$-theory and the Segal conjecture, but they display many unusual phenomena. Lin'{}s theorem implies that the Tate spectrum for the trivial action of $C_2$ on the sphere is the $2$-adically completed sphere. This means that there is a spectral sequence
+
+\begin{displaymath}
+H^s(C_2; \pi_t \mathbb{S}) \Rightarrow \pi_t(\mathbb{S})^\wedge_2.
+\end{displaymath}
+The elements in stable homotopy groups of spheres undergo some unusual ``{}shift''{} in this spectral sequence, and trying to figure out what happens led to Mahowald'{}s root invariant. (note: some root invariant questions would be good)
+
+More recently, Sverre Lunøe-Nielsen proved that the Tate spectrum for the action of $C_2$ on $H\mathbb{Z}/2 \wedge H\mathbb{Z}/2$, via the flip action, is equivalent to $H\mathbb{Z}/2$, by analogy with the Segal conjecture. There are further analogous results other spectra such as $BP$ and $MU$. This means that there'{}s a spectral sequence
+
+\begin{displaymath}
+H^s(C_2; A_*) \Rightarrow \mathbb{Z}/2;
+\end{displaymath}
+we start with the Tate cohomology for the action of $C_2$ on the dual Steenrod algebra, and converging to \emph{nothing} except for a $\mathbb{Z}/2$ generated by the unit.
+
+\textbf{Question}: What is the structure of this spectral sequence? What is the Tate cohomology, what are the differentials, and how does this collapse happen?
+
+I'{}ve been told that Bökstedt has carried out an investigation of this back before the theorem was proven, but do not know what the result was.
+
+\section{Algebraic K-theory}
+
+\hypertarget{algebraic_ktheory_1}{}\subsection{{Algebraic K-theory}}\label{algebraic_ktheory_1}
+
+Algebraic $K$-theory might be regarded as a method for studying rings by extracting invariants of their module category which are additive with respect to the symmetric monoidal structure.
+
+\hypertarget{chromatic_redshift_2}{}\subsubsection{{Chromatic redshift}}\label{chromatic_redshift_2}
+
+Ausoni and Rognes conjectured, based on computational evidence, that the algebraic $K$-theory functor (when applied to ring spectra) increases chromatic level by one. Some instances of this include the following:
+
+\begin{itemize}%
+\item The algebraic $K$-theory of a field of characteristic zero (chromatic height zero) is, by Thomason'{}s work on étale $K$-theory, concentrated at chromatic heights zero and one. (Both of these technically also carry information at height $\infty$.)
+
+
+\item The algebraic $K$-theory of the complex $K$-theory spectrum $ku$ (chromatic heights zero and one) exhibits $v_2$-periodic phenomena in its algebraic $K$-theory spectrum $K(ku)$, as proven by Ausoni-Rognes.
+
+
+\item Further conjectural behaviour of the spectra $BP\langle n\rangle$ suggests that this pattern carries forward.
+
+
+\item (fill in something about spherical group algebras and free loop spaces)
+
+
+
+\end{itemize}
+\textbf{Remark}: This only applies when one is using the same prime to gauge both the chromatic behaviour of both the ring and the algebraic $K$-theory. One should also not carry this too far. A finite field (chromatic height $\infty$) has algebraic $K$-theory which is concentrated at heights zero and $\infty$.
+
+However, these examples are almost all computational. The underlying reason for this shift in chromatic level seems extremely mysterious.
+
+\textbf{Question}: What is the underlying mechanism that would induce a shift in the chromatic behaviour of the algebraic $K$-theory?
+
+There are functors closely related to algebraic $K$-theory, which is constructed from the spaces $BGL_n(R)$.
+
+\textbf{Question}: Are any aspects of chromatic redshift visible on the level of these classifying spaces?
+
+Ausoni and Rognes have explicit forms of the redshift conjecture (see ''{}\href{http://www.math.univ-paris13.fr/~ausoni/papers/gmconj-AR.pdf}{Guido'{}s book of conjectures}''{}), one of which is that there is an equivalence $L_{K(n+1)} K(\Omega_n) \simeq E_{n+1}$, where $\Omega_n$ is a suitable interpretation of the algebraic closure of the fraction field of the ring spectrum $E_n$. Under any reasonable definition of $\Omega_n$, it should however receive a \textbf{map} from $E_n$, thus yielding a composite map $L_{K(n+1)} K(E_n) \to E_{n+1}$, which, amongst other things, should make the spectrum on the right a module spectrum over the one on the left.
+
+\textbf{Problem}: Construct such a map.
+
+A good first step would be to show that $L_{K(n+1)} K(E_n)$ is nonzero. A $K(n+1)$-local ring spectrum is nonzero if and only if its unit map (from the $K(n+1)$-local sphere) is nonzero. In this case, that unit must factor through $L_{K(n+1)} K(L_{K(n)} S^0)$.
+
+\textbf{Problem}: Show that $L_{K(n+1)} K(L_{K(n)} S^0)$ is not zero.
+
+This is subtler than it looks; when $n=0$, it'{}s the statement that the algebraic $K$-theory of $\mathbb{Q}$ has nonzero $K(1)$-local homotopy (visible, e.g., in the work of Hesselholt-Madsen). When $n=1$, it'{}s tantamount to the statement that the algebraic $K$-theory of the image of $J$ spectrum has nonzero $K(2)$-local homotopy, a statement which is to my knowledge open (though it may follow from computations of Ausoni-Rognes).
+
+\hypertarget{topological_cyclic_homology_3}{}\subsubsection{{Topological cyclic homology}}\label{topological_cyclic_homology_3}
+
+Many modern computations in $K$-theory make use of the cyclotomic trace from topological cyclic homology.
+
+The library of full calculations in algebraic $K$-theory (which are, realistically, computations in topological cyclic homology) is staggeringly small, mainly because many components of the existing proofs don'{}t generalize. However, there are some situations closely connected to the existing computations where there may be hope.
+
+\textbf{Program}: Calculate the topological cyclic homology of \emph{forms} of $K$-theory using the same machinery as Ausoni-Rognes'{} computation of $K$-theory. How does this work as a functor of its input? How sensitive is $TC$ to these adjustments in multiplicative structure?
+
+This serves as an interesting test for how sensitive $TC$ is to intricate details about multiplicative structure.
+
+The Ausoni-Rognes work also determines the topological cyclic homology after smashing with Smith-Toda complexes and their generalizations.
+
+\textbf{Question}: Can we determine the topological cyclic homology of $ku$ integrally? Of $ko$?
+
+Topological cyclic homology does not connect closely to algebraic $K$-theory when the spectra are nonconnective. However, that does not mean that it would not be profitable to study the greater phenomenology of $TC$.
+
+\textbf{Program}: Calculate the topological cyclic homology of spectra such as $E_n^{BG}$, Torii'{}s $K(n-1)$-localized $E_n$, the Tate spectra of $E_n$, of the Morava $K$-theories $K(n)$ and their $2$-periodic versions, of the real $K$-theory spectrum $ko$.
+
+Basically all of these are likely to be very involved.
+
+The chromatic redshift conjectures are aimed at understanding chromatic information. In the past few decades, it'{}s become pretty clear that other invariants (such as $MU$-homology) are better at detecting this data than a close study of homotopy groups.
+
+\textbf{Program}: Understand $TC$ through its $E$-homology objects (or its continuous $E$-homology objects), for $E$ among $MU$, $BP$, $E(n)$, and related theories.
+
+If $E_* R$ is nice there are a bunch of direct calculations that one can do with $E_*$ of $THH(R)$ and the corresponding fixed-point objects in terms of de Rham complexes. If $E = MU$ this gives us the formal group data directly, rather than trying to extract it from the homotopy groups.
+
+\hypertarget{iterated_algebraic_ktheory_4}{}\subsubsection{{Iterated algebraic K-theory}}\label{iterated_algebraic_ktheory_4}
+
+Carlsson-Douglas-Dundas developed a version of iterated topological Hochschild homology that has more symmetry than the version constructed by just iterating twice, and allows the development of versions of iterated topological cyclic homology which are slightly more refined than the simply iterated one.
+
+\textbf{Question}: Is there a direct expression for iterated algebraic $K$-theory of a ring strictly in terms of its module category? Does this have a simple trace-type connection with Carlsson-Douglas-Dundas'{} iterated THH/TC?
+
+\hypertarget{miscellaneous_5}{}\subsubsection{{Miscellaneous}}\label{miscellaneous_5}
+
+\begin{itemize}%
+\item I have written down ``{}Hopf rings and TC''{} but I don'{}t understand what that means anymore.
+
+
+\item Does Neeman'{}s derivator $K$-theory, which comes from nerves of a collection of derived categories of diagrams, take values in modules over $K(\mathbb{Z})$?
+
+
+
+\end{itemize}
+\section{Stable miscellany}
+
+\begin{itemize}%
+\item At $p=2$, can we somehow mix up $MU$-theory and $H\mathbb{F}_2$-homology to get some kind of even-odd graded understanding of the stable homotopy category, including a formal group law plus an expression of its ``{}additive''{} degeneration as the Frobenius on something? Ideally we'{}d like to recover a conceptual interpretation of mixing the Adams and Adams-Novikov perspectives.
+
+
+\item It was pointed out to me that it might be really interesting to understand if $K(n)_*$, or the (co)homology theories associated to small Postnikov towers, can be computed from a purely algorithmic point of view. There'{}s a fairly large amount of interest in computational topology right now.
+
+
+\item A stupid question: if you have spectra which are sufficiently filtered that you can realize their cohomology as decent complexes in the derived category of the Steenrod algebra, to what extent can you employ an Adams spectral sequence, starting in the \emph{derived} category, for mapping into them?
+
+
+\item Is there some version of the Lambda algebra for the Adams-Novikov spectral sequence that unwinds Miller'{}s algebraic Novikov spectral sequence? Or is there a definitive reason why such a thing cannot exist? (A quick check of the literature indicates that there are a couple of BP-theoretic Lambda algebras, but they accomplish slightly different things.)
+
+
+
+\end{itemize}
+\section{Problems from the E-theory seminar}
+
+This is currently a placeholder for questions raised by the E-theory seminar going on at MIT. The short version of this would be to simply go through and write down everything that has a bold-block ``{}Question''{} or ``{}Conjecture''{} next to it, but I think that there are enough little things that it'{}s worth going through in more detail.
+
+(This is incomplete.)
+
+\begin{itemize}%
+\item When is the map from the $K(n)$-local Picard group to the algebraic Picard group surjective or injective? What can one say about finiteness, or finite generation, or completeness, of the source, target, and kernel?
+\item \rd{Do the lower Bousfield-Kuhn functors $\Phi_t$, applied to the total unstable power operation for $E_n$, act nontrivially? Does this give some filtration of the total power operation on $E_n$?}
+\item Does the ``{}inertia groupoid''{} functor $\Lambda_G$ respect $E_\infty$ structures?
+\item Can Marsh'{}s computations of the $E$-theory of linear algebraic groups over finite fields be expressed algebro-geometrically? (They appear to be connected to symmetric powers of formal schemes.)
+\item Ando has a program for studying $E_\infty$ orientations of $E(2)$-local $TMF$ by finding a presentation of $MU$ in this category, and then finding the space of $E_\infty$ maps $MU \to
+TMF$. (This may already or imminently be being considered by a graduate student, and this problem has been considered by Jan-David Möllers in his thesis.)
+\item (H. Miller) How does the Morava stabilizer group $\mathbb{S}_n$ act on the formal group $C_t \otimes \mathbb{G}$ appearing in Nathaniel Stapleton'{}s character theory? (It then ``{}acts''{} on $\mathbb{Q}_p/\mathbb{Z}_p${\tt \symbol{94}}\{n-t\}, but also acts on the base scheme.)
+\item (N. Stapleton) Does going down in height by one give the determinant representation of $\mathbb{S}_n$?
+\item (S. Glasman) What happens when $n=1$, $t=0$? In this case the ring $C_t$ is a maximal ramified extension of $\mathbb{Q}_p$.
+\item (H. Miller) Is this character theory the unit of an adjunction between ``{}height $n$ stuff''{} and ``{}height $t$ stuff''{}, for some definition of ``{}stuff''{}?
+\item Is there a nice category of spaces over $\pi$-finite spaces with fibers finite CW-complexes? In particular, can one make sense of the intertia groupoid in this category?
+\item What spectra can be decomposed $K(n)$-locally using attaching maps along exotic elements of the $K(n)$-local Picard group?
+\item Is there an analogous notion of ``{}vector bundle''{} which is classified by analogues of the spaces $BU(m)$, which come equipped with associated bundles which are fibered in determinantal spheres?
+\item What is the topological Hochschild homology of the Lubin-Tate spectrum $E_n$? The $K(n)$-localization is $E_n$ itself (G. Horel) and $THH(KU) \simeq KU \wedge \Sigma KU_{\mathbb{Q}}$ ($\backslash$McClure-Staffeldt).
+\item Does $THH(E_n)$ classify some sort of deformations of the Honda formal group law along with an automorphism? (It is claimed that $E_n$ doesn'{}t have a moduli-theoretic interpretation in the terms of derived algebraic geometry.)
+\item Is the Dennis trace map from the algebraic $K$-theory of the group algebra $E_n[G]$ to $E_n \wedge \Sigma^\infty_+ LBG$ related to chromatic redshift?
+\item Is there a surjection from the exotic elements of the $K(p-1)$-local Picard group onto $\mathbb{Z}/p$, as at $n=1$ and $n=2$? Does this split?
+\item (Hughes, Lau, Peterson) The quotient of the mod-2 cohomology of $BU\langle 2k\rangle$ by images of the classes in odd degree by the elements in the Steenrod algebra has an algebro-geometric interpretation, in terms of a symmetric power of a scheme of divisors.
+\item How does the dual Steenrod algebra act on the Cartier dual scheme to the symmetric power from the previous question?
+\item Does $BU\langle 2k\rangle$ refine to a space $X(k)$ whose $E$-cohomology realizes this symmetric power?
+
+\end{itemize}
+\section{Equivariant homotopy theory}
+
+\begin{itemize}%
+\item (D. Ravenel) Does there exist a $C_p$-equivariant analogue of Real bordism theory? Such an object would have an underlying homotopy type given by a $(p-1)$-fold smash product of copies of $MU$, with action analogous to the reduced regular representation of $C_p$. The geometric fixed point object should be a wedge of Eilenberg-Mac Lane objects. Such an object would be relevant to odd-primary analogues of the Hill-Hopkins-Ravenel constructions.
+
+
+\item (D. Ravenel) Revisit $K(n)^*BG$ for a finite group G. It is known to have finite rank, and HKR gives a formula for its Euler characteristic. We tried but failed to prove that it is concentrated in even dimensions. This is known to be true when $n=1$, and when G is abelian or a symmetric group and a few other cases, and it would suffice to prove it for G a finite p-group. Later Kriz and his student (Lee?) found a counter example, the p-Sylow subgroup of $GL_4 (F_p)$, which has order $p^6$. It would be interesting to have general statement about the ranks of the even and odd dimensional parts of $K(n)^*BG$.
+
+
+\item (J.Greenlees)Is $MU_G^*$ in even degrees? The answer is yes for abelian compact Lie groups, though the proof is computational (Loeffler, Comezana).
+
+
+\item Stefan Schwede and Anna-Marie Bohmann have both been doing work on global equivariant homotopy theory that has open avenues to pursue.
+
+\begin{itemize}%
+\item (M. Mandell) What is the relation between this global perspective and the Greenlees-May paper on completion?
+
+
+\item (S. Schwede) In what sense is (periodic, complex, topological) global K-theory obtained from the global classifying space of the circle Lie group by inverting a Bott element?
+
+
+\item (S. Schwede) A theory of global orientations, global $gl_1(R)$, global Thom spectra
+
+
+
+\end{itemize}
+
+\item (P. Goerss) Equivariant formal group laws and equivariant complex cobordism have been around for a while, but it may be time to take it up a notch. Recent work of Abram-Kriz gives a place to start.
+
+\begin{itemize}%
+\item First think about the Abram-Kriz work; they give a calculation, but it might be fruitful to think about that calculation in terms of the functors represented by these calculated rings---{}a sort of Lazard ring interpretation. There is some unpublished work of Greenlees (on his home page) worth reading.
+
+
+\item Abram-Kriz works only for finite abelian groups, mostly because they have good duals. Is there a good notion of global equivariant formal group laws, in the fashion on Bohmann and Schwede? Does it good interpretation algebraically (Is there a Lazard object?) or homotopically?
+
+
+\item (S. Schwede) In global equivariant homotopy theory, the role of complex bordism is the universal ``{}globally complex oriented theory''{}; the coefficients of global complex bordism have a very rich algebraic structure (global power functor with Euler classes). What is the universal property that the coefficients enjoy?
+
+
+
+\end{itemize}
+
+
+\end{itemize}
+\section{Equivariant miscellany}
+
+\begin{itemize}%
+\item Obtain more conceptual casting underlying what the Hill-Hopkins-Ravenel slice filtration, and some of its variants, are doing, e.g. to the chromatic information. I think that we might need some more computation here before we have an idea of the direction that things will take.
+
+
+\item Get some nontrivial computations of equivariant stable homotopy groups using the tom Dieck splitting / equivariant Barratt-Priddy-Quillen.
+
+
+\item Get some calculations of $K(n)_*$ and $E_n^\vee$ of the $G$-spheres as Green functors.
+
+
+\item It would also be good to understand slice filtrations of ``{}boring''{} objects like homotopy fixed point and homotopy orbit objects, Tate spectra, and objects coming from $THH$. What is this really telling us in the case of $EO_n(G)$? John Ullman did a fair amount of work on things like this in his thesis.
+
+
+\item Tsalidis'{} theorem: it would be good to get a more conceptual handle on it so that algebraic $K$-theory can be rigorously calculated in more than a handful of situations. It'{}s proved by mixing a whole bunch of isotropy separation calculations with nilpotence of a bunch of Euler classes when doing calculations with mod-$p$ cohomology.
+
+
+\item I still want a better understanding of Lin'{}s theorem. It'{}s the keystone computation in the (2-primary portion of) the Segal conjecture, and a modern perspective would be useful, because it captures something terrifically profound about the stable homotopy category.
+
+
+\item Definition and calculation of ``{}higher''{} Tate spectra in terms of classifying spaces for families. Roughly Tate spectra for $C_{p^n}$ take $[p^n](x)$ and invert $x$; the ``{}higher''{} ones should invert $[p^k](x)$, and play a role in these isotropy separation diagrams.
+
+
+\item We still don'{}t really seem to have a version of equivariant stable homotopy theory over profinite groups. Often with these we need to be working in a situation where we assert that the action is either fairly tame (in the sense of being built up from actions of the finite quotient groups) or continuous (with respect to some kind of topology on the object in question). It seems like there might be some foundational issues to tackle here.
+
+
+\item Given that, it would be good to understand slice filtrations for Morava $E$-theories, even if we only use the action of finite subgroups.
+
+
+\item What'{}s is the precise relationship between Schwede-Bohmann'{}s global equivariant theories and stable categories of orbispaces or topological stacks? What kinds of cohomology theories can we lift there? What'{}s the connection between these ``{}global equivariant''{} homotopy theories and cohomology theories for orbifolds? Nora Ganter seems to have thought about this quite a bit, and there is work of Gepner and Henriques as well.
+
+
+
+\end{itemize}
+\section{Algebras and modules}
+
+\begin{itemize}%
+\item Topological spaces and orthogonal $G$-spectra have symmetric powers/norms which are homotopically well-behaved and refine the homotopical notion of a symmetric power. Taking homotopy fixed points seems to be another, related to ``{}divided power''{} constructions. Using these more refined norms, we recover notions like topological abelian groups (which are equivalent to connective $H\mathbb{Z}$-modules), strictly commutative $G$-spectra (which play a role in the Hill-Hopkins-Ravenel proof), and some notion of divided power algebras. What'{}s the underlying categorical structure you need to obtain these more refined notions of algebras?
+\item What'{}s the natural target for the functor $M \mapsto M^{\wedge_{R}
+n}$ on $R$-modules? When $R = \mathbb{S}$, it'{}s some category of genuine equivariant spectra for an incomplete universe for $\Sigma_n$ (the one generated by the permutation representation).
+\item Find a homotopy theory of coalgebras in spectra, or some kind of partial coalgebra-type object, that makes it tractable to work with these objects and their categories of comodules. (Someone is probably going to tell me that these are actually some kind of infinity-groupoid objects.)
+\item Describe some general notion of ``{}cohomology''{} of ring spectra that allows one to make more complicated descent arguments than just Rognes-style Galois descent or $\pi_*$-based descent. E.g. when can we say something about recovering a module category or Pic from hypercovers/cosimplicial resolutions?
+\item Similarly, can we connect up the two collections of Dyer-Lashof operations for $E_\infty$ ring spaces with $TAQ$ using the standard ``{}simplicial resolution to spectral sequence''{} type technology?
+\item Taking the map of cosimplicial objects $\{MU^{\wedge p+1}\} \to
+\{MU\}$ and taking the Goodwillie tower (in the category of algebras mapping to $MU$) should give some kind of filtration by cosimplicial objects whose layers are related to the cotangent complex of $MU$. Can we take this and use it to describe $\mathbb{S}$-modules in differential-geometric terms, i.e. as an $MU$-module $N$ with a map $N \to \Omega \wedge_{MU} N$, plus structure making that into a connection, plus structure making that into a flat connection, plus \ldots{}
+\item In a similar vein, can we understand actions of $DBU$, the ``{}Galois group''{} of $MU$ over $\mathbb{S}$, in an iterative manner?
+\item Get some kind of computational handle on universal enveloping operads so that we can state the right Hurewicz and Whitehead theorems in circumstances where we'{}re not working with augmented algebras. This seems doable in principle but one has to be very careful.
+\item There should be a Blakers-Massey exicision theorem about the Andre-Quillen homology of algebras over operads, say in spectra. Somebody has to do it eventually, but it involves a large amount of being careful with operad pushouts.
+\item An annoyance about topological Andre-Quillen homology is that obstruction theory based on it often requires your coefficient object to already possess an algebra or module structure. This can make it irritating to employ in situations where we know a map $R
+\to S$ has trivial relative $TAQ$, but we can'{}t easily use that to construct maps of $R$-algebras out of $S$. Is there some way clean this up?
+\item If we take ``{}positive''{} symmetric spectra (removing degree 0) we get a model category with a monoidal structure and a lax unit. What do we need out of this framework to recover model categories of commutative algebras?
+\item It would be good to have a published proof that associative topological Andre-Quillen cohomology is related to topological Hochschild cohomology. This is still referenced as a communication from Michael Mandell in the Dugger-Shipley paper.
+\item In characteristic zero, is the map from the homotopy category of commutative DGAs to that of associative DGAs faithful?
+\item The homotopy category of $KU$-modules is equivalent to the derived category of modules over a graded ring (namely, its ring of homotopy groups). It'{}s an open problem as to whether this extends to an equivalence as triangulated categories. There are a number of other examples that are closely related, but this seems to be among the most prominent examples that people have thought about. Irakli Patchkoria appears to be one of the people who has thought in depth about this recently.
+\item In the algebraic setting, there is a scheme $\mathbb{P}^{n-1}$ which is acted on naturally by $PGL_n$. Does this extend to the derived setting? Here we can reinterpret the latter as living inside the automorphism group of some matrix algebra.
+
+\end{itemize}
+\section{Homotopy theory and higher categories}
+
+\begin{itemize}%
+\item Find the right notion of a \emph{symmetric} monoidal model category, and specifically of a Quillen equivalence between those. For example, there'{}s this category (of $\ast$-symmetric spectra in spaces) with a symmetric monoidal Quillen equivalence to the category of spaces, but the commutative monoids model $E_\infty$ spaces. Ideally we'{}d like to distinguish between these categories.
+\item Ken Brown'{}s lemma allows us to define a derived functor with a small verification (preserving acyclic fibrations between fibrant objects). One can recast this as saying that one can reconstruct the homotopy category of a model category $M$ by a localization solely with respect to the subcategory $A$ of acyclic fibrations between fibrant objects. (There is a corresponding statement that states that $A^{-1} A$ is equivalent to the subcategory of isomorphisms in the homotopy category.) Is there a homotopical version of Ken Brown'{}s lemma, in the sense that localizing with respect to $A$ gives the same result - in the sense of higher category theory - as localizing with respect to all weak equivalences in $M$?
+\item Enriched localizations. Under what circumstances can we take a category enriched in some monoidal model category and sensibly invert some collection of morphisms, producing a new enriched category?
+\item The Dwyer-Kan simplicial localization is functorial, but turns natural transformations into some portion of the simplicial structure. Is it possible to understand what happens to the simplicial localizations of monoidal or symmetric monoidal categories in a more coherent way?
+
+\end{itemize}
+
+
+
+\end{document}
