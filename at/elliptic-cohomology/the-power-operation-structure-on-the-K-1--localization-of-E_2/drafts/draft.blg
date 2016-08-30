@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: draft.aux
+The style file: amsalpha.bst
+Database file #1: po.bib
+Warning--I didn't find a database entry for "BMMS"
+You've used 40 entries,
+            2624 wiz_defined-function locations,
+            864 strings with 10626 characters,
+and the built_in function-call counts, 14234 in all, are:
+= -- 1313
+> -- 439
+< -- 42
++ -- 135
+- -- 127
+* -- 1178
+:= -- 2154
+add.period$ -- 40
+call.type$ -- 40
+change.case$ -- 215
+chr.to.int$ -- 37
+cite$ -- 40
+duplicate$ -- 685
+empty$ -- 1256
+format.name$ -- 197
+if$ -- 2954
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 84
+newline$ -- 131
+num.names$ -- 115
+pop$ -- 250
+preamble$ -- 2
+purify$ -- 254
+quote$ -- 0
+skip$ -- 475
+stack$ -- 0
+substring$ -- 900
+swap$ -- 145
+text.length$ -- 42
+text.prefix$ -- 30
+top$ -- 0
+type$ -- 276
+warning$ -- 0
+while$ -- 134
+width$ -- 47
+write$ -- 493
+(There was 1 warning)

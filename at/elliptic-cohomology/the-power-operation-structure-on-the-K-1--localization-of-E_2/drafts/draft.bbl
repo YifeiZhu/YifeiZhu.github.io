@@ -1,0 +1,207 @@
+\def\cprime{$'$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{EKMM97}
+
+\bibitem[Ada74]{sh}
+J.~F. Adams, \emph{Stable homotopy and generalised homology}, University of
+  Chicago Press, Chicago, Ill., 1974, Chicago Lectures in Mathematics.
+  \MR{0402720 (53 \#6534)}
+
+\bibitem[And95]{Andu}
+Matthew Ando, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MR{1344767 (97a:55006)}
+
+\bibitem[BMMS86]{BMSS}
+R.~R. Bruner, J.~P. May, J.~E. McClure, and M.~Steinberger, \emph{{$H\sb \infty
+  $} ring spectra and their applications}, Lecture Notes in Mathematics, vol.
+  1176, Springer-Verlag, Berlin, 1986. \MR{836132 (88e:55001)}
+
+\bibitem[Bor94]{borceux}
+Francis Borceux, \emph{Handbook of categorical algebra. 2}, Encyclopedia of
+  Mathematics and its Applications, vol.~51, Cambridge University Press,
+  Cambridge, 1994, Categories and structures. \MR{1313497 (96g:18001b)}
+
+\bibitem[Bou79]{bousfield}
+A.~K. Bousfield, \emph{The localization of spectra with respect to homology},
+  Topology \textbf{18} (1979), no.~4, 257--281. \MR{551009 (80m:55006)}
+
+\bibitem[Car54]{cartan}
+Henri Cartan, \emph{Sur les groupes d'{E}ilenberg-{M}ac {L}ane. {II}}, Proc.
+  Nat. Acad. Sci. U. S. A. \textbf{40} (1954), 704--707. \MR{0065161 (16,390b)}
+
+\bibitem[EKMM97]{EKMM}
+A.~D. Elmendorf, I.~Kriz, M.~A. Mandell, and J.~P. May, \emph{Rings, modules,
+  and algebras in stable homotopy theory}, Mathematical Surveys and Monographs,
+  vol.~47, American Mathematical Society, Providence, RI, 1997, With an
+  appendix by M. Cole. \MR{1417719 (97h:55006)}
+
+\bibitem[Fr{\"o}68]{fg}
+A.~Fr{\"o}hlich, \emph{Formal groups}, Lecture Notes in Mathematics, No. 74,
+  Springer-Verlag, Berlin, 1968. \MR{0242837 (39 \#4164)}
+
+\bibitem[GH04]{GH}
+P.~G. Goerss and M.~J. Hopkins, \emph{Moduli spaces of commutative ring
+  spectra}, Structured ring spectra, London Math. Soc. Lecture Note Ser., vol.
+  315, Cambridge Univ. Press, Cambridge, 2004, pp.~151--200. \MR{2125040
+  (2006b:55010)}
+
+\bibitem[Hopa]{k1}
+M.~J. Hopkins, \emph{K(1)-local ${E}_\infty$ ring spectra}, available at
+  \href{http://www.math.rochester.edu/people/faculty/doug/otherpapers/knlocal.pdf}{http://www.math.rochester.edu/people/faculty/doug/otherpapers/knlocal.pdf}.
+
+\bibitem[Hopb]{coctalos}
+Mike Hopkins, \emph{Complex oriented cohomology theories and the language of
+  stacks}, available at
+  \href{http://www.math.rochester.edu/people/faculty/doug/otherpapers/coctalos.pdf}{http://www.math.rochester.edu/people/faculty/doug/otherpapers/coctalos.pdf}.
+
+\bibitem[Hov08]{hovey}
+Mark Hovey, \emph{Morava {$E$}-theory of filtered colimits}, Trans. Amer. Math.
+  Soc. \textbf{360} (2008), no.~1, 369--382 (electronic). \MR{2342007
+  (2008g:55007)}
+
+\bibitem[HS99]{hoveystrickland}
+Mark Hovey and Neil~P. Strickland, \emph{Morava {$K$}-theories and
+  localisation}, Mem. Amer. Math. Soc. \textbf{139} (1999), no.~666, viii+100.
+  \MR{1601906 (99b:55017)}
+
+\bibitem[Kat81]{katz}
+N.~Katz, \emph{Serre-{T}ate local moduli}, Algebraic surfaces ({O}rsay,
+  1976--78), Lecture Notes in Math., vol. 868, Springer, Berlin, 1981,
+  pp.~138--202. \MR{638600 (83k:14039b)}
+
+\bibitem[KM85]{katzmazur}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MR{772569 (86i:11024)}
+
+\bibitem[Law63]{lawvere}
+F.~William Lawvere, \emph{Functorial semantics of algebraic theories}, Proc.
+  Nat. Acad. Sci. U.S.A. \textbf{50} (1963), 869--872. \MR{0158921 (28 \#2143)}
+
+\bibitem[Law09]{tafoverview}
+Tyler Lawson, \emph{An overview of abelian varieties in homotopy theory}, New
+  topological contexts for {G}alois theory and algebraic geometry ({BIRS}
+  2008), Geom. Topol. Monogr., vol.~16, Geom. Topol. Publ., Coventry, 2009,
+  pp.~179--214. \MR{2544390 (2010i:55006)}
+
+\bibitem[LN]{level3}
+Tyler Lawson and Niko Naumann, \emph{Topological modular forms of level 3 and
+  ${E}_\infty$-structures on truncated {B}rown-{P}eterson spectra},
+  arXiv:1101.3897.
+
+\bibitem[LT66]{lubintate}
+Jonathan Lubin and John Tate, \emph{Formal moduli for one-parameter formal
+  {L}ie groups}, Bull. Soc. Math. France \textbf{94} (1966), 49--59.
+  \MR{0238854 (39 \#214)}
+
+\bibitem[Lub67]{lubin}
+Jonathan Lubin, \emph{Finite subgroups and isogenies of one-parameter formal
+  {L}ie groups}, Ann. of Math. (2) \textbf{85} (1967), 296--302. \MR{0209287
+  (35 \#189)}
+
+\bibitem[Lur]{252x}
+Jacob Lurie, \emph{Chromatic homotopy theory}, available at
+  \href{http://www.math.harvard.edu/~lurie/252x.html}{http://www.math.harvard.edu/\textasciitilde
+  lurie/252x.html}.
+
+\bibitem[Lur09]{survey}
+J.~Lurie, \emph{A survey of elliptic cohomology}, Algebraic topology, Abel
+  Symp., vol.~4, Springer, Berlin, 2009, pp.~219--277. \MR{2597740}
+
+\bibitem[Mas83]{massey}
+W.~S. Massey, \emph{Cross products of vectors in higher-dimensional {E}uclidean
+  spaces}, Amer. Math. Monthly \textbf{90} (1983), no.~10, 697--701. \MR{723943
+  (85b:15038)}
+
+\bibitem[MR09]{tmf3}
+Mark Mahowald and Charles Rezk, \emph{Topological modular forms of level 3},
+  Pure Appl. Math. Q. \textbf{5} (2009), no.~2, Special Issue: In honor of
+  Friedrich Hirzebruch. Part 1, 853--872. \MR{2508904 (2010g:55010)}
+
+\bibitem[MT68]{moshertangora}
+Robert~E. Mosher and Martin~C. Tangora, \emph{Cohomology operations and
+  applications in homotopy theory}, Harper \& Row Publishers, New York, 1968.
+  \MR{0226634 (37 \#2223)}
+
+\bibitem[Rav86]{green}
+Douglas~C. Ravenel, \emph{Complex cobordism and stable homotopy groups of
+  spheres}, Pure and Applied Mathematics, vol. 121, Academic Press Inc.,
+  Orlando, FL, 1986. \MR{860042 (87j:55003)}
+
+\bibitem[Rav92]{orange}
+\bysame, \emph{Nilpotence and periodicity in stable homotopy theory}, Annals of
+  Mathematics Studies, vol. 128, Princeton University Press, Princeton, NJ,
+  1992, Appendix C by Jeff Smith. \MR{1192553 (94b:55015)}
+
+\bibitem[Reza]{lpo}
+Charles Rezk, \emph{Lectures on power operations}, available at
+  \href{http://www.math.uiuc.edu/~rezk/power-operation-lectures.dvi}{http://www.math.uiuc.edu/\textasciitilde
+  rezk/power-operation-lectures.dvi}.
+
+\bibitem[Rezb]{h2p2}
+\bysame, \emph{Power operations for {M}orava ${E}$-theory of height 2 at the
+  prime 2}, arXiv:0812.1320.
+
+\bibitem[Rezc]{slides}
+\bysame, \emph{Power operations in {M}orava ${E}$-theory: a survey}, available
+  at
+  \href{http://www.math.uiuc.edu/~rezk/midwest-2009-power-ops-handout.pdf}{http://www.math.uiuc.edu/\textasciitilde
+  rezk/midwest-2009-power-ops-handout.pdf}.
+
+\bibitem[Rez98]{H-Mthm}
+\bysame, \emph{Notes on the {H}opkins-{M}iller theorem}, Homotopy theory via
+  algebraic geometry and group representations ({E}vanston, {IL}, 1997),
+  Contemp. Math., vol. 220, Amer. Math. Soc., Providence, RI, 1998,
+  pp.~313--366. \MR{1642902 (2000i:55023)}
+
+\bibitem[Rez09]{cong}
+\bysame, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MR{2591924 (2011e:55021)}
+
+\bibitem[Ser53]{serre}
+Jean-Pierre Serre, \emph{Cohomologie modulo {$2$} des complexes
+  d'{E}ilenberg-{M}ac{L}ane}, Comment. Math. Helv. \textbf{27} (1953),
+  198--232. \MR{0060234 (15,643c)}
+
+\bibitem[Sil09]{AEC}
+Joseph~H. Silverman, \emph{The arithmetic of elliptic curves}, second ed.,
+  Graduate Texts in Mathematics, vol. 106, Springer, Dordrecht, 2009.
+  \MR{2514094 (2010i:11005)}
+
+\bibitem[Ste62]{steenrod}
+N.~E. Steenrod, \emph{Cohomology operations}, Lectures by N. E. STeenrod
+  written and revised by D. B. A. Epstein. Annals of Mathematics Studies, No.
+  50, Princeton University Press, Princeton, N.J., 1962. \MR{0145525 (26
+  \#3056)}
+
+\bibitem[Str97]{strick}
+Neil~P. Strickland, \emph{Finite subgroups of formal groups}, J. Pure Appl.
+  Algebra \textbf{121} (1997), no.~2, 161--208. \MR{1473889 (98k:14065)}
+
+\bibitem[Str98]{strickland}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MR{1607736 (99e:55008)}
+
+\bibitem[Tat67]{tate}
+J.~T. Tate, \emph{p-{D}ivisible groups}, Proc. {C}onf. {L}ocal {F}ields
+  ({D}riebergen, 1966), Springer, Berlin, 1967, pp.~158--183. \MR{0231827 (38
+  \#155)}
+
+\bibitem[TO70]{tateoort}
+John Tate and Frans Oort, \emph{Group schemes of prime order}, Ann. Sci.
+  {\'E}cole Norm. Sup. (4) \textbf{3} (1970), 1--21. \MR{0265368 (42 \#278)}
+
+\bibitem[Wil82]{wilkerson}
+Clarence Wilkerson, \emph{Lambda-rings, binomial domains, and vector bundles
+  over {${\bf C}P(\infty )$}}, Comm. Algebra \textbf{10} (1982), no.~3,
+  311--328. \MR{651605 (83f:55003)}
+
+\end{thebibliography}
