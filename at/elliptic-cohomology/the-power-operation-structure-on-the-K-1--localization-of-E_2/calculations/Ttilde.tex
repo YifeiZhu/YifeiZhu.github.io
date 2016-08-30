@@ -1,0 +1,190 @@
+\documentclass{rs}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[all]{xy}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tensor}
+%/home/grad/zyf/TeX/inputs/
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{mathtools}
+%\usepackage{amsrefs}
+%\usepackage{setspace}
+%\doublespacing
+
+%\title{Elliptic curves}
+%\author{Yifei Zhu}
+%\givenname{Yifei}
+%\surname{Zhu}
+%\address{Department of Mathematics\\University of Minnesota\\Minneapolis, MN 55455\\USA}
+%\email{zyf@math.umn.edu}
+
+%\subject{primary}{msc2000}{55P99}
+%\subject{secondary}{msc2000}{55Q99}
+
+%\bibliographystyle{gtart}
+\parskip 0.7pc
+\parindent 0pt
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{case}[thm]{Case}
+\newtheorem{slogan}[thm]{Slogan}
+\newtheorem{ques}[thm]{Question}
+
+\def\co{\colon\thinspace}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\Hom}{\ensuremath{{\rm Hom}}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\LT}{{\rm LT}}
+\newcommand{\Spec}{{\rm Spec\thinspace}}
+\newcommand{\Proj}{{\rm Proj\thinspace}}
+\newcommand{\Spf}{{\rm Spf\thinspace}}
+\newcommand{\Ell}{{\rm Ell}}
+\newcommand{\Sch}{{\rm Sch}}
+\newcommand{\cF}{\overline {\mb F}}
+\newcommand{\ck}{\overline k}
+\newcommand{\CA}{{\cal A}}
+\newcommand{\CB}{{\cal B}}
+\newcommand{\CC}{{\cal C}}
+\newcommand{\CE}{{\cal E}}
+\newcommand{\CF}{{\cal F}}
+\newcommand{\CG}{{\cal G}}
+\newcommand{\CHom}{{\cal H}om}
+\newcommand{\CLie}{{\cal L}ie}
+\newcommand{\CM}{{\cal M}}
+\newcommand{\CO}{{\cal O}}
+\newcommand{\CP}{{\cal P}}
+\newcommand{\CS}{{\cal S}}
+\newcommand{\Mod}{{\rm Mod}}
+\newcommand{\Alg}{{\rm Alg}}
+\newcommand{\dl}{{\rm DL}}
+\newcommand{\Set}{{\rm Set}}
+\newcommand{\Sq}{{\rm Sq}}
+\newcommand{\Frob}{{\rm Frob}}
+\newcommand{\DF}{{{\rm DefFrob}_\BG}}
+\newcommand{\Model}{{\rm Model}}
+\newcommand{\HGa}{{\widehat{\mb G}_a}}
+\newcommand{\HGm}{{\widehat{\mb G}_m}}
+\newcommand{\Gm}{{{\mb G}_m}}
+\newcommand{\DL}{Dyer-Lashof~}
+\newcommand{\EM}{Eilenberg-Mac~Lane~}
+\newcommand{\BC}{{\mb C}}
+\newcommand{\BE}{{\mb E}}
+\newcommand{\BF}{{\mb F}}
+\newcommand{\BG}{{\mb G}}
+\newcommand{\BN}{{\mb N}}
+\newcommand{\BP}{{\mb P}}
+\newcommand{\BQ}{{\mb Q}}
+\newcommand{\BR}{{\mb R}}
+\newcommand{\BW}{{\mb W}}
+\newcommand{\BZ}{{\mb Z}}
+\newcommand{\fm}{{\mf m}}
+\newcommand{\HC}{\widehat{C~}\!}
+\newcommand{\HE}{\widehat{E~}\!}
+\newcommand{\Hf}{\widehat{f}}
+\newcommand{\Hphi}{\widehat{\phi}}
+\newcommand{\Hpsi}{\widehat{\psi}}
+\newcommand{\HS}{\widehat{S~}\!}
+\newcommand{\TA}{\tilde{\A}}
+\newcommand{\Tc}{\tilde{c}}
+\newcommand{\TE}{\widetilde{E\thinspace}\!}
+\newcommand{\Tf}{\widetilde{f}}
+\newcommand{\Tp}{\widetilde{\psi}}
+\newcommand{\TW}{\widetilde{W\thinspace}\!}
+\newcommand{\md}{~~{\rm mod}~}
+\newcommand{\ad}{{\rm and}}
+\newcommand{\HT}{{\rm ht}}
+\newcommand{\id}{{\rm id}}
+\newcommand{\op}{{\rm op}}
+\newcommand{\tf}{{\rm tf}}
+\newcommand{\TMF}{{\rm TMF}}
+\newcommand{\tr}{{\rm trace}}
+\newcommand{\univ}{{\rm univ}}
+\newcommand{\Ext}{{\rm Ext}}
+\newcommand{\Tor}{{\rm Tor}}
+\newcommand{\nul}{{\rm nul}}
+\newcommand{\A}{\alpha}
+\newcommand{\G}{\Gamma}
+\newcommand{\g}{\gamma}
+\newcommand{\K}{\kappa}
+\newcommand{\T}{\tau}
+\newcommand{\om}{\underline{\omega\!}_{~E/S}}
+\newcommand{\p}{\psi^3}
+\newcommand{\s}{S^\bullet}
+\newcommand{\ce}{\coloneqq}
+\newcommand{\lb}{\llbracket}
+\newcommand{\rb}{\rrbracket}
+\newcommand{\lp}{(\!(}
+\newcommand{\rp}{)\!)}
+\newcommand{\isog}[1]{Proposition \ref{prop:isog}\thinspace \eqref{isog(#1)}}
+\newcommand{\q}[1]{Proposition \ref{prop:Q}\thinspace \eqref{Q(#1)}}
+\newcommand{\go}[1]{Definition \ref{def:go}\thinspace \eqref{go(#1)}}
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{thm}{section}
+
+
+\begin{document}
+
+Write $\tilde{T}_p = \sum_{\text{subgroups} ~ A ~ \text{of order} ~ p} \psi_A$ 
+
+\subsection*{$p = 2$}
+
+$y^2 + a x y + y = x^3$ 
+
+$\Delta = a^3 - 27$ 
+
+$c_4 = a^4 - 24 a$ 
+
+$c_6 = -a^6 + 36 a^3 - 216$ 
+
+$\psi^2(a) = a^2 + 3 d - a d^2$ 
+
+$d^3 - a d - 2 = 0$ 
+
+($d' = \psi^2(d) = a - d^2, \quad a = d^2 + d'$) 
+
+$\tilde{T}_2(\Delta) = \Delta (a^3 - 3)$ 
+
+$\tilde{T}_2(c_4) = a^2 (354 - 40 a^3 + a^6)$ 
+
+$\tilde{T}_2(c_6) = -3564 + 6534 a^3 - 1128 a^6 + 60 a^9 - a^{12}$ 
+
+\subsection*{$p = 3$}
+
+$y^2 + a x y + a y = x^3 + x^2$ 
+
+$\Delta = h^2 - 18 h + 17$ 
+
+$c_4 = h^2 - 18 h + 33$ 
+
+$c_6 = -h^3 + 27 h^2 - 171 h + 81 = -(h - 9) (h^2 - 18 h + 9)$ 
+
+$\psi^3(h) = h^3 - 27 h^2 + 201 h - 342 + (-6 h^2 + 108 h - 334) \A + (3 h - 27) \A^2 + (h^2 - 18 h + 57) \A^3$ 
+
+$\A^4 - 6 \A^2 + (h - 9) \A - 3 = 0$ 
+
+($\A' = \psi^3(\A) = -\A^3 + 6 \A - h + 9, \quad -h \equiv \A^3 + \A' \md 3$) 
+
+$\tilde{T}_3(\Delta) = \Delta (2413 - 1908 h + 430 h^2 - 36 h^3 + h^4)$ 
+
+$\tilde{T}_3(c_4) = c_4 (1245 - 1620 h + 414 h^2 - 36 h^3 + h^4)$ 
+
+$\tilde{T}_3(c_6) = -(h - 9) (921351 - 2452032 h + 2399040 h^2 - 1091232 h^3 + 251928 h^4 - 31104 h^5 + 2088 h^6 - 72 h^7 + h^8)$ 
+
+($\tilde{T}_3(h^2 - 18 h + 16) = 41017 - 75870 h + 44067 h^2 - 10260 h^3 + 1095 h^4 - 54 h^5 + h^6$) 
+
+\end{document}
