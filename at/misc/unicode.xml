@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Math symbols"/> 
+  <Content type="html">
+     <![CDATA[
+    <p>
+    ∘ ∞ ⊕ ⊗ ⨿ ∂ ⋯ ≃ ≅
+    <br>
+    ← → ↠ ↣ ↦ ↪ 
+    <br>
+    ∧ ∨ ∩ ∪ ⊓ ⊔ 
+    <br>
+    Σ Ω Γ Δ Θ Λ Ξ Φ Ψ
+    <br>
+    ℂ ℍ ℕ ℙ ℚ ℝ ℤ
+    <br>
+    ⟦ ⟧ ⟨ ⟩ ⟪ ⟫ ⦅ ⦆
+    <br>
+    α β γ δ ε ζ η θ ι κ λ μ ν ξ ο
+    π ρ ς σ τ υ φ χ ψ ω 
+    <br>
+    ⊂ ⊃ ⊄ ⊅ ⊆ ⊇ ⊈ ⊉
+    <br>
+    𝓐 𝓑 𝓒 𝓓 𝓔 𝓕 𝓖 𝓗 𝓘 𝓙 𝓚 𝓛 𝓜 𝓝 𝓞 𝓟
+    𝓠 𝓡 𝓢 𝓣 𝓤 𝓥 𝓦 𝓧 𝓨 𝓩
+    </p>
+     ]]>
+  </Content> 
+</Module>

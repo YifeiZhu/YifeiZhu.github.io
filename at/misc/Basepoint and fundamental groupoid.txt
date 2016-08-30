@@ -1,0 +1,79 @@
+Date: Tue, 08 Jun 2010 22:18:45 +0100
+From: Ronnie Brown <ronnie.profbrown@btinternet.com>
+Subject: Re: [ALGTOP-L] categories: Re: covering spaces and groupoids
+To: "F. William Lawvere" <wlawvere@hotmail.com>
+Cc: algtop <algtop-l@lists.lehigh.edu>, categories <categories@mta.ca>
+Message-ID: <4C0EB3B5.1030909@btinternet.com>
+Content-Type: text/plain; charset=windows-1252; format=flowed
+
+
+Dear Bill,
+
+You ask:
+
+In the applications of algebraic topology to topology, where do the
+?basepoints? originate?
+
+I'd like to give a different type of answer to that suggested in your
+list. (yet another is : whoopee, we have a group!)
+
+After I first thought of the van Kampen theorem for the whole
+fundamental groupoid I realised one wanted *computation*, and the whole
+fundamental groupoid of a space was too big for that. The fundamental
+group at a base point was too small in may cases, such as the circle.
+The solution that seemed right to me, and which took a while to find,
+was the fundamental groupoid on a set of base points chosen conveniently
+according to the geometry of a given situation. Eldon Dyer said I ought
+to take a hard line on this: if the connected space X is the union of
+127 open sets whose intersections have 3,272 components, you do not want
+to take a single base point! Such situations (even with infinitely many
+components) occur in group theory applications, and analogously in
+topology in connected covering spaces over a union of 2 open sets.
+
+I advocated the fundamental groupoid on a set of base points in my 1968
+book `Elements of Modern Topology', but this concept has I think not
+been mentioned in any later date algebraic topology text in English by
+other authors. Also group theorists are happy with graphs and free
+groups, but are very wary of the free groupoid on a graph! The only new
+result from that book that has been taken up is the gluing theorem for
+homotopy equivalences, but its origin is usually unacknowledged.
+
+Looking at the way this groupoid van Kampen theorem could be used, it
+seemed amazing to me that one could obtain *complete* information on a
+fundamental group by deducing that from knowledge of a larger structure,
+for which one had colimit information, whereas my tries with nonabelian
+cohomology gave only exact sequences. It seems that groupoids have the
+advantages of structure in dimensions 0 and 1, and that this is needed
+for what Grothendieck later called `integration of homotopy types'.
+
+Could one find analogous objects with structure in dimensions 0, 1,
+...,n? This question led (after many years, and with fortunate
+collaborations) to higher dimensional van Kampen theorems, which gave
+quite new information on homotopy invariants, some of them nonabelian,
+e.g. second relative homotopy groups, triad homotopy groups, n-adic
+Hurewicz Theorems. Such results were published in 1978, 1981 (with
+Higgins), 1987 (with Loday). These theorems are, I think, not even
+mentioned in any texts on algebraic topology (except mine). Some current
+writers (Faria Martins, Kauffman, Ellis, Mikhailov,...) are using these
+techniques.
+
+So for me the question is: why are people unwilling to throw off the
+shackles of a single base point? I would welcome enlightenment. It may
+be that it is found just too hard to fit this idea into what is
+currently considered the `real world', and so to obtain new results. For
+example, what happens to iterated loop space theory, with more than one
+base point?
+
+Those interested in the sociology of science might like an excerpt from
+a lecture by Alan MacKay on icosahedral symmetry at the LMS in 1985. He
+said the reaction went through three phases:
+
+Phase 1) It is false.
+
+Phase 2) It is true, but unimportant.
+
+Phase 3) It is true, it is very important; and we have known it for years!
+
+All the best
+
+Ronnie
