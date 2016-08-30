@@ -1,0 +1,695 @@
+\documentclass{rs}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tensor}
+%/home/grad/zyf/TeX/inputs/
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{mathtools}
+%\usepackage{amsrefs}
+%\usepackage{setspace}
+%\doublespacing
+
+\title{Research statement}
+\author{Yifei Zhu}
+\givenname{Yifei}
+\surname{Zhu}
+%\address{Department of Mathematics\\University of Minnesota\\Minneapolis, MN 55455\\USA}
+%\email{zyf@math.umn.edu}
+
+%\subject{primary}{msc2000}{55P99}
+%\subject{secondary}{msc2000}{55Q99}
+
+%\bibliographystyle{gtart}
+\parskip 0.7pc
+\parindent 0pt
+
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{remark}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{exam}[thm]{Example}
+\newtheorem{case}[thm]{Case}
+\newtheorem{slogan}[thm]{Slogan}
+\newtheorem{ques}[thm]{Question}
+
+\def\co{\colon\thinspace}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+
+\newcommand{\NB}[1]{{\bf (NB: #1)}}
+
+\newcommand{\Ext}{\ensuremath{{\rm Ext}}}
+\newcommand{\Coext}{\ensuremath{{\rm Coext}}}
+\newcommand{\Hom}{\ensuremath{{\rm Hom}}}
+\newcommand{\Tor}{\ensuremath{{\rm Tor}}}
+\newcommand{\Ind}{\ensuremath{{\rm Ind}}}
+\newcommand{\Res}{\ensuremath{{\rm Res}}}
+\newcommand{\colim}{\ensuremath{\mathop{\rm colim}}}
+\newcommand{\hocolim}{\ensuremath{\mathop{\rm hocolim}}}
+\newcommand{\holim}{\ensuremath{\mathop{\rm holim}}}
+\newcommand{\overto}{\mathop\rightarrow}
+\newcommand{\overfrom}{\mathop\leftarrow}
+\newcommand{\into}{\mathop\hookrightarrow}
+\newcommand{\onto}{\mathop\twoheadrightarrow}
+\newcommand{\longoverto}{\mathop{\longrightarrow}}
+\newcommand{\Irr}{\ensuremath{\mathop{\rm Irr}}}
+\newcommand{\Rep}{\ensuremath{\mathop{\rm Rep}}}
+\newcommand{\Map}{\ensuremath{{\rm Map}}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\Uni}{{\rm U}}
+\newcommand{\BU}{{\rm BU}}
+\newcommand{\Sp}{{\cal S}p}
+\newcommand{\Sym}{{\rm Sym}}
+\newcommand{\thh}{{\rm thh}}
+\newcommand{\TAF}{{\rm TAF}}
+\newcommand{\TAQ}{{\rm TAQ}}
+\newcommand{\End}{{\rm End}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\As}{{\cal A}s}
+\newcommand{\LT}{{\rm LT}}
+\newcommand{\Spec}{{\rm Spec\thinspace}}
+\newcommand{\Spf}{{\rm Spf}}
+\newcommand{\tmf}{{\rm tmf}}
+\newcommand{\eo}{{\rm eo}}
+\newcommand{\TMF}{{\rm TMF}}
+\newcommand{\Ell}{{\cal E}ll}
+\newcommand{\Lie}{{\rm Lie}}
+\newcommand{\Sh}{{\rm Sh}}
+\newcommand{\HF}{{\rm H}{\mb F}}
+\newcommand{\cF}{\overline {\mb F}}
+\newcommand{\cQ}{\overline {\mb Q}}
+
+\newcommand{\eilm}[1]{\ensuremath{{\mb H} #1}}
+\newcommand{\smsh}[1]{\ensuremath{\mathop{\wedge}_{#1}}}
+\newcommand{\tens}[1]{\ensuremath{\mathop{\otimes}_{#1}}}
+\newcommand{\susp}{\ensuremath{\Sigma}}
+\newcommand{\mapset}[3]{\ensuremath{\left[#2,#3\right]_{#1}}}
+\newcommand{\form}[2]{\ensuremath{\left\langle#1,#2\right\rangle}}
+\newcommand{\bilin}[2]{\ensuremath{\left(#1,#2\right)}}
+\newcommand{\comp}[1]{\ensuremath{#1^\wedge}}
+\newcommand{\loca}[3]{\ensuremath{L^{#1}_{#2}(#3)}}
+\newcommand{\tc}[3]{\ensuremath{\Omega_{#2 / #1}^{#3}}}
+\newcommand{\atc}[3]{\ensuremath{\L_{#2 / #1}^{#3}}}
+
+\newcommand{\xym}[1]{
+\vskip 0.7pc
+\centerline{\xymatrix{#1}}
+\vskip 0.7pc
+}
+
+\newcommand{\CA}{{\cal A}}
+\newcommand{\Mod}{{\rm Mod}}
+\newcommand{\Alg}{{\rm Alg}}
+\newcommand{\Frob}{{\rm Frob}}
+\newcommand{\DF}{{{\rm DefFrob}_\Gamma}}
+\newcommand{\Model}{{\rm Model}}
+\newcommand{\Gm}{{{\mb G}_m}}
+\newcommand*{\longhookrightarrow}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+
+\newcommand{\DL}{Dyer-Lashof~}
+\newcommand{\BF}{{\mb F}}
+\newcommand{\BG}{{\mb G}}
+\newcommand{\BP}{{\mb P}}
+\newcommand{\BZ}{{\mb Z}}
+\newcommand{\HC}{\widehat{C}}
+\newcommand{\HS}{\widehat{S}}
+\newcommand{\Tf}{\widetilde{f}}
+\newcommand{\Tp}{\widetilde{\psi}}
+\newcommand{\md}{~~{\rm mod}~}
+\newcommand{\ad}{{\rm and}}
+\newcommand{\A}{\alpha}
+\newcommand{\G}{\Gamma}
+\newcommand{\g}{\gamma}
+\newcommand{\K}{\kappa}
+\newcommand{\p}{\psi^3}
+\newcommand{\s}{S^\bullet}
+\newcommand{\isog}[1]{Proposition \ref{prop:isog}\thinspace \eqref{isog(#1)}}
+\newcommand{\q}[1]{Proposition \ref{prop:Q}\thinspace \eqref{Q(#1)}}
+\newcommand{\go}[1]{Definition \ref{def:go}\thinspace \eqref{go(#1)}}
+
+
+%single word
+%end space
+%page break
+%labels
+%newcommands
+%.bib
+%line break .tex
+
+
+\begin{document}
+%\begin{abstract}
+% A research statement outlines your current research and your future plans.  
+% It should be relatively short, with some background material that can be understood by a general mathematician 
+% but including some specific statements about your current and future plans.  
+% Try to be concrete.  
+%\end{abstract}
+
+
+\maketitle
+
+Algebraic topology is a field that solves topological or geometric problems by translating them into algebra.  
+It is often aided by an interaction between computations and conceptual interpretations.  
+My current research is study cohomology operations in algebraic topology---specifically, 
+power operations for elliptic cohomology theories, including Morava $E$-theory of height 2---with connections to algebraic geometry and number theory.  
+
+\section{Background and motivation}
+\label{sec:intro}
+
+The problem of vector fields on spheres asks: 
+What is the maximum integer $k(n)$ for which there exist $k$ continuous vector fields on the unit sphere in Euclidean $n$-space, 
+linearly independent everywhere?  
+This was solved by Adams \cite{adamsvector} as a classic application of algebraic topology to geometry.  
+The solution was built upon the study of cohomology operations---the work of Steenrod and Whitehead \cite{steenrodwhitehead} 
+which used the Steenrod squares to study the same problem, 
+and Adams' original attempt to replace the Steenrod squares by 
+``cohomology operations of higher kinds.''\footnote{Cf.~\cite[Section 2]{adamsvector}.  
+Adams used secondary cohomology operations to solve the Hopf invariant one problem \cite{adamshopf}.  }  
+These led to the construction of the Adams operations which were the key tool for solving the vector-field problem for spheres.  
+
+The Steenrod squares and the Adams operations are operations in ordinary cohomology with $\BZ/2$-coefficients and in $K$-theory respectively, 
+and both are examples of an important family of cohomology operations called {\em power operations}.  
+Foundational work on the Steenrod operations and the {\em Steenrod algebra} $A^*$ 
+established a model for studying power operations in other cohomology theories, as encapsulated in \cite[Section 1]{blind}: 
+``Steenrod constructed a family of elements of $A^*$, \ldots \cite{steenrod}, 
+Adem found some relations between them \cite{adem}, 
+Serre showed that Steenrod's elements generated $A^*$ and Adem's relations implied all relations \cite{serre} 
+and Milnor elucidated the full structure of $A^*$ \cite{milnor}.  
+Nonetheless much remains to be understood about $A^*$ and it is an active area of research.''  
+
+Following earlier work for ordinary cohomology and $K$-theory, 
+the study of power operations for other cohomology theories has been carried out 
+by tom Dieck and Quillen for complex cobordism \cite{tomdieck, quillenmu}, 
+by McClure for $p$-adic $K$-theory \cite{mcclure, H_infty}, 
+by Voevodsky for motivic cohomology \cite{V}, 
+and by Ando, Hopkins, and Strickland for Morava $E$-theories \cite{AHS04}, among others.  
+In particular, complex cobordism, $p$-adic $K$-theory, and Morava $E$-theories, together with ordinary cohomology, 
+all fit into {\em the chromatic filtration}, 
+an organizing principle for understanding large-scale phenomena in modern stable homotopy theory (cf.~\cite{quillenfgl, orange, tafoverview}).  
+Under this framework, cohomology theories are organized according to the {\em heights} of their associated {\em formal group laws}, and also prime by prime: 
+ordinary cohomology with rational coefficients at height 0, 
+$p$-adic $K$-theory at height 1, complex cobordism and ordinary cohomology with $\BZ/p$-coefficients at height $\infty$, 
+and Morava $E$-theories as a family of cohomology theories at height $n$ for each $n$---with $n = 2$ as instances of elliptic cohomology 
+\cite{morava, hopkinsmahowald, survey}---and at all primes.  
+The chromatic filtration has an intimate connection with algebraic geometry and number theory, 
+and studying power operations from this viewpoint brings in new tools and insight from beyond the range of classical algebraic topology.  
+
+In elliptic cohomology, the study of power operations is aided by 
+a ``bridge'' connecting homotopy theory and the theory of elliptic curves (see \cite[Theorem B]{cong} and \cite[Theorem 2.9.1]{KM}), 
+and is based on work of Ando, Hopkins, and Strickland for the case of supersingular curves (see \cite{AHS04}), 
+and work of Ando and Ganter for the case of the Tate curve (see \cite{andotrans, ganterTate}).  
+Thanks to the correspondence across this bridge, 
+explicit constructions and computations for power operations flow from calculations with isogenies of elliptic curves (see \cite{h2p2}).  
+With concrete formulas, we hope to study the structure underlying power operations in elliptic cohomology, 
+along the lines of understanding the Steenrod algebra $A^*$ for ordinary cohomology.  
+Moreover, as explained at the beginning of \cite{andoduke}, 
+we hope to learn about the conjectural geometric interpretation of Morava $E$-theories (at height $n = 2$) by examining power operations, 
+analogous to vector bundles and representation theory as encoded in the Adams operations for $K$-theory (cf.~\cite{adamsvector, atiyah}).  
+
+
+\section{Current research}
+
+\subsection{The power operation structure on Morava $E$-theory of height 2 at the prime 3}
+\label{subsec:h2p3}
+
+Let $p$ be a prime, and $q$ be a power of $p$.  
+We use the symbols $\BF_q$ and $\BZ_q$ to denote a field with $q$ elements 
+and the ring of $p$-typical Witt vectors over $\BF_q$ respectively.  
+In particular $\BZ_p$ is the ring of $p$-adic integers.  
+
+For a Morava $E$-theory, the analog of the Steenrod algebra in ordinary cohomology is 
+the {\em \DL algebra} (modulo instability relations) as the collection of all (additive) power operations.  
+In \cite{h2p2} Rezk explicitly computes the \DL algebra for a specific $E$-theory of height 2 at the prime 2.  
+Following his work, at height 2 for the prime 3, 
+we studied the power operation structure on an $E$-theory $E$ whose homotopy groups are 
+\[
+ \pi_* E = E_* \cong \BZ_9 \llbracket h \rrbracket [u^{\pm 1}] 
+\]
+with $h$ and $u$ in degrees 0 and 2 respectively \cite[Sections 2 and 3]{p3}.  
+
+As in \cite{h2p2}, our computation of power operations follows the approach of \cite{steenrod}: 
+one first defines a total power operation, 
+and then uses the computation of the cohomology of the classifying space $B\Sigma_m$ for the symmetric group $\Sigma_m$ to obtain individual power operations.  
+By doing calculations with elliptic curves associated to $E$, 
+we get formulas for a total power operation $\p$ on $E_0$ and a ring $S_3$ which represents a corresponding moduli problem.  
+Based on the computation of $E^* B\Sigma_m$ in \cite{Str98} as reflected in the formula for $S_3$, 
+we then define individual power operations $Q_k$, and derive the relations they satisfy---action on scalars, additivity, 
+commutation relations, Adem relations, Cartan formulas, and the Frobenius congruence.  
+In view of the general structure studied in \cite{cong}, we get an explicit description of the corresponding \DL algebra $\G$ as below.  
+
+\begin{defn}
+\label{def}
+ \mbox{}
+ \begin{enumerate}[(i)]
+  \item \label{gamma} Let $i$ be an element generating $\BZ_9$ over $\BZ_3$ with $i^2 = -1$.  
+  Define $\G$ to be the associative ring generated over $\BZ_9 \llbracket h \rrbracket$ 
+  by elements $Q_0$, $Q_1$, $Q_2$, and $Q_3$ subject to the following relations: 
+  the $Q_k$'s commute with elements in $\BZ_3 \subset \BZ_9 \llbracket h \rrbracket$, 
+  and satisfy {\em commutation relations} 
+  \begin{equation*}
+  \begin{split}
+   Q_0 h = & ~ (h^3 - 27 h^2 + 201 h - 342) Q_0 + (3 h^2 - 54 h + 171) Q_1 + (9 h - 81) Q_2 ~ \\
+           & + 24 Q_3, 
+  \end{split}
+  \end{equation*}
+  \begin{equation*}
+  \begin{split}
+   Q_1 h = & ~ (-6 h^2 + 108 h - 334) Q_0 + (-18 h + 171) Q_1 + (-72) Q_2 + (h - 9) Q_3, \\
+   Q_2 h = & ~ (3 h - 27) Q_0 + 8 Q_1 + 9 Q_2 + (-24) Q_3, \\
+   Q_3 h = & ~ (h^2 - 18 h + 57) Q_0 + (3 h - 27) Q_1 + 8 Q_2 + 9 Q_3, \\
+   Q_k i ~ = & ~ (-i) Q_k \text{~for all~} k, 
+  \end{split}
+  \end{equation*}
+  and {\em Adem relations} 
+  \begin{equation*}
+  \begin{split}
+   Q_1Q_0 = & ~ (-6) Q_0Q_1 + 3 Q_2Q_1 + (6 h - 54) Q_0Q_2 + 18 Q_1Q_2 + (-9) Q_3Q_2 \\
+            & + (-6 h^2 + 108 h - 369) Q_0Q_3 + (-18 h + 162) Q_1Q_3 + (-54) Q_2Q_3, ~ \\
+   Q_2Q_0 = & ~ 3 Q_3Q_1 + (-3) Q_0Q_2 + (3 h - 27) Q_0Q_3 + 9 Q_1Q_3, \\
+   Q_3Q_0 = & ~ Q_0Q_1 + (-h + 9) Q_0Q_2 + (-3) Q_1Q_2 + (h^2 - 18 h + 63) Q_0Q_3 \\
+            & + (3 h - 27) Q_1Q_3 + 9 Q_2Q_3.  
+  \end{split}
+  \end{equation*}
+
+  \item \label{omega} Write $\omega \coloneqq \pi_2 E$, viewed as a free 
+  module with one generator $u$ over 
+  $E_0 \cong \BZ_9 \llbracket h \rrbracket$.  Define $\omega$ as a left 
+  $\G$-module, compatible with its $E_0$-module structure, by 
+  \[
+   Q_k \cdot u \coloneqq \left\{
+   \begin{array}{ll}
+     u,  & \quad {\rm if}~k = 1, \\
+     0,  & \quad {\rm if}~k \neq 1.  
+   \end{array}
+   \right.
+  \]
+ \end{enumerate}
+\end{defn}
+The relations in Definition \ref{def}\thinspace \eqref{gamma}, together with additivity, Cartan formulas, and a natural grading, 
+describe explicitly the structure of $\G$ as that of a {\em graded twisted bialgebra over $E_0$} in the sense of \cite[Section 5]{cong}.  
+
+Our computation is motivated by Rezk's result \cite{cong, h2p2} on the general pattern of power operations for Morava $E$-theory spectra.  
+The formulas in Definition \ref{def} give the following concrete version of his theorem, at height 2 for the prime 3.  
+(See \cite{cong, h2p2} for details about the notation and terminology.)  
+
+\begin{thm}
+ Let $R$ be a $K(2)$-local commutative $E$-algebra spectrum.  
+ Let $\G$ be the graded twisted bialgebra over $E_0$ in Definition \ref{def}\thinspace \eqref{gamma}, 
+ and $\omega$ be the $\G$-module in Definition \ref{def} \eqref{omega}.  
+ Then $R_*$ has the structure of an {\em $\omega$-twisted $\BZ/2$-graded amplified $\G$-ring} in the sense of \cite[Section 2]{cong} and \cite[2.5 and 2.6]{h2p2}.  
+ In particular, for a free commutative $E$-algebra spectrum $\BP_E (\Sigma^d E)$, 
+ \[
+  \pi_* L_{K(2)} \BP_E (\Sigma^d E) \cong \big( F_d \big)_{(3,h)}^\wedge 
+ \]
+ where $F_d$ is the free graded amplified $\G$-ring with one generator in dimension $d$.  
+\end{thm}
+
+With explicit formulas, we hope to get a real understanding of this structure, and it is one of our main research goals (see Section \ref{sec:plans} below).  
+
+The calculations in \cite{h2p2} at the prime 2 provide a model for computing power operations in Morava $E$-theories of height 2.  
+At the prime 3, along with extra difficulty in some aspects of the computation, there also arise patterns previously hidden beneath the formulas at the prime 2.  
+Our attempt for the above calculations involves choices of universal families of elliptic curves for the $E$-theory $E$, 
+choices of affine coordinate charts both for elliptic curves and for the moduli stack associated to the universal family, 
+and choices of parameters for the total power operation $\p$.  
+Different choices result in different formal group laws of $E$ and different bases of the \DL algebra $\G$.  
+Keeping in mind the comparison with Rezk's calculations at the prime 2, 
+we seek for choices which are both geometrically interesting and computationally convenient.  
+Here is a brief summary.  
+\begin{enumerate}[(i)]
+ \item For elliptic curves, the affine coordinate chart $\{u = X/Y, v = Z/Y\}$ 
+ carries (formal) geometric information relevant to the construction of power operations.  
+
+ \item We need to do calculations with the universal elliptic curve over {\em all} of the moduli stack, 
+ and then pass these to an affine coordinate chart containing the supersingular locus 
+ and get formulas for power operations.  
+
+ \item \label{A} There is a parameter $\A$ coming from the relative cotangent space of the elliptic curve at the identity 
+ which is convenient for deriving Adem relations.  
+\end{enumerate}
+In particular, closely related to (iii), we studied a commutative diagram of elliptic curves over the ring $S_3$.  
+It involves a composite of deformations of the third-power Frobenius endomorphism 
+on a supersingular elliptic curve over the field $\BF_9 \cong S_3 / (3,h,\A)$.  
+This diagram brings in geometric intuition and clarifies our derivation of Adem relations.  
+Formulas for Adem relations flow from an explicitation of the endomorphism of a moduli scheme 
+which is induced by an involution of the corresponding moduli problem (cf.~\cite[11.3.1]{KM} and see Section \ref{sec:plans} below).  
+
+
+\subsection{Power operations on the $K(1)$-localization}
+
+On the $K(1)$-localization $L$ of our Morava $E$-theory $E$, 
+the power operation structure is simpler: 
+the \DL algebra has a single generator $\p_L$ over the ring 
+\[
+ L_0 \cong \BZ_9 \llbracket h \rrbracket [h^{-1}]_3^\wedge = \left.\left\{\sum_{n = -\infty}^{\infty} k_n h^n~\right|~k_n \in \BZ_9, \lim_{n \to -\infty} k_n = 0\right\}.  
+\]
+We derived formulas for this $K(1)$-local power operation $\p_L$ 
+from the calculations in Section \ref{subsec:h2p3} \cite[Section 4]{p3}.  
+Based on \cite[Sections 2.4 and 8.2]{level3}, 
+it boils down to interpreting the $K(1)$-local power operations 
+in terms of the elliptic curve and formal group data 
+for our construction of the total power operation $\p$.  
+Here are the formulas.  
+
+\begin{prop}
+\label{prop}
+ The total power operation 
+ \[
+  \p \co E^0 \to E^0 [\A] \big/ \big( w(\A) \big) 
+ \]
+ is given by 
+ \begin{equation*}
+ \begin{split}
+  \p(h) = & ~ h^3 - 27 h^2 + 201 h -342 + (-6 h^2 + 108 h - 334) \A + (3 h - 27) \A^2 \\
+          & + (h^2 - 18 h + 57) \A^3, \\
+  \p(i) \thinspace = & -i, 
+ \end{split}
+ \end{equation*}
+ where 
+ \begin{equation}
+ \label{w}
+  w(\A) = \A^4 - 6 \A^2 + (h - 9) \A - 3.  
+ \end{equation}
+ Correspondingly the power operation 
+ \[
+  \p_L \co L^0 \to L^0 
+ \]
+ is given by 
+ \begin{equation*}
+ \begin{split}
+  \psi_L^3(h) = & ~ h^3 - 27 h^2 + 183 h - 180 + 186 h^{-1} + 1674 h^{-2} + (\text{lower-order terms}), \\
+  \psi_L^3(i) \thinspace = & -i.  
+ \end{split}
+ \end{equation*}
+\end{prop}
+
+
+\section{Future plans}
+\label{sec:plans}
+
+A uniform presentation of the $E$-\DL algebra at height 2 that works for all primes has yet to be determined.  
+As a continuation of our current work on explicit formulas for power operations, 
+we would like to extend our computation to other universal families of elliptic curves and other primes.  
+Specifically, these include: 
+\begin{itemize}
+ \item The universal elliptic curve with a choice of a point of exact order 5 and a nowhere-vanishing invariant one-form (see \cite[Section 1.1]{behrensormsby}) at the prime 2 
+
+ \item The Legendre family (see \cite[Section 1.3.2]{behrens}) at the prime 3 
+
+ \item The universal elliptic curve with a choice of a point of exact order 3 and a nowhere-vanishing invariant one-form 
+ (see \cite[Proposition 3.2]{tmf3} and \cite[Section 3]{h2p2}) at the prime 5 
+
+ \item The universal elliptic curve with a choice of a point of exact order 4 and a nowhere-vanishing invariant one-form (our choice of universal family at the prime 3) at the prime 5 
+\end{itemize}
+
+Based on explicit formulas, we hope to work toward a more intrinsic and structural understanding of power operations.  
+Here are some specific plans.  
+
+From the calculations in Section \ref{subsec:h2p3}, for power operations in Morava $E$-theory of height 2 at the prime 3, 
+we get an analog of the relations satisfied by the Steenrod operations.  
+In particular, Adem relations have interesting geometry underlying their derivation, 
+but we still have no real understanding of how they arise, and what role they play in the structure of the \DL algebra.  
+From the perspective of the chromatic filtration (see Section \ref{sec:intro}), 
+it would be helpful to understand the connection to classical derivations for the Steenrod operations 
+(cf.~\cite[Section VIII.1]{steenrod} and \cite{bullettmacdonald}).  
+
+We hope to acquire a better understanding of the underlying geometry, 
+specifically the moduli problems corresponding to the power operations (see \cite[Theorem B]{cong}).  
+For example, at the prime 3, the parameter $\A$ in \eqref{A} and Proposition \ref{prop} 
+gives a coordinate of the modular curve which represents (relative to our universal elliptic curve) 
+the moduli problem [3-$Isog] = [\G_0(3)]$ (see \cite[Sections 6.5 and 6.8]{KM}, and cf.~the moduli problem $\big([\G_1(4)],[\G_0(3)]\big)$ in \cite[10.9.6]{KM}).  
+This parameter satisfies a quartic polynomial equation $w(\A) = 0$ (cf.~\eqref{w}).  
+Thus the number of the individual power operations $Q_k$ corresponds to the degree of the representing modular curve.  
+We plan to study other properties of power operations in connection with the geometric properties of modular curves.  
+For example, it would be interesting to analyze the coefficients in $w(\A)$ (also cf.~\cite[Sections 10.13 and 12.9]{KM}).  
+
+From the formulas for the relations satisfied by the individual power operations $Q_k$, 
+we hope to extract patterns invariant under change of basis of the \DL algebra 
+(the coefficients in these formulas vary if we choose a different parameter for the total power operation $\p$).  
+For example, we would like to study if there is an analog of the presentation for Adem relations in \cite{bullettmacdonald}, 
+and to study congruences modulo 3 of our formulas as motivated by \cite[Section 4.8]{mc1}.  
+
+We plan to study questions about functoriality of power operations for Morava $E$-theories: 
+How does the \DL algebra change under maps between formal group laws of $E$-theories?  
+For this we hope to seek functorial models for the power operation structure.  
+Here are two possible starting points.  
+\begin{itemize}
+ \item Thanks to \cite[Section 9.1]{pearson}, we are able to compute the formulas in \cite[25.1.2 and 25.1.11]{FG} 
+ for the Witt-vector-like group functors $W^F$ \cite[Theorem 25.1.12 and Remark 25.1.14]{FG} 
+ attached to the formal group laws $F$ of Morava $E$-theories of height 2 at the primes 2 and 3.  
+ Based on these formulas, we would like to explore if there is a connection 
+ between power operations for Morava $E$-theories of height 2 
+ and a certain generalization of Witt vectors (and Dieudonn\'e modules over rings of Witt vectors), 
+ along the lines of power operations at height 1 (see \cite[Section 4]{hopkins}).  
+ In particular, Rezk's congruence criterion for the algebraic theory of power operations in Morava $E$-theory \cite[Theorem A]{cong} 
+ can be viewed as a ``higher chromatic''\footnote{With respect to the chromatic filtration by heights of formal group laws (see Section \ref{sec:intro}).  } analog 
+ of Wilkerson's congruence criterion for torsion-free $\lambda$-rings \cite[Proposition 1.2]{wilkerson} (cf.~\cite[Section 1]{cong}).  
+ In view of the analogy between Wilkerson's criterion 
+ and a criterion for Witt vectors \cite[VII.4.6]{lazard} (attributed by Cartier to Dwork and Dieudonn\'e), 
+ we may generalize the latter for formal group laws of Morava $E$-theories of height 2.  
+ The congruences needed in the formulation may be helpful in our calculations exploring power operations and Witt vectors.  
+
+ \item We plan to study the notion of plethory \cite{BW} in the context of power operations (cf.~\cite[Sections 4-6]{cong}, \cite{staceywhitehouse}, and \cite{bauer}), 
+ and to see if it is possible to transport some of the functorial constructions for plethories to the \DL algebra.  
+ For example, there are morphisms, base change, and amplifications of plethories (see \cite[1.8, 1.13, and Theorem 7.1]{BW}).  
+ We are particularly interested in Borger and Wieland's ``formula-free'' construction 
+ of the ring $W(R)$ of $p$-typical Witt vectors over a commutative ring $R$: 
+ it is the $\Lambda_p$-ring co-induced from $R$, 
+ where $\Lambda_p$ is the amplification along the trivial $\BF_p$-plethory 
+ of a certain free $\BZ$-plethory generated by the $p$'th-power Frobenius map (see \cite[Section 12]{BW}).  
+ We would like to explore a generalization of this construction.  
+\end{itemize}
+
+We hope to study power operations with a view toward applications, 
+especially given the fruitful work on the Steenrod operations and the Adams operations, 
+as well as motivated by \cite[Lemma 14 and Remark 1]{hopkins}, \cite{davis}, and \cite{behrenslec}.  
+
+
+%\nocite{*}
+%\bibliographystyle{amsalpha}
+%\bibliography{rs}
+%\end{document}
+\renewcommand\refname{}
+\newcommand{\MRn}[2]{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR#1 #2}}
+\begin{thebibliography}
+
+\section*{\leftskip=-.44in References \vspace{.13in}}
+
+\bibitem[Ada60]{adamshopf}
+J.~F. Adams, \emph{On the non-existence of elements of {H}opf invariant one},
+  Ann. of Math. (2) \textbf{72} (1960), 20--104. \MRn{0141119}{(25 \#4530)}
+
+\bibitem[Ada62]{adamsvector}
+\bysame, \emph{Vector fields on spheres}, Ann. of Math. (2) \textbf{75} (1962),
+  603--632. \MRn{0139178}{(25 \#2614)}
+
+\bibitem[Ade52]{adem}
+Jos{\'e} Adem, \emph{The iteration of the {S}teenrod squares in algebraic
+  topology}, Proc. Nat. Acad. Sci. U. S. A. \textbf{38} (1952), 720--726.
+  \MRn{0050278}{(14,306e)}
+
+\bibitem[AHS04]{AHS04}
+Matthew Ando, Michael~J. Hopkins, and Neil~P. Strickland, \emph{The sigma
+  orientation is an {$H\sb \infty$} map}, Amer. J. Math. \textbf{126} (2004),
+  no.~2, 247--334. \MRn{2045503}{(2005d:55009)}
+
+\bibitem[And95]{andoduke}
+Matthew Ando, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MRn{1344767}{(97a:55006)}
+
+\bibitem[And00]{andotrans}
+\bysame, \emph{Power operations in elliptic cohomology and representations of
+  loop groups}, Trans. Amer. Math. Soc. \textbf{352} (2000), no.~12,
+  5619--5666. \MRn{1637129}{(2001b:55016)}
+
+\bibitem[Ati66]{atiyah}
+M.~F. Atiyah, \emph{Power operations in {$K$}-theory}, Quart. J. Math. Oxford
+  Ser. (2) \textbf{17} (1966), 165--193. \MRn{0202130}{(34 \#2004)}
+
+\bibitem[Bau]{bauer}
+Tilman Bauer, \emph{Formal plethories}, preprint, available at
+  \href{http://arxiv.org/abs/1107.5745}{arXiv:1107.5745}.
+
+\bibitem[Beh]{behrenslec}
+Mark Behrens, \emph{Exotic spheres and topological modular forms}, talk on
+  joint work with Mike Hill, Mike Hopkins, and Mark Mahowald, available at
+  \href{http://www.ima.umn.edu/videos/index.php?id=1789}{http://www.ima.umn.edu\linebreak/videos/index.php?id=1789}.
+
+\bibitem[Beh06]{behrens}
+\bysame, \emph{A modular description of the {$K(2)$}-local sphere at the prime
+  3}, Topology \textbf{45} (2006), no.~2, 343--402. \MRn{2193339}{(2006i:55016)}
+
+\bibitem[BM82]{bullettmacdonald}
+S.~R. Bullett and I.~G. Macdonald, \emph{On the {A}dem relations}, Topology
+  \textbf{21} (1982), no.~3, 329--332. \MRn{649764}{(83h:55035)}
+
+\bibitem[BMMS86]{H_infty}
+R.~R. Bruner, J.~P. May, J.~E. McClure, and M.~Steinberger, \emph{{$H\sb \infty
+  $} ring spectra and their applications}, Lecture Notes in Mathematics, vol.
+  1176, Springer-Verlag, Berlin, 1986. \MRn{836132}{(88e:55001)}
+
+\bibitem[BO]{behrensormsby}
+Mark Behrens and Kyle Ormsby, \emph{On the homotopy of ${Q}(3)$ and ${Q}(5)$ at
+  the prime 2}, preprint, available at
+  \href{http://arxiv.org/abs/1211.0076}{arXiv:1211.0076}.
+
+\bibitem[BW05]{BW}
+James Borger and Ben Wieland, \emph{Plethystic algebra}, Adv. Math.
+  \textbf{194} (2005), no.~2, 246--283. \MRn{2139914}{(2006i:13044)}
+
+\bibitem[Dav11]{davis}
+Donald~M. Davis, \emph{Some new nonimmersion results for real projective
+  spaces}, Bol. Soc. Mat. Mexicana (3) \textbf{17} (2011), no.~2, 159--166.
+  \MRn{2986078}{}
+
+\bibitem[Gan]{ganterTate}
+Nora Ganter, \emph{Stringy power operations in {T}ate ${K}$-theory}, preprint,
+  available at \href{http://arxiv.org/abs/math/0701565}{arXiv:0701565}.
+
+\bibitem[Gre88]{blind}
+J.~P.~C. Greenlees, \emph{How blind is your favourite cohomology theory?},
+  Exposition. Math. \textbf{6} (1988), no.~3, 193--208. \MRn{949783}{(89j:55001)}
+
+\bibitem[Haz78]{FG}
+Michiel Hazewinkel, \emph{Formal groups and applications}, Pure and Applied
+  Mathematics, vol.~78, Academic Press Inc. [Harcourt Brace Jovanovich
+  Publishers], New York, 1978. \MRn{506881}{(82a:14020)}
+
+\bibitem[HM]{hopkinsmahowald}
+Mike Hopkins and Mark Mahowald, \emph{From elliptic curves to homotopy theory},
+  preprint, available at
+  \href{http://hopf.math.purdue.edu//Hopkins-Mahowald/eo2homotopy.pdf}{http://hopf.math.purdue.edu//Hopkins-Mahowald/eo2homotopy.pdf}.
+
+\bibitem[Hop]{hopkins}
+M.~J. Hopkins, \emph{{$K(1)$}-local {$E\sb \infty $} ring spectra}, unpublished
+  notes, available at
+  \href{http://www.math.rochester.edu/people/faculty/doug/otherpapers/knlocal.pdf}{http://\linebreak www.math.rochester.edu/people/faculty/doug/otherpapers/knlocal.pdf}.
+
+\bibitem[KM85]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MRn{772569}{(86i:11024)}
+
+\bibitem[Law09]{tafoverview}
+Tyler Lawson, \emph{An overview of abelian varieties in homotopy theory}, New
+  topological contexts for {G}alois theory and algebraic geometry ({BIRS}
+  2008), Geom. Topol. Monogr., vol.~16, Geom. Topol. Publ., Coventry, 2009,
+  pp.~179--214. \MRn{2544390}{(2010i:55006)}
+
+\bibitem[Laz75]{lazard}
+Michel Lazard, \emph{Commutative formal groups}, Lecture Notes in Mathematics,
+  Vol. 443, Springer-Verlag, Berlin, 1975. \MRn{0393050}{(52 \#13861)}
+
+\bibitem[LN12]{level3}
+Tyler Lawson and Niko Naumann, \emph{Commutativity conditions for truncated
+  {B}rown-{P}eterson spectra of height 2}, J. Topol. \textbf{5} (2012), no.~1,
+  137--168. \MRn{2897051}{}
+
+\bibitem[Lur09]{survey}
+J.~Lurie, \emph{A survey of elliptic cohomology}, Algebraic topology, Abel
+  Symp., vol.~4, Springer, Berlin, 2009, pp.~219--277. \MRn{2597740}{(2011f:55009)}
+
+\bibitem[McC83]{mcclure}
+James~E. McClure, \emph{Dyer-{L}ashof operations in {$K$}-theory}, Bull. Amer.
+  Math. Soc. (N.S.) \textbf{8} (1983), no.~1, 67--72. \MRn{682824}{(84e:55014)}
+
+\bibitem[Mil58]{milnor}
+John Milnor, \emph{The {S}teenrod algebra and its dual}, Ann. of Math. (2)
+  \textbf{67} (1958), 150--171. \MRn{0099653}{(20 \#6092)}
+
+\bibitem[Mor89]{morava}
+Jack Morava, \emph{Forms of {$K$}-theory}, Math. Z. \textbf{201} (1989), no.~3,
+  401--428. \MRn{999737}{(90e:55011)}
+
+\bibitem[MR09]{tmf3}
+Mark Mahowald and Charles Rezk, \emph{Topological modular forms of level 3},
+  Pure Appl. Math. Q. \textbf{5} (2009), no.~2, Special Issue: In honor of
+  Friedrich Hirzebruch. Part 1, 853--872. \MRn{2508904}{(2010g:55010)}
+
+\bibitem[Pea]{pearson}
+Paul Pearson, \emph{Calculating formal group laws}, unpublished notes,
+  available at
+  \href{http://www.math.rochester.edu/people/faculty/pearson/papers/fgls-2up.pdf}{http://\linebreak www.math.rochester.edu/people/faculty/pearson/papers/fgls-2up.pdf}.
+
+\bibitem[Qui69]{quillenfgl}
+Daniel Quillen, \emph{On the formal group laws of unoriented and complex
+  cobordism theory}, Bull. Amer. Math. Soc. \textbf{75} (1969), 1293--1298.
+  \MRn{0253350}{(40 \#6565)}
+
+\bibitem[Qui71]{quillenmu}
+\bysame, \emph{Elementary proofs of some results of cobordism theory using
+  {S}teenrod operations}, Advances in Math. \textbf{7} (1971), 29--56 (1971).
+  \MRn{0290382}{(44 \#7566)}
+
+\bibitem[Rav92]{orange}
+Douglas~C. Ravenel, \emph{Nilpotence and periodicity in stable homotopy
+  theory}, Annals of Mathematics Studies, vol. 128, Princeton University Press,
+  Princeton, NJ, 1992, Appendix C by Jeff Smith. \MRn{1192553}{(94b:55015)}
+
+\bibitem[Rez]{h2p2}
+Charles Rezk, \emph{Power operations for {M}orava ${E}$-theory of height 2 at
+  the prime 2}, preprint, available at
+  \href{http://arxiv.org/abs/0812.1320}{arXiv:0812.1320}.
+
+\bibitem[Rez09]{cong}
+\bysame, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MRn{2591924}{(2011e:55021)}
+
+\bibitem[Rez12]{mc1}
+\bysame, \emph{Modular isogeny complexes}, Algebr. Geom. Topol. \textbf{12}
+  (2012), no.~3, 1373--1403. \MRn{2966690}{}
+
+\bibitem[Ser53]{serre}
+Jean-Pierre Serre, \emph{Cohomologie modulo {$2$} des complexes
+  d'{E}ilenberg-{M}ac{L}ane}, Comment. Math. Helv. \textbf{27} (1953),
+  198--232. \MRn{0060234}{(15,643c)}
+
+\bibitem[Ste62]{steenrod}
+N.~E. Steenrod, \emph{Cohomology operations}, Lectures by N. E. Steenrod
+  written and revised by D. B. A. Epstein. Annals of Mathematics Studies, No.
+  50, Princeton University Press, Princeton, N.J., 1962. \MRn{0145525}{(26
+  \#3056)}
+
+\bibitem[Str98]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MRn{1607736}{(99e:55008)}
+
+\bibitem[SW51]{steenrodwhitehead}
+N.~E. Steenrod and J.~H.~C. Whitehead, \emph{Vector fields on the
+  {$n$}-sphere}, Proc. Nat. Acad. Sci. U. S. A. \textbf{37} (1951), 58--63.
+  \MRn{0041436}{(12,847c)}
+
+\bibitem[SW09]{staceywhitehouse}
+Andrew Stacey and Sarah Whitehouse, \emph{The hunting of the {H}opf ring},
+  Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 75--132. \MRn{2559638}{(2011d:55034)}
+
+\bibitem[tD68]{tomdieck}
+Tammo tom Dieck, \emph{Steenrod-{O}perationen in {K}obordismen-{T}heorien},
+  Math. Z. \textbf{107} (1968), 380--401. \MRn{0244989}{(39 \#6302)}
+
+\bibitem[Voe03]{V}
+Vladimir Voevodsky, \emph{Reduced power operations in motivic cohomology},
+  Publ. Math. Inst. Hautes \'Etudes Sci. (2003), no.~98, 1--57. \MRn{2031198}{(2005b:14038a)}
+
+\bibitem[Wil82]{wilkerson}
+Clarence Wilkerson, \emph{Lambda-rings, binomial domains, and vector bundles
+  over {${\bf C}P(\infty )$}}, Comm. Algebra \textbf{10} (1982), no.~3,
+  311--328. \MRn{651605}{(83f:55003)}
+
+\bibitem[Zhu]{p3}
+Yifei Zhu, \emph{The power operation structure on {M}orava ${E}$-theory of
+  height 2 at the prime 3}, accepted by Algebraic and Geometric Topology,
+  preprint available at \href{http://arxiv.org/abs/1210.3730}{arXiv:1210.3730}.
+
+\end{thebibliography}
+\end{document}

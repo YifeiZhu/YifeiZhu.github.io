@@ -1,0 +1,251 @@
+\def\cprime{$'$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BMMS86}
+
+\bibitem[Ada60]{adamshopf}
+J.~F. Adams, \emph{On the non-existence of elements of {H}opf invariant one},
+  Ann. of Math. (2) \textbf{72} (1960), 20--104. \MR{0141119 (25 \#4530)}
+
+\bibitem[Ada62]{adamsvector}
+\bysame, \emph{Vector fields on spheres}, Ann. of Math. (2) \textbf{75} (1962),
+  603--632. \MR{0139178 (25 \#2614)}
+
+\bibitem[Ade52]{adem}
+Jos{\'e} Adem, \emph{The iteration of the {S}teenrod squares in algebraic
+  topology}, Proc. Nat. Acad. Sci. U. S. A. \textbf{38} (1952), 720--726.
+  \MR{0050278 (14,306e)}
+
+\bibitem[AHS04]{AHS04}
+Matthew Ando, Michael~J. Hopkins, and Neil~P. Strickland, \emph{The sigma
+  orientation is an {$H\sb \infty$} map}, Amer. J. Math. \textbf{126} (2004),
+  no.~2, 247--334. \MR{2045503 (2005d:55009)}
+
+\bibitem[And92]{andothesis}
+Matthew Ando, \emph{Operations in complex-oriented cohomology theories related
+  to subgroups of formal groups}, ProQuest LLC, Ann Arbor, MI, 1992, Thesis
+  (Ph.D.)--Massachusetts Institute of Technology. \MR{2716371}
+
+\bibitem[And95]{andoduke}
+\bysame, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MR{1344767 (97a:55006)}
+
+\bibitem[And00]{andotrans}
+\bysame, \emph{Power operations in elliptic cohomology and representations of
+  loop groups}, Trans. Amer. Math. Soc. \textbf{352} (2000), no.~12,
+  5619--5666. \MR{1637129 (2001b:55016)}
+
+\bibitem[Ati66]{atiyah}
+M.~F. Atiyah, \emph{Power operations in {$K$}-theory}, Quart. J. Math. Oxford
+  Ser. (2) \textbf{17} (1966), 165--193. \MR{0202130 (34 \#2004)}
+
+\bibitem[Bau]{bauer}
+Tilman Bauer, \emph{Formal plethories}, preprint, available at
+  \href{http://arxiv.org/abs/1107.5745}{arXiv:1107.5745}.
+
+\bibitem[Beh]{behrenslec}
+Mark Behrens, \emph{Exotic spheres and topological modular forms}, talk on
+  joint work with Mike Hill, Mike Hopkins, and Mark Mahowald, available at
+  \href{http://www.ima.umn.edu/videos/index.php?id=1789}{http://www.ima.umn.ed%
+u/videos/index.php?id=1789}.
+
+\bibitem[Beh06]{behrens}
+\bysame, \emph{A modular description of the {$K(2)$}-local sphere at the prime
+  3}, Topology \textbf{45} (2006), no.~2, 343--402. \MR{2193339 (2006i:55016)}
+
+\bibitem[BM82]{bullettmacdonald}
+S.~R. Bullett and I.~G. Macdonald, \emph{On the {A}dem relations}, Topology
+  \textbf{21} (1982), no.~3, 329--332. \MR{649764 (83h:55035)}
+
+\bibitem[BMMS86]{H_infty}
+R.~R. Bruner, J.~P. May, J.~E. McClure, and M.~Steinberger, \emph{{$H\sb \infty
+  $} ring spectra and their applications}, Lecture Notes in Mathematics, vol.
+  1176, Springer-Verlag, Berlin, 1986. \MR{836132 (88e:55001)}
+
+\bibitem[BO]{behrensormsby}
+Mark Behrens and Kyle Ormsby, \emph{On the homotopy of ${Q}(3)$ and ${Q}(5)$ at
+  the prime 2}, preprint, available at
+  \href{http://arxiv.org/abs/1211.0076}{arXiv:1211.0076}.
+
+\bibitem[BW05]{BW}
+James Borger and Ben Wieland, \emph{Plethystic algebra}, Adv. Math.
+  \textbf{194} (2005), no.~2, 246--283. \MR{2139914 (2006i:13044)}
+
+\bibitem[Dav11]{davis}
+Donald~M. Davis, \emph{Some new nonimmersion results for real projective
+  spaces}, Bol. Soc. Mat. Mexicana (3) \textbf{17} (2011), no.~2, 159--166.
+  \MR{2986078}
+
+\bibitem[Gan]{ganterTate}
+Nora Ganter, \emph{Stringy power operations in {T}ate ${K}$-theory}, preprint,
+  available at \href{http://arxiv.org/abs/math/0701565}{arXiv:0701565}.
+
+\bibitem[Gan06]{ganter}
+\bysame, \emph{Orbifold genera, product formulas and power operations}, Adv.
+  Math. \textbf{205} (2006), no.~1, 84--133. \MR{2254309 (2007e:55003)}
+
+\bibitem[Gre88]{blind}
+J.~P.~C. Greenlees, \emph{How blind is your favourite cohomology theory?},
+  Exposition. Math. \textbf{6} (1988), no.~3, 193--208. \MR{949783 (89j:55001)}
+
+\bibitem[Haz78]{FG}
+Michiel Hazewinkel, \emph{Formal groups and applications}, Pure and Applied
+  Mathematics, vol.~78, Academic Press Inc. [Harcourt Brace Jovanovich
+  Publishers], New York, 1978. \MR{506881 (82a:14020)}
+
+\bibitem[HM]{hopkinsmahowald}
+Mike Hopkins and Mark Mahowald, \emph{From elliptic curves to homotopy theory},
+  preprint, available at
+  \href{http://hopf.math.purdue.edu//Hopkins-Mahowald/eo2homotopy.pdf}{http://%
+hopf.math.purdue.edu//Hopkins-Mahowald/eo2homotopy.pdf}.
+
+\bibitem[Hop]{hopkins}
+M.~J. Hopkins, \emph{{$K(1)$}-local {$E\sb \infty $} ring spectra}, unpublished
+  notes, available at
+  \href{http://www.math.rochester.edu/people/faculty/doug/otherpapers/knlocal.%
+pdf}{http://www.math.rochester.edu/people/faculty/doug/otherpapers/knlocal.pdf%
+}.
+
+\bibitem[KM85]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MR{772569 (86i:11024)}
+
+\bibitem[Koh96]{kohel}
+David~Russell Kohel, \emph{Endomorphism rings of elliptic curves over finite
+  fields}, ProQuest LLC, Ann Arbor, MI, 1996, Thesis (Ph.D.)--University of
+  California, Berkeley. \MR{2695524}
+
+\bibitem[Law09]{tafoverview}
+Tyler Lawson, \emph{An overview of abelian varieties in homotopy theory}, New
+  topological contexts for {G}alois theory and algebraic geometry ({BIRS}
+  2008), Geom. Topol. Monogr., vol.~16, Geom. Topol. Publ., Coventry, 2009,
+  pp.~179--214. \MR{2544390 (2010i:55006)}
+
+\bibitem[Laz75]{lazard}
+Michel Lazard, \emph{Commutative formal groups}, Lecture Notes in Mathematics,
+  Vol. 443, Springer-Verlag, Berlin, 1975. \MR{0393050 (52 \#13861)}
+
+\bibitem[LN12]{level3}
+Tyler Lawson and Niko Naumann, \emph{Commutativity conditions for truncated
+  {B}rown-{P}eterson spectra of height 2}, J. Topol. \textbf{5} (2012), no.~1,
+  137--168. \MR{2897051}
+
+\bibitem[Lur09]{survey}
+J.~Lurie, \emph{A survey of elliptic cohomology}, Algebraic topology, Abel
+  Symp., vol.~4, Springer, Berlin, 2009, pp.~219--277. \MR{2597740
+  (2011f:55009)}
+
+\bibitem[McC83]{mcclure}
+James~E. McClure, \emph{Dyer-{L}ashof operations in {$K$}-theory}, Bull. Amer.
+  Math. Soc. (N.S.) \textbf{8} (1983), no.~1, 67--72. \MR{682824 (84e:55014)}
+
+\bibitem[Mil58]{milnor}
+John Milnor, \emph{The {S}teenrod algebra and its dual}, Ann. of Math. (2)
+  \textbf{67} (1958), 150--171. \MR{0099653 (20 \#6092)}
+
+\bibitem[Mor89]{morava}
+Jack Morava, \emph{Forms of {$K$}-theory}, Math. Z. \textbf{201} (1989), no.~3,
+  401--428. \MR{999737 (90e:55011)}
+
+\bibitem[MR09]{tmf3}
+Mark Mahowald and Charles Rezk, \emph{Topological modular forms of level 3},
+  Pure Appl. Math. Q. \textbf{5} (2009), no.~2, Special Issue: In honor of
+  Friedrich Hirzebruch. Part 1, 853--872. \MR{2508904 (2010g:55010)}
+
+\bibitem[Pea]{pearson}
+Paul Pearson, \emph{Calculating formal group laws}, unpublished notes,
+  available at
+  \href{http://www.math.rochester.edu/people/faculty/pearson/papers/fgls-2up.p%
+df}{http://www.math.rochester.edu/people/faculty/pearson/papers/fgls-2up.pdf}.
+
+\bibitem[Qui69]{quillenfgl}
+Daniel Quillen, \emph{On the formal group laws of unoriented and complex
+  cobordism theory}, Bull. Amer. Math. Soc. \textbf{75} (1969), 1293--1298.
+  \MR{0253350 (40 \#6565)}
+
+\bibitem[Qui71]{quillenmu}
+\bysame, \emph{Elementary proofs of some results of cobordism theory using
+  {S}teenrod operations}, Advances in Math. \textbf{7} (1971), 29--56 (1971).
+  \MR{0290382 (44 \#7566)}
+
+\bibitem[Rav92]{orange}
+Douglas~C. Ravenel, \emph{Nilpotence and periodicity in stable homotopy
+  theory}, Annals of Mathematics Studies, vol. 128, Princeton University Press,
+  Princeton, NJ, 1992, Appendix C by Jeff Smith. \MR{1192553 (94b:55015)}
+
+\bibitem[Rez]{h2p2}
+Charles Rezk, \emph{Power operations for {M}orava ${E}$-theory of height 2 at
+  the prime 2}, preprint, available at
+  \href{http://arxiv.org/abs/0812.1320}{arXiv:0812.1320}.
+
+\bibitem[Rez06]{rezklog}
+\bysame, \emph{The units of a ring spectrum and a logarithmic cohomology
+  operation}, J. Amer. Math. Soc. \textbf{19} (2006), no.~4, 969--1014.
+  \MR{2219307 (2007h:55006)}
+
+\bibitem[Rez09]{cong}
+\bysame, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MR{2591924 (2011e:55021)}
+
+\bibitem[Rez12]{mc1}
+\bysame, \emph{Modular isogeny complexes}, Algebr. Geom. Topol. \textbf{12}
+  (2012), no.~3, 1373--1403. \MR{2966690}
+
+\bibitem[Ser53]{serre}
+Jean-Pierre Serre, \emph{Cohomologie modulo {$2$} des complexes
+  d'{E}ilenberg-{M}ac{L}ane}, Comment. Math. Helv. \textbf{27} (1953),
+  198--232. \MR{0060234 (15,643c)}
+
+\bibitem[Ste62]{steenrod}
+N.~E. Steenrod, \emph{Cohomology operations}, Lectures by N. E. Steenrod
+  written and revised by D. B. A. Epstein. Annals of Mathematics Studies, No.
+  50, Princeton University Press, Princeton, N.J., 1962. \MR{0145525 (26
+  \#3056)}
+
+\bibitem[Str98]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MR{1607736 (99e:55008)}
+
+\bibitem[SW51]{steenrodwhitehead}
+N.~E. Steenrod and J.~H.~C. Whitehead, \emph{Vector fields on the
+  {$n$}-sphere}, Proc. Nat. Acad. Sci. U. S. A. \textbf{37} (1951), 58--63.
+  \MR{0041436 (12,847c)}
+
+\bibitem[SW09]{staceywhitehouse}
+Andrew Stacey and Sarah Whitehouse, \emph{The hunting of the {H}opf ring},
+  Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 75--132. \MR{2559638
+  (2011d:55034)}
+
+\bibitem[tD68]{tomdieck}
+Tammo tom Dieck, \emph{Steenrod-{O}perationen in {K}obordismen-{T}heorien},
+  Math. Z. \textbf{107} (1968), 380--401. \MR{0244989 (39 \#6302)}
+
+\bibitem[V{\'e}l71]{velu}
+Jacques V{\'e}lu, \emph{Isog\'enies entre courbes elliptiques}, C. R. Acad.
+  Sci. Paris S\'er. A-B \textbf{273} (1971), A238--A241. \MR{0294345 (45
+  \#3414)}
+
+\bibitem[Voe03]{V}
+Vladimir Voevodsky, \emph{Reduced power operations in motivic cohomology},
+  Publ. Math. Inst. Hautes \'Etudes Sci. (2003), no.~98, 1--57. \MR{2031198
+  (2005b:14038a)}
+
+\bibitem[Wil82]{wilkerson}
+Clarence Wilkerson, \emph{Lambda-rings, binomial domains, and vector bundles
+  over {${\bf C}P(\infty )$}}, Comm. Algebra \textbf{10} (1982), no.~3,
+  311--328. \MR{651605 (83f:55003)}
+
+\bibitem[Zhu]{p3}
+Yifei Zhu, \emph{The power operation structure on {M}orava ${E}$-theory of
+  height 2 at the prime 3}, to appear in Algebraic and Geometric Topology,
+  preprint available at \href{http://arxiv.org/abs/1210.3730}{arXiv:1210.3730}.
+
+\end{thebibliography}
