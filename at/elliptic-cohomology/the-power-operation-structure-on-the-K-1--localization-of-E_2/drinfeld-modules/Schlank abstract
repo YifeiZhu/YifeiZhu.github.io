@@ -1,0 +1,30 @@
+Speaker: Tomer Schlank (Hebrew University)
+Pretalk: 1:30 pm
+Talk: 4:30 pm
+Title: Ultra-Products and Chromatic Homotopy Theory.
+Abstract: Let $C_{p,n}$ be the $K(n)$-local category at height $n$ and
+prime $p$. These categories are of great interest to the stable homotopy
+theorist since they serve as a the “associated  graded” pieces of the
+chromatic filtration on the category of spectra. It is a well known
+observation that for a given height $n$ certain “special” phenomena happen
+only for small enough primes. Further, in some sense, the categories
+$C_{p,n}$ become more regular and algebraic as $p$ goes to infinity for a
+fixed $n$. The goal of this talk is to make this intuition precise.
+
+Given an infinite sequence of mathematical structures, logicians have a
+method to construct a limiting one by using “ultra-products”. We shall
+define a notion of “ultra-product of categories” and then describe a
+collection of categories $D_{n,p}$ which will serve as algebro-geometric
+analogs of the $K(n)$-local category at the prime $p$.
+
+Then for a  fixed height $n$ we prove:
+
+$$\prod_p^{\mathrm{Ultra}} C_{n,p}  \cong \prod_p^{\mathrm{Ultra}}
+D_{n,p}.$$
+
+If time permits we shall describe our ongoing attempts to use these methods
+to get a version of the $K(n)$-local category corresponding to formal
+Drinfeld modules (instead of formal groups).
+
+This is a joint project with N. Stapleton and T. Barthel.
+
