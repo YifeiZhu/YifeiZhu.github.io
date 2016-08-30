@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: draft.aux
+The style file: amsalpha.bst
+Database file #1: me.bib
+Warning--I didn't find a database entry for "LubinTate"
+Warning--missing note in Milne
+Warning--missing note in ho
+You've used 17 entries,
+            2624 wiz_defined-function locations,
+            700 strings with 6921 characters,
+and the built_in function-call counts, 6180 in all, are:
+= -- 585
+> -- 161
+< -- 16
++ -- 50
+- -- 44
+* -- 552
+:= -- 949
+add.period$ -- 17
+call.type$ -- 17
+change.case$ -- 89
+chr.to.int$ -- 17
+cite$ -- 19
+duplicate$ -- 263
+empty$ -- 539
+format.name$ -- 76
+if$ -- 1243
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 35
+newline$ -- 62
+num.names$ -- 50
+pop$ -- 79
+preamble$ -- 2
+purify$ -- 105
+quote$ -- 0
+skip$ -- 176
+stack$ -- 0
+substring$ -- 547
+swap$ -- 42
+text.length$ -- 16
+text.prefix$ -- 15
+top$ -- 0
+type$ -- 124
+warning$ -- 2
+while$ -- 60
+width$ -- 21
+write$ -- 206
+(There were 3 warnings)

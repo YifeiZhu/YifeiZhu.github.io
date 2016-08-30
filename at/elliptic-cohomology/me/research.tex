@@ -1,0 +1,733 @@
+\documentclass{rs}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[all]{xy}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tensor}
+%/home/grad/zyf/TeX/inputs/
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usetikzlibrary{arrows}
+%\usepackage{amsrefs}
+%\usepackage{setspace}
+%\doublespacing
+
+\title{Research statement}
+\author{Yifei Zhu}
+\givenname{Yifei}
+\surname{Zhu}
+%\address{Department of Mathematics\\University of Minnesota\\
+%         Minneapolis, MN 55455\\USA}
+%\email{zyf@math.umn.edu}
+
+%\subject{primary}{msc2000}{55P99}
+%\subject{secondary}{msc2000}{55Q99}
+
+%\bibliographystyle{gtart}
+\parskip 0.7pc
+\parindent 0pt
+
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{prop}[equation]{Proposition}
+\newtheorem{lem}[equation]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{cstr}[equation]{Construction}
+\theoremstyle{remark}
+\newtheorem{rmk}[equation]{Remark}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{case}[equation]{Case}
+\newtheorem{slogan}[equation]{Slogan}
+\newtheorem{ques}[equation]{Question}
+
+\def\co{\colon\thinspace}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\Hom}{\ensuremath{{\rm Hom}}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\LT}{{\rm LT}}
+\newcommand{\Spec}{{\rm Spec\thinspace}}
+\newcommand{\Proj}{{\rm Proj\thinspace}}
+\newcommand{\Spf}{{\rm Spf\thinspace}}
+\newcommand{\Ell}{{\rm Ell}}
+\newcommand{\Sch}{{\rm Sch}}
+\newcommand{\cF}{\overline {\mb F}}
+\newcommand{\ck}{\overline k}
+\newcommand{\CA}{{\cal A}}
+\newcommand{\CB}{{\cal B}}
+\newcommand{\CC}{{\cal C}}
+\newcommand{\CE}{{\cal E}}
+\newcommand{\CF}{{\cal F}}
+\newcommand{\CG}{{\cal G}}
+\newcommand{\CH}{{\cal H}}
+\newcommand{\CHom}{{\cal H}om}
+\newcommand{\CLie}{{\cal L}ie}
+\newcommand{\CM}{{\cal M}}
+\newcommand{\CO}{{\cal O}}
+\newcommand{\CP}{{\cal P}}
+\newcommand{\CS}{{\cal S}}
+\newcommand{\Mod}{{\rm Mod}}
+\newcommand{\Alg}{{\rm Alg}}
+\newcommand{\dl}{{\rm DL}}
+\newcommand{\Set}{{\rm Set}}
+\newcommand{\Sq}{{\rm Sq}}
+\newcommand{\Sub}{{\rm Sub}}
+\newcommand{\Frob}{{\rm Frob}}
+\renewcommand{\gcd}{{\rm gcd}}
+\newcommand{\cmp}{{\rm cmp}}
+\newcommand{\DF}{{{\rm DefFrob}_\BG}}
+\newcommand{\Model}{{\rm Model}}
+\newcommand{\HGa}{{\widehat{\mb G}_a}}
+\newcommand{\HGm}{{\widehat{\mb G}_m}}
+\newcommand{\Gm}{{{\mb G}_m}}
+\newcommand{\DL}{Dyer-Lashof~}
+\newcommand{\EM}{Eilenberg-Mac~Lane~}
+\newcommand{\BC}{{\mb C}}
+\newcommand{\BE}{{\mb E}}
+\newcommand{\BF}{{\mb F}}
+\newcommand{\BG}{{\mb G}}
+\newcommand{\BN}{{\mb N}}
+\newcommand{\BP}{{\mb P}}
+\newcommand{\BQ}{{\mb Q}}
+\newcommand{\BR}{{\mb R}}
+\newcommand{\BW}{{\mb W}}
+\newcommand{\BZ}{{\mb Z}}
+\newcommand{\fm}{{\mf m}}
+\newcommand{\HC}{\widehat{C~}\!}
+\newcommand{\HE}{\widehat{E~}\!}
+\newcommand{\Hf}{\widehat{f}}
+\newcommand{\Hphi}{\widehat{\phi}}
+\newcommand{\Hpsi}{\widehat{\psi}}
+\newcommand{\HS}{\widehat{S~}\!}
+\newcommand{\TA}{\tilde{\A}}
+\newcommand{\Tc}{\tilde{c}}
+\newcommand{\TE}{\widetilde{E\thinspace}\!}
+\newcommand{\Tf}{\widetilde{f}}
+\newcommand{\Tp}{\widetilde{\psi}}
+\newcommand{\TW}{\widetilde{W\thinspace}\!}
+\newcommand{\tj}{\widetilde{j}}
+\newcommand{\md}{~~{\rm mod}~}
+\newcommand{\ad}{{\rm and}}
+\newcommand{\DR}{{\scriptscriptstyle \rm DR}}
+\newcommand{\HT}{{\rm ht}}
+\newcommand{\id}{{\rm id}}
+\newcommand{\op}{{\rm op}}
+\newcommand{\pt}{{\rm point}}
+\newcommand{\tf}{{\rm tf}}
+\newcommand{\TMF}{{\rm TMF}}
+\newcommand{\MF}{{\rm MF}}
+\newcommand{\tr}{{\rm trace}}
+\newcommand{\univ}{{\rm univ}}
+\newcommand{\Ext}{{\rm Ext}}
+\newcommand{\Tor}{{\rm Tor}}
+\newcommand{\nul}{{\rm nul}}
+\newcommand{\A}{\alpha}
+\newcommand{\B}{\beta}
+\renewcommand{\D}{\Delta}
+\renewcommand{\d}{\delta}
+\newcommand{\f}{\phi}
+\newcommand{\G}{\Gamma}
+\newcommand{\g}{\gamma}
+\newcommand{\K}{\kappa}
+\renewcommand{\l}{\lambda}
+\newcommand{\si}{\sigma}
+\newcommand{\T}{\tau}
+\newcommand{\om}{\underline{\omega\!}_{~E/S}}
+\newcommand{\p}{\psi^3}
+\newcommand{\s}{S^\bullet}
+\newcommand{\ce}{\coloneqq}
+\newcommand{\lb}{\llbracket}
+\newcommand{\rb}{\rrbracket}
+\newcommand{\lp}{(\!(}
+\newcommand{\rp}{)\!)}
+\newcommand{\Ht}{\widehat{T}}
+\newcommand{\Tt}{\widetilde{T}}
+\newcommand{\mt}{\widetilde{m}}
+\newcommand{\lt}{\widetilde{\lambda}}
+\newcommand{\todo}{\spadesuit}
+\newcommand{\totodo}{\heartsuit}
+\renewcommand{\=}{\approx}
+\renewcommand{\-}{\sim}
+\newcommand{\isog}[1]{Proposition \ref{prop:isog}\thinspace \eqref{isog(#1)}}
+\newcommand{\q}[1]{Proposition \ref{prop:Q}\thinspace \eqref{Q(#1)}}
+\newcommand{\go}[1]{Definition \ref{def:go}\thinspace \eqref{go(#1)}}
+\newcommand{\rd}[1]{{\textcolor{red}{#1}}}
+\newcommand{\bl}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\wt}[1]{\textcolor{white}{#1} \!~}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\SL}{{\rm SL}}
+\newcommand{\Tate}{{\rm Tate}}
+\renewcommand{\c}[2]{{#1 \choose #2}}
+
+\makeatletter
+\DeclareRobustCommand\widecheck[1]{{\mathpalette\@widecheck{#1}}}
+\def\@widecheck#1#2{%
+    \setbox\z@\hbox{\m@th$#1#2$}%
+    \setbox\tw@\hbox{\m@th$#1%
+       \widehat{%
+          \vrule\@width\z@\@height\ht\z@
+          \vrule\@height\z@\@width\wd\z@}$}%
+    \dp\tw@-\ht\z@
+    \@tempdima\ht\z@ \advance\@tempdima2\ht\tw@ \divide\@tempdima\thr@@
+    \setbox\tw@\hbox{%
+       \raise\@tempdima\hbox{\scalebox{1}[-1]{\lower\@tempdima\box
+\tw@}}}%
+    {\ooalign{\box\tw@ \cr \box\z@}}}
+\makeatother
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+
+\begin{document}
+
+% \begin{abstract}
+%  A research statement outlines your current research and your future plans.  
+%  It should be relatively short, with some background material that can be 
+%  understood by a general mathematician but including some specific statements 
+%  about your current and future plans.  Try to be concrete.  
+% \end{abstract}
+\maketitle
+
+Algebraic topologists attach algebraic structures, such as groups, rings, and 
+categories, to geometric objects, such as manifolds, simplicial complexes, and 
+even big data sets.  In homotopy theory, the main goal is to study 
+{\em invariants} of geometric objects under ``homotopy'' transformations.  This 
+type of transformations usually turns out to provide the ``right'' criterion, 
+neither too rigid nor too loose, for gaining useful insights to how these 
+objects look and behave.  
+
+Effective {\em calculational} tools with the associated algebraic structures 
+give homotopy theory its unique flavor.  The main players in realizing this 
+process are the various ``cohomology theories,'' each a systematic way of 
+attaching specific algebraic structures to geometric objects, and each 
+successfully capturing some aspects of the objects in question, while being 
+blind to some others \cite{blind}.  A local-to-global property, manifested by 
+Mayer-Vietoris sequences, makes cohomology theories particularly amenable to 
+computations.  
+
+The study of Morava $E$-theories is like a raindrop in which all of modern 
+homotopy theory is reflected.  These cohomology theories are prominent players 
+promoted by the ``chromatic viewpoint''---a deep and fruitful relationship 
+between homotopy theory and the theory of one-dimensional formal groups that has 
+been steadily developing and pervading the field since Quillen's work on complex 
+cobordism \cite{Quillen}.  This approach brings homotopy theorists a 
+``chromatic'' view (and soundscape) of the stable homotopy category, by 
+filtering cohomology theories through heights and primes according to their 
+corresponding formal groups.  The family of Morava $E$-theories determines this 
+chromatic filtration via Bousfield localizations \cite{Ravenel}.  
+
+Hendrik Lenstra and Peter Stevenhagen wrote that ``nothing can match the clarity 
+of a formula when it comes to conveying a mathematical truth.''\footnote{From 
+their book review of {\em Solving the Pell equation}, Bull. Amer. Math. Soc. 
+(N.S.) \textbf{52} (2015), no.~2, 345--351.}  To understand $E$-theories in the 
+specific case of height 2, our research has been centering on calculations with 
+their ``power operations.''  These can be viewed as algebraic structures of the 
+algebraic structures attached to geometric objects.  They impose restrictions 
+and refinements to the algebraic structures carried by cohomology theories, so 
+as to enhance their ability to recognize and distinguish the subtleties between 
+geometric objects, making those players clear-sighted.  
+
+For $E$-theories at height 2, contacts with algebraic geometry and number 
+theory, particularly through the arithmetic moduli of elliptic curves, avail 
+homotopy theorists effective tools to carry out explicit calculations.  In terms 
+of formulas for power operations, this approach imposes vastly more intricate 
+data from arithmetic.  The goal is to make the cohomology theories more 
+sensitive and powerful in studying geometric questions, with a potential to 
+witness the deep interplay between numbers and spaces.  
+
+We give an outline of our current research and future plans, with an emphasis on 
+some specific aspects where algebraic topology, algebraic geometry, and number 
+theory interact.  
+
+
+
+\section{Elliptic curves: power operation structures at small primes}
+\label{sec:p3}
+
+Cohomology operations have been a calculational tool central to algebraic 
+topology.  A classical example that has been extensively studied and widely 
+applied is the Steenrod operations in ordinary cohomology with 
+$\BZ/p$-coefficients.  When $p = 2$, for all integers $i \geq 0$ and $n \geq 0$, 
+each Steenrod square takes the form 
+$\Sq^i \co H^n(X;\,\BZ/2) \to H^{n + i}(X;\,\BZ/2)$, natural in spaces $X$.  
+Together they generate the mod-$2$ Steenrod algebra subject to a set of axioms, 
+among which, notably, the Adem relations 
+\[
+ \Sq^i\,\Sq^{\,j} = \sum_{k = 0}^{\left[\frac{i}{2}\right]} 
+                    \c{j - k - 1}{i - 2 k} \Sq^{i + j - k}\,\Sq^k 
+ \hskip 2cm 0 < i < 2\,j 
+\]
+In-depth study of the structure of the Steenrod algebra, and of analogous 
+structures for other cohomology theories such as $K$-theory and motivic 
+cohomology, has led to spectacular applications: Adams' solution to the problem 
+of counting vector fields on spheres \cite{Adams}, and Voevodsky's proof of the 
+Milnor conjecture \cite{V1, V2}, just to name two.  
+
+For a Morava $E$-theory, after the foundational work of Ando \cite{Ando95}, 
+Strickland \cite{Str97, Str98}, and Ando-Hopkins-Strickland \cite{AHS04}, Rezk 
+computed the first example of an explicit presentation for its algebra of power 
+operations, in the case of height 2 at the prime 2 \cite{h2p2}.  This algebra is 
+generated over $E^0(\pt) \cong \BW\big(\cF_2\big)\lb h \rb$ by operations 
+$Q_i \co E^0(X) \to E^0(X)$, $0 \leq i \leq 2$, which, in particular, satisfy 
+``Adem relations'' 
+\[
+  Q_1 Q_0 = 2 Q_2 Q_1 - 2 Q_0 Q_2 \qquad \ad \qquad 
+  Q_2 Q_0 = Q_0 Q_1 + h Q_0 Q_2 - 2 Q_1 Q_2 
+\]
+Unlike their classical analogue, these formulas are computed from a specific 
+moduli space of the universal formal deformation of a supersingular elliptic 
+curve over $\cF_2$.  Here, bridging algebraic topology and algebraic geometry 
+are the work of Ando, Hopkins, Strickland, and Rezk \cite{AHS04, cong} and the 
+theorem of Serre and Tate \cite{LST}.  
+
+We systematically studied and generalized Rezk's methods, and have obtained 
+analogous results for $E$-theories at the primes 3 and 5.  
+
+\begin{thm}[{\cite[Corollary 2.6 and Definition 3.8]{p3}, 
+             \cite[Examples 3.4 and 6.1]{ho}}]
+ \label{thm:p3}
+ \mbox{}\\
+ Let $E$ be a Morava $E$-theory spectrum of height $2$ at the prime $p$.  There 
+ is a total power operation 
+ \[
+  \begin{split}
+           \psi^p \co E^0(\pt) \to & ~ E^0(B\Sigma_p) / I \\
+   \BW\big(\cF_p\big)\lb h \rb \to & ~ \BW\big(\cF_p\big)\lb h,\A \rb 
+                                     / \big( w(h,\A) \big) 
+  \end{split}
+ \]
+ where $I$ is an ideal of transfers.  
+
+ \begin{enumerate}[{\em (i)}]
+  \item When $p = 3$, we have $w(h,\A) = \A^4 - 6 \A^2 + (h - 9) \A - 3$ and 
+  \[
+   \psi^3(h) = h^3 - 27 h^2 + 201 h - 342 + (-6 h^2 + 108 h - 334) \A 
+             + (3 h - 27) \A^2 + (h^2 - 18 h + 57) \A^3 
+  \]
+
+  \item When $p = 5$, we obtain analogous (but admittedly less readable) 
+  formulas.  
+
+  \item These lead to presentations for the respective algebra of power 
+  operations on $K(2)$-local commutative $E$-algebra spectra, in terms of 
+  explicit generators and quadratic relations.  
+ \end{enumerate}
+\end{thm}
+
+\begin{ques}
+ \label{q:dl}
+ Is there a presentation that applies to {\em all} primes for the algebra of 
+ power operations in a Morava $E$-theory at height 2?  
+\end{ques}
+
+Rezk gave such a uniform presentation, {\em modulo p}, in \cite{mc1}, which 
+relies on explicit formulas for the mod-$p$ reduction of a certain moduli space 
+of elliptic curves from \cite{KM}.  {\em Integrally}, we will provide an answer 
+in Theorem \ref{cor} below.  
+
+We should emphasize that the arithmetic data extracted from the particular 
+moduli of elliptic curves cannot be homotopy-theoretically meaningful without 
+the aforementioned deep theorems of Ando-Hopkins-Strickland, of Rezk, and of 
+Serre-Tate.  In the program of understanding higher chromatic levels, these 
+{\em computational} experiments supply tangible raw materials to studying 
+{\em structural} properties of the stable homotopy category.  Below are some 
+directions that we have investigated and plan to explore further in.  
+
+\begin{enumerate}[(i)]
+ \item Rezk shows that the algebra of power operations for a Morava $E$-theory 
+ is ``Koszul'' at all heights and primes \cite{Koszul, mc1}.  For height 2 and 
+ small primes, the power operation formulas give rise to explicit Koszul 
+ complexes.  More generally, the homological algebra of these Koszul complexes 
+ has been applied, e.g., to studying Bousfield-Kuhn functors and unstable 
+ periodic homotopy groups by Behrens and Rezk \cite{BKTAQ}.  
+
+ \item The power operations at height 2 ``descend'' to height 1 via a 
+ $K(1)$-localization \cite[Section 4]{p3}.  At small primes, we observe that the 
+ resulting formulas match up numerically to the rings studied by Lubin which 
+ parametrize ``canonical'' subgroups of formal groups \cite{can}.  These rings 
+ can be explicitly determined, one for each height and prime.  The patterns 
+ re-occur in our study of Rezk's logarithms (see Section \ref{sec:ho} below).  
+ These suggest a more precise relationship between the first and second 
+ chromatic layers from the perspective of power operations and subgroups of 
+ formal groups.  
+
+ \item Again, at height 2, the explicit formulas have led to a partial 
+ understanding of the ``center'' for the algebra of power operations in an 
+ $E$-theory \cite[Theorem 6.8]{ho}.  This is related to the Hecke operators that 
+ we discuss next.  
+\end{enumerate}
+
+
+
+\section{Modular forms: Hecke operators and Rezk's logarithms}
+\label{sec:ho}
+
+In \cite{log}, using Bousfield-Kuhn functors, Rezk constructed ``logarithmic'' 
+cohomology operations that naturally act on the units of any strictly 
+commutative ring spectrum.  In particular, given a Morava $E$-theory spectrum 
+$E$ of height $n$ at the prime $p$, he wrote down a formula for its 
+``logarithm'' $\ell_{n,\,p} \co E^0(X)^\times \to E^0(X)$ in terms of its power 
+operations $\psi_A$ \cite[Theorem 1.11]{log} and he interpreted this formula in 
+terms of certain ``Hecke operators'' $T_{j,\,p}$ as follows: 
+\begin{equation}
+ \label{log}
+ \begin{split}
+  \ell_{n,\,p}(x) = & ~ \frac{1}{p} \log\Bigg( \prod_{j = 0}^n ~ 
+                        \prod_{\stackrel{\scriptstyle 
+                        A\,\subset\,(\BQ_p/\BZ_p)^n [p]}{|A| = p^{\,j}}} 
+                        \psi_A(x)^{(-1)^{\,j} p^{(\,j - 1) (\,j - 2) / 2}} 
+                        \Bigg) \\
+                  = & ~ \sum_{j = 0}^n (-1)^{\,j} \, p^{\,j \, (\,j - 1) / 2} \, 
+                        T_{j,\,p} (\log x) 
+ \end{split}
+\end{equation}
+
+These Hecke operators are cohomology operations constructed from power 
+operations that were known to act on the $E$-cohomology of a space 
+\cite{Ando95}.  Based on explicit calculations and a particular choice of 
+parameters in the case of height 2, we revisited these operators to make a 
+precise connection with Hecke operators acting on modular forms.  In particular, 
+we obtained the following.  
+
+\begin{thm}[{\cite[Proposition 2.8 and Theorem 4.13]{ho}}]
+ \label{thm:ho}
+ Let $E$ be a Morava $E$-theory spectrum of height $2$ at the prime $p$, and let 
+ $N > 3$ be any integer prime to $p$.  
+ \begin{enumerate}[{\em (i)}]
+  \item There is a ring homomorphism 
+  $\B_N^{(p)} \co \MF\big(\G_1(N)\big) \to E^0(\pt)$, where 
+  $\MF\big(\G_1(N)\big)$ is the graded ring of weakly holomorphic modular forms 
+  on $\G_1(N)$.  
+
+  \item Given $f \in \MF\big(\G_1(N)\big)^{\!\times}$ with trivial Nebentypus, 
+  if its Serre derivative $\vartheta \, f = 0$, then $\B_N^{(p)}(\,f)$ is 
+  contained in the kernel of the logarithmic operation 
+  $\ell_{2,\,p} \co E^0(\pt)^\times \to E^0(\pt)$.  
+ \end{enumerate}
+\end{thm}
+
+The logarithms in $E$-theories at height 2 are critical in the work of Ando, 
+Hopkins, and Rezk on rigidification of the string-bordism elliptic genus 
+\cite[Theorem 12.3]{koandtmf}.  Roughly, in their setting, the kernel of a 
+logarithm contains the desired genera, which they identified with certain 
+Eisenstein series.  
+
+\begin{ques}
+ With our result in Theorem \ref{thm:ho} about the kernel of a logarithmic 
+ operation, can we develop an analysis of $E_\infty$-orientations analogous to 
+ the work of Ando, Hopkins, and Rezk?  
+\end{ques}
+
+The logarithm of a meromorphic modular form (on which Hecke operators act) 
+appears in Rezk's formula \eqref{log}.  Serre's differential operator 
+$\vartheta$ appears in Theorem \ref{thm:ho}.  In view of these, we ask the 
+following.  
+
+\begin{ques}
+ Do these specific pieces of number theory enter homotopy theory in a 
+ {\em structural} way?  For example, do Rezk's logarithmic operations bring in a 
+ wider class of automorphic functions to homotopy theory?  What is present at 
+ chromatic level higher than 2?  
+\end{ques}
+
+In \cite[Section 5]{ho}, we have started investigating certain aspects of the 
+aforementioned type of elliptic functions, not totally modular, in the framework 
+of ``logarithmic $q$-series'' originally studied by Knopp and Mason 
+\cite{KnoppMason}.  It has a curious relationship to mock modular forms 
+\cite[Remark 5.2]{ho}.  
+
+
+
+\section{Formal groups: modular equations for Lubin-Tate deformations}
+
+Classically, the Kronecker congruence 
+\[
+ \big(\,\tj - \,j^{\,p}\big) \,\! \big(\,\tj^{\,p} - \,j\,\big) \equiv 0 \md p 
+\]
+gives a (local) equation, reduced modulo $p$, for the curve that represents 
+$[\G_0(p)]$, the moduli problem of finite flat subgroup schemes of rank $p$ for 
+elliptic curves.  Indeed, this is precisely the formula that underlies Rezk's 
+uniform presentation for the mod-$p$ reduction of the power operation algebra 
+(see Section \ref{sec:p3}).  
+
+Strickland studied various moduli problems for formal groups of finite height 
+\cite{Str97} and he applied them to the study of power operations in Morava 
+$E$-theories \cite{Str98}.  At height 2, we have obtained an integral lift of 
+the Kronecker congruence above, in a different pair of parameters.  
+
+\begin{thm}[{\cite[Theorem 1.2]{me}}]
+ \label{thm:me}
+ Let $\BG_0$ be a formal group over $\cF_p$ of height $2$, and let $\BG$ be its 
+ universal deformation.  Write $A_m$ for the ring $\CO_{\Sub_m(\BG)}$ studied in 
+ \cite{Str97}, which classifies degree-$p^m$ subgroups of the formal group 
+ $\BG$.  In particular, write $A_0 \cong \BW\big(\cF_p\big)\lb h \rb$ according 
+ to the Lubin-Tate theorem \cite{LubinTate}.  
+
+ Then the ring $A_1 \cong \BW\big(\cF_p\big)\lb h, \A \rb / \big(w(h,\A)\big)$ 
+ is determined by the polynomial 
+ \begin{equation}
+  \label{w}
+  w(h,\A) = (\A - p) \big(\A + (-1)^{\,p}\big)^p 
+          - \big(h - p^2 + (-1)^{\,p}\big) \A 
+ \end{equation}
+ which reduces to $\A (\A^{\,p} - h)$ modulo $p$.  
+\end{thm}
+
+This gives an explicit description of $[\G_0(p)]$ at a supersingular point 
+(cf.~\cite[Section 7.7]{KM}).  It is {\em not} an equation for the modular curve 
+over $\Spec \BZ$, which, as hinted in \cite{RezkMSRI}, might connect to power 
+operations for a ``globally equivariant'' elliptic cohomology.  It would be 
+interesting to explore this local-global relationship, intertwined by the 
+actions of the Morava stabilizer groups and of the modular group, which unites 
+the chromatic and equivariant perspectives on homotopy theory.  We have started 
+investigating related functorial constructions, such as Witt ring schemes 
+\cite{FG}, plethories \cite{BorgerWieland}, and topological modular forms of 
+higher level \cite{logetaletmf}.  
+
+Put in the context of homotopy theory, Theorem \ref{thm:me} yields the following 
+answer to Question \ref{q:dl}.  
+
+\begin{thm}[{\cite[Theorems 1.6 and 1.7]{me}}]
+ \label{cor}
+ Continue with the notation in Theorem \ref{thm:p3}.  
+
+ \begin{enumerate}[{\em (i)}]
+  \item In the total power operation $\psi^p \co E^0(\pt) \to E^0(B\Sigma_p) / I 
+  \cong \BW\big(\cF_p\big)\lb h,\A \rb / \big( w(h,\A) \big)$, the polynomial 
+  \[
+   w(h,\A) = w_{p + 1} \A^{\,p + 1} + \cdots + w_1 \A + w_0 
+   \hskip 2cm w_i \in \BW\big(\cF_p\big)\lb h \rb 
+  \]
+  can be given as \eqref{w} from Theorem \ref{thm:me} above.  In particular, 
+  $w_{p + 1} = 1$, $w_1 = -h$, $w_0 = (-1)^{\,p + 1} p$, and the remaining 
+  coefficients 
+  \[
+   w_i = (-1)^{\,p\,(\,p - i + 1)} \left[ \c{p}{i - 1} + (-1)^{\,p + 1} \, p \, 
+         \c{\,p\,}{i} \right] 
+  \]
+
+  \item The image $\psi^p(h) = \sum_{i = 0}^p Q_i(h) \, \A^i$ is then given by 
+  \[
+   \psi^p(h) = \A + \sum_{i = 0}^p \A^i \sum_{\T = 1}^p w_{\T + 1} \, d_{i,\T} 
+  \]
+  where 
+  \[
+   d_{i,\T} = \sum_{n = 0}^{\T - 1} (-1)^{\T - n} \, w_0^n 
+              \sum_{\stackrel{\scriptstyle m_1 + \cdots + m_{\T - n} = \T + i} 
+              {1 \,\leq\, m_s \,\leq\, m_{s + 1} \,\leq\, p + 1}} w_{m_1} \cdots 
+              w_{m_{\T - n}} 
+  \]
+  In particular, $Q_0(h) \equiv h^{\,p} \md p$.  
+
+  \item These lead to a presentation for the algebra of power operations on 
+  $K(2)$-local commutative $E$-algebra spectra.  In particular, the generators 
+  $Q_i \co E^0(X) \to E^0(X)$ satisfy quadratic relations 
+  \[
+   Q_k Q_0 = -\sum_{j = 1}^{p - k} w_0^{\,j} \, Q_{k + j} Q_j - \sum_{j = 1}^p 
+             \sum_{i = 0}^{j - 1} w_0^i \, d_{k,\,j - i} \, Q_i Q_j 
+   \hskip 2cm 1 \leq k \leq p 
+  \]
+  where the first summation is vacuous if $k = p$.  
+ \end{enumerate}
+\end{thm}
+
+\begin{ques}
+ To study power operations in Morava $E$-theories at height greater than 2, can 
+ we generalize Theorem \ref{thm:me} for the ring $A_2$?  How to formulate this 
+ for $p$-divisible groups in general?  
+\end{ques}
+
+A difficulty for such a generalization lies in the current methods for proving 
+Theorem \ref{thm:me}: we argue with $q$-expansions of certain Hauptmoduln and 
+their Hecke translates, as in \cite[Example 2.4]{Choi} and 
+\cite[Section 1.11]{padicprop}, which are specific to heights 1 and 2.  
+Moreover, we are in much need of results from concrete ``computational 
+experiments'' at higher chromatic levels, indeed, at height 3 (see 
+\cite{prime2, picsurf}).  It would be interesting to work on this.  
+
+
+
+% \bibliographystyle{amsalpha}
+% \bibliography{me}
+% \end{document}
+
+\vspace{.3in}
+\renewcommand\refname{}
+\newcommand{\AX}[1]{\href{http://arxiv.org/abs/#1}{arXiv:#1}}
+\newcommand{\MRn}[2]{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR#1#2}}
+\wt{.}\vspace{-1.04in}
+\begin{thebibliography}
+
+\section*{\leftskip=-.44in References \vspace{.17in}}
+
+\bibitem[Adams1962]{Adams}
+J.~F. Adams, \emph{Vector fields on spheres}, Ann. of Math. (2) \textbf{75}
+  (1962), 603--632. \MRn{0139178}{(25 \#2614)}
+
+\bibitem[Ando1995]{Ando95}
+Matthew Ando, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MRn{1344767}{(97a:55006)}
+
+\bibitem[Ando-Hopkins-Rezk2010]{koandtmf}
+Matthew Ando, Michael~J. Hopkins, and Charles Rezk, \emph{Multiplicative
+  orientations of {$KO$}-theory and the spectrum of topological modular forms}, 
+  available at \\ \href{http://www.math.uiuc.edu/~mando/papers/koandtmf.pdf}
+  {http://www.math.uiuc.edu/\textasciitilde mando/papers/koandtmf.pdf}.
+
+\bibitem[Ando-Hopkins-Strickland2004]{AHS04}
+Matthew Ando, Michael~J. Hopkins, and Neil~P. Strickland, \emph{The sigma
+  orientation is an {$H\sb \infty$} map}, Amer. J. Math. \textbf{126} (2004),
+  no.~2, 247--334. \MRn{2045503}{(2005d:55009)}
+
+\bibitem[Behrens-Rezk2015]{BKTAQ}
+Mark Behrens, Charles Rezk, \emph{The Bousfield-Kuhn functor and topological 
+  Andr\'e-Quillen cohomology}, available at \,\!
+  \href{http://www3.nd.edu/~mbehren1/papers/BKTAQ6.pdf}
+  {http://www3.nd.edu/\textasciitilde mbehren1/papers/BKTAQ6.pdf}.
+
+\bibitem[Borger-Wieland2005]{BorgerWieland}
+James Borger and Ben Wieland, \emph{Plethystic algebra}, Adv. Math.
+  \textbf{194} (2005), no.~2, 246--283. \MRn{2139914}{(2006i:13044)}
+
+\bibitem[Choi2006]{Choi}
+D.~Choi, \emph{On values of a modular form on {$\Gamma\sb 0(N)$}}, Acta Arith.
+  \textbf{121} (2006), no.~4, 299--311. \MRn{2224397}{(2006m:11051)}
+
+\bibitem[Greenlees1988]{blind}
+J.~P.~C. Greenlees, \emph{How blind is your favourite cohomology theory?},
+  Exposition. Math. \textbf{6} (1988), no.~3, 193--208.
+  \MRn{949783}{(89j:55001)}
+
+\bibitem[Hazewinkel1978]{FG}
+Michiel Hazewinkel, \emph{Formal groups and applications}, Pure and Applied
+  Mathematics, vol.~78, Academic Press Inc. [Harcourt Brace Jovanovich
+  Publishers], New York, 1978. \MRn{506881}{(82a:14020)}
+
+\bibitem[Hill-Lawson2015]{logetaletmf}
+Michael Hill and Tyler Lawson, \emph{Topological modular forms with level
+  structure}. \AX{1312.7394}
+
+\bibitem[Katz1973]{padicprop}
+Nicholas~M. Katz, \emph{{$p$}-adic properties of modular schemes and modular
+  forms}, Modular functions of one variable, {III} ({P}roc. {I}nternat.
+  {S}ummer {S}chool, {U}niv. {A}ntwerp, {A}ntwerp, 1972), Springer, Berlin,
+  1973, pp.~69--190. Lecture Notes in Mathematics, Vol. 350. \MRn{0447119}{(56
+  \#5434)}
+
+\bibitem[Katz-Mazur1985]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MRn{772569}{(86i:11024)}
+
+\bibitem[Knopp-Mason2011]{KnoppMason}
+Marvin Knopp and Geoffrey Mason, \emph{Logarithmic vector-valued modular
+  forms}, Acta Arith. \textbf{147} (2011), no.~3, 261--262. 
+  \MRn{2773205}{(2012c:11094)}
+
+\bibitem[Lawson2015]{prime2}
+Tyler Lawson, \emph{The {S}himura curve of discriminant 15 and topological
+  automorphic forms}, Forum Math. Sigma \textbf{3} (2015), e3, 32.
+  \MRn{3324940}{}
+
+\bibitem[Lubin1979]{can}
+Jonathan Lubin, \emph{Canonical subgroups of formal groups}, Trans. Amer. Math.
+  Soc. \textbf{251} (1979), 103--127. \MRn{531971}{(80j:14039)}
+
+\bibitem[Lubin-Serre-Tate1964]{LST}
+J.~Lubin, J.-P. Serre, and J.~Tate, \emph{Elliptic curves and formal groups}, 
+  available at \\ \href{http://www.ma.utexas.edu/users/voloch/lst.html}
+  {http://www.ma.utexas.edu/users/voloch/lst.html}.
+
+\bibitem[Lubin-Tate1966]{LubinTate}
+Jonathan Lubin and John Tate, \emph{Formal moduli for one-parameter formal
+  {L}ie groups}, Bull. Soc. Math. France \textbf{94} (1966), 49--59.
+  \MRn{0238854}{(39 \#214)}
+
+\bibitem[Meier2014]{picsurf}
+Lennart Meier,
+  \emph{Concrete examples of Shimura surfaces}, MathOverflow, \\
+  \href{http://mathoverflow.net/q/188780}{http://mathoverflow.net/q/188780}
+ (version: 2014-12-03).
+
+\bibitem[Quillen1969]{Quillen}
+Daniel Quillen, \emph{On the formal group laws of unoriented and complex
+  cobordism theory}, Bull. Amer. Math. Soc. \textbf{75} (1969), 1293--1298.
+  \MRn{0253350}{(40 \#6565)}
+
+\bibitem[Ravenel1984]{Ravenel}
+Douglas~C. Ravenel, \emph{Localization with respect to certain periodic
+  homology theories}, Amer. J. Math. \textbf{106} (1984), no.~2, 351--414.
+  \MRn{737778}{(85k:55009)}
+
+\bibitem[Rezk2006]{log}
+Charles Rezk, \emph{The units of a ring spectrum and a logarithmic cohomology
+  operation}, J. Amer. Math. Soc. \textbf{19} (2006), no.~4, 969--1014.
+  \MRn{2219307}{(2007h:55006)}
+
+\bibitem[Rezk2008]{h2p2}
+Charles Rezk, \emph{Power operations for {M}orava {$E$}-theory of height 2 at 
+  the prime 2}. \AX{0812.1320}
+
+\bibitem[Rezk2009]{cong}
+Charles Rezk, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MRn{2591924}{(2011e:55021)}
+
+\bibitem[Rezk2012a]{mc1}
+Charles Rezk, \emph{Modular isogeny complexes}, Algebr. Geom. Topol. \textbf{12}
+  (2012), no.~3, 1373--1403. \MRn{2966690}{}
+
+\bibitem[Rezk2012b]{Koszul}
+Charles Rezk, \emph{Rings of power operations for {M}orava {$E$}-theories are
+  {K}oszul}. \AX{1204.4831}
+
+\bibitem[Rezk2014]{RezkMSRI}
+Charles Rezk, \emph{Calculations in multiplicative stable homotopy theory at
+  height 2}, available at \\
+  \href{http://www.msri.org/workshops/689/schedules/18240}
+  {http://www.msri.org/workshops/689/schedules/18240}.
+
+\bibitem[Strickland1997]{Str97}
+Neil~P. Strickland, \emph{Finite subgroups of formal groups}, J. Pure Appl.
+  Algebra \textbf{121} (1997), no.~2, 161--208. \MRn{1473889}{(98k:14065)}
+
+\bibitem[Strickland1998]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MRn{1607736}{(99e:55008)}
+
+\bibitem[Voevodsky2003a]{V1}
+Vladimir Voevodsky, \emph{Reduced power operations in motivic cohomology}, Publ.
+  Math. Inst. Hautes \'Etudes Sci. (2003), no.~98, 1--57.
+  \MRn{2031198}{(2005b:14038a)}
+
+\bibitem[Voevodsky2003b]{V2}
+Vladimir Voevodsky, \emph{Motivic cohomology with {${\bf Z}/2$}-coefficients},
+  Publ. Math. Inst. Hautes \'Etudes Sci. (2003), no.~98, 59--104.
+  \MRn{2031199}{(2005b:14038b)}
+
+\bibitem[Zhu2014]{p3}
+Yifei Zhu, \emph{The power operation structure on {M}orava {$E$}-theory of
+  height 2 at the prime 3}, Algebr. Geom. Topol. \textbf{14} (2014), no.~2,
+  953--977. \MRn{3160608}{}
+
+\bibitem[Zhu2015a]{ho}
+Yifei Zhu, \emph{The {H}ecke algebra action on {M}orava {$E$}-theory of height
+  2}. \AX{1505.06377}
+
+\bibitem[Zhu2015b]{me}
+Yifei Zhu, \emph{Modular equations for {L}ubin-{T}ate formal groups at chromatic
+  level 2}. \AX{1508.03358}
+
+\end{thebibliography}
+
+
+
+\end{document}

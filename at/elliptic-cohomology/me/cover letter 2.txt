@@ -1,0 +1,5 @@
+Dear Professor Blumberg, I'm submitting a revised version of my paper. 
+Remarks 1.9 and 1.10 are new. The proposition in Section 2 has been moved and 
+made into a more thorough discussion in Section 3.3 of [Zhu2015] (now 
+resubmitted to Homology, Homotopy and Applications). Thank you. 
+Sincerely, Yifei Zhu

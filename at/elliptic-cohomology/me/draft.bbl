@@ -1,0 +1,92 @@
+\def\cprime{$'$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BKO04}
+
+\bibitem[Ade52]{Adem}
+Jos{\'e} Adem, \emph{The iteration of the {S}teenrod squares in algebraic
+  topology}, Proc. Nat. Acad. Sci. U. S. A. \textbf{38} (1952), 720--726.
+  \MR{0050278 (14,306e)}
+
+\bibitem[Ahl03]{Ahlgren}
+Scott Ahlgren, \emph{The theta-operator and the divisors of modular forms on
+  genus zero subgroups}, Math. Res. Lett. \textbf{10} (2003), no.~5-6,
+  787--798. \MR{2024734 (2004m:11059)}
+
+\bibitem[And95]{Ando95}
+Matthew Ando, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MR{1344767 (97a:55006)}
+
+\bibitem[BKO04]{BKO}
+Jan~H. Bruinier, Winfried Kohnen, and Ken Ono, \emph{The arithmetic of the
+  values of modular functions and the divisors of modular forms}, Compos. Math.
+  \textbf{140} (2004), no.~3, 552--566. \MR{2041768 (2005h:11083)}
+
+\bibitem[Car54]{Cartan}
+Henri Cartan, \emph{Sur les groupes d'{E}ilenberg-{M}ac {L}ane. {II}}, Proc.
+  Nat. Acad. Sci. U. S. A. \textbf{40} (1954), 704--707. \MR{0065161 (16,390b)}
+
+\bibitem[Cho06]{Choi}
+D.~Choi, \emph{On values of a modular form on {$\Gamma\sb 0(N)$}}, Acta Arith.
+  \textbf{121} (2006), no.~4, 299--311. \MR{2224397 (2006m:11051)}
+
+\bibitem[Cox13]{Cox}
+David~A. Cox, \emph{Primes of the form {$x\sp 2 + ny\sp 2$}}, second ed., Pure
+  and Applied Mathematics (Hoboken), John Wiley \& Sons, Inc., Hoboken, NJ,
+  2013, Fermat, class field theory, and complex multiplication. \MR{3236783}
+
+\bibitem[Kat73]{padicprop}
+Nicholas~M. Katz, \emph{{$p$}-adic properties of modular schemes and modular
+  forms}, Modular functions of one variable, {III} ({P}roc. {I}nternat.
+  {S}ummer {S}chool, {U}niv. {A}ntwerp, {A}ntwerp, 1972), Springer, Berlin,
+  1973, pp.~69--190. Lecture Notes in Mathematics, Vol. 350. \MR{0447119 (56
+  \#5434)}
+
+\bibitem[KM85]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MR{772569 (86i:11024)}
+
+\bibitem[Mil]{Milne}
+J.S. Milne, \emph{Modular functions and modular forms}.
+
+\bibitem[Rez09]{cong}
+Charles Rezk, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MR{2591924 (2011e:55021)}
+
+\bibitem[Ser53]{Serre}
+Jean-Pierre Serre, \emph{Cohomologie modulo 2 des complexes
+  d'{E}ilenberg-{M}ac{L}ane}, Comment. Math. Helv. \textbf{27} (1953),
+  198--232. \MR{0060234 (15,643c)}
+
+\bibitem[Ste62]{Steenrod}
+N.~E. Steenrod, \emph{Cohomology operations}, Lectures by N. E. Steenrod
+  written and revised by D. B. A. Epstein. Annals of Mathematics Studies, No.
+  50, Princeton University Press, Princeton, N.J., 1962. \MR{0145525 (26
+  \#3056)}
+
+\bibitem[Str97]{Str97}
+Neil~P. Strickland, \emph{Finite subgroups of formal groups}, J. Pure Appl.
+  Algebra \textbf{121} (1997), no.~2, 161--208. \MR{1473889 (98k:14065)}
+
+\bibitem[Str98]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MR{1607736 (99e:55008)}
+
+\bibitem[Zhu]{ho}
+Yifei Zhu, \emph{The {H}ecke algebra action on {M}orava {$E$}-theory of height
+  2}.
+
+\bibitem[Zhu14]{p3}
+\bysame, \emph{The power operation structure on {M}orava {$E$}-theory of height
+  2 at the prime 3}, Algebr. Geom. Topol. \textbf{14} (2014), no.~2, 953--977.
+  \MR{3160608}
+
+\end{thebibliography}

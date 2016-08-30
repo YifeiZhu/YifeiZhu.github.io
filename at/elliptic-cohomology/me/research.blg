@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: research.aux
+The style file: amsalpha.bst
+Database file #1: me.bib
+Warning--I didn't find a database entry for "Quillen"
+Warning--I didn't find a database entry for "orange"
+Warning--I didn't find a database entry for "tafoverview"
+Warning--I didn't find a database entry for "Adams"
+Warning--I didn't find a database entry for "BKTAQ"
+Warning--I didn't find a database entry for "me"
+Warning--I didn't find a database entry for "LubinTate"
+Warning--I didn't find a database entry for "RezkMSRI"
+Warning--I didn't find a database entry for "FG"
+Warning--I didn't find a database entry for "BorgerWieland"
+Warning--I didn't find a database entry for "picsurf"
+Warning--missing note in koandtmf
+Warning--missing note in logetaletmf
+Warning--missing note in LST
+Warning--missing note in h2p2
+Warning--missing note in Koszul
+Warning--missing note in ho
+You've used 25 entries,
+            2624 wiz_defined-function locations,
+            745 strings with 7603 characters,
+and the built_in function-call counts, 8941 in all, are:
+= -- 859
+> -- 277
+< -- 19
++ -- 89
+- -- 81
+* -- 814
+:= -- 1377
+add.period$ -- 25
+call.type$ -- 25
+change.case$ -- 135
+chr.to.int$ -- 23
+cite$ -- 31
+duplicate$ -- 368
+empty$ -- 738
+format.name$ -- 124
+if$ -- 1784
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 45
+newline$ -- 86
+num.names$ -- 69
+pop$ -- 122
+preamble$ -- 2
+purify$ -- 160
+quote$ -- 0
+skip$ -- 248
+stack$ -- 0
+substring$ -- 742
+swap$ -- 58
+text.length$ -- 19
+text.prefix$ -- 18
+top$ -- 0
+type$ -- 196
+warning$ -- 6
+while$ -- 86
+width$ -- 27
+write$ -- 285
+(There were 17 warnings)

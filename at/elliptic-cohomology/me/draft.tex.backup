@@ -1,0 +1,932 @@
+\documentclass{gtpart}
+\usepackage{amsmath,amssymb,amsthm,stmaryrd}
+\usepackage[all]{xy}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,fit}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{tensor}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usetikzlibrary{arrows}
+%\usepackage{amsrefs}
+%\usepackage{setspace}
+%\doublespacing
+
+\title{Modular equations for Lubin-Tate formal groups\\at chromatic level 2}
+\author{Yifei Zhu}
+\givenname{Yifei}
+\surname{Zhu}
+% \address{Department of Mathematics\\Northwestern University\\
+%          Evanston\\IL 60208\\USA}
+% \email{zyf@math.northwestern.edu}
+% \urladdr{http://www.math.northwestern.edu/~zyf}
+% 
+% \subject{primary}{msc2000}{55S25}
+% \subject{secondary}{msc2000}{11F23, 11G18, 14L05, 55N20, 55N34, 55P43}
+
+%\bibliographystyle{gtart}
+\parskip 0.7pc
+\parindent 0pt
+
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{prop}[equation]{Proposition}
+\newtheorem{lem}[equation]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{cstr}[equation]{Construction}
+\theoremstyle{remark}
+\newtheorem{rmk}[equation]{Remark}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{case}[equation]{Case}
+\newtheorem{slogan}[equation]{Slogan}
+\newtheorem{ques}[equation]{Question}
+
+\def\co{\colon\thinspace}
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+\newcommand{\Hom}{\ensuremath{{\rm Hom}}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\Gal}{{\rm Gal}}
+\newcommand{\LT}{{\rm LT}}
+\newcommand{\Spec}{{\rm Spec\thinspace}}
+\newcommand{\Proj}{{\rm Proj\thinspace}}
+\newcommand{\Spf}{{\rm Spf\thinspace}}
+\newcommand{\Ell}{{\rm Ell}}
+\newcommand{\Sch}{{\rm Sch}}
+\newcommand{\cF}{\overline {\mb F}}
+\newcommand{\ck}{\overline k}
+\newcommand{\CA}{{\cal A}}
+\newcommand{\CB}{{\cal B}}
+\newcommand{\CC}{{\cal C}}
+\newcommand{\CE}{{\cal E}}
+\newcommand{\CF}{{\cal F}}
+\newcommand{\CG}{{\cal G}}
+\newcommand{\CH}{{\cal H}}
+\newcommand{\CHom}{{\cal H}om}
+\newcommand{\CLie}{{\cal L}ie}
+\newcommand{\CM}{{\cal M}}
+\newcommand{\CMB}{\overline {\cal M}}
+\newcommand{\CO}{{\cal O}}
+\newcommand{\CP}{{\cal P}}
+\newcommand{\CS}{{\cal S}}
+\newcommand{\FF}{{\mf F}}
+\newcommand{\Mod}{{\rm Mod}}
+\newcommand{\Alg}{{\rm Alg}}
+\newcommand{\dl}{{\rm DL}}
+\newcommand{\Set}{{\rm Set}}
+\newcommand{\Sq}{{\rm Sq}}
+\newcommand{\Frob}{{\rm Frob}}
+\newcommand{\DF}{{{\rm DefFrob}_\BG}}
+\newcommand{\Model}{{\rm Model}}
+\newcommand{\HGa}{{\widehat{\mb G}_a}}
+\newcommand{\HGm}{{\widehat{\mb G}_m}}
+\newcommand{\Gm}{{{\mb G}_m}}
+\newcommand{\DL}{Dyer-Lashof~}
+\newcommand{\EM}{Eilenberg-Mac~Lane~}
+\newcommand{\BC}{{\mb C}}
+\newcommand{\BE}{{\mb E}}
+\newcommand{\BF}{{\mb F}}
+\newcommand{\BG}{{\mb G}}
+\newcommand{\BN}{{\mb N}}
+\newcommand{\BP}{{\mb P}}
+\newcommand{\BQ}{{\mb Q}}
+\newcommand{\BR}{{\mb R}}
+\newcommand{\BS}{{\mb S}}
+\newcommand{\BW}{{\mb W}}
+\newcommand{\BZ}{{\mb Z}}
+\newcommand{\fm}{{\mf m}}
+\newcommand{\HC}{\widehat{C~}\!}
+\newcommand{\HCC}{\widehat{~\!\!\CC}}
+\newcommand{\HE}{\widehat{E~}\!}
+\newcommand{\Hf}{\widehat{f}}
+\newcommand{\Hphi}{\widehat{\phi}}
+\newcommand{\Hpsi}{\widehat{\psi}}
+\newcommand{\HS}{\widehat{S~}\!}
+\newcommand{\TA}{\tilde{\A}}
+\newcommand{\Tc}{\tilde{c}}
+\newcommand{\TE}{\widetilde{E\thinspace}\!}
+\newcommand{\Tf}{\widetilde{f}}
+\newcommand{\Tp}{\widetilde{\psi}}
+\newcommand{\TW}{\widetilde{W\thinspace}\!}
+\newcommand{\tA}{\widetilde{\A}}
+\renewcommand{\th}{\widetilde{h}}
+\newcommand{\tj}{\widetilde{j}}
+\newcommand{\tw}{\widetilde{w}}
+\newcommand{\md}{~~{\rm mod}~}
+\newcommand{\ad}{\text{and}}
+\newcommand{\can}{{\rm can}}
+\newcommand{\HT}{{\rm ht}}
+\newcommand{\id}{{\rm id}}
+\newcommand{\op}{{\rm op}}
+\newcommand{\tf}{{\rm tf}}
+\newcommand{\TMF}{{\rm TMF}}
+\newcommand{\tmf}{{\rm tmf}}
+\newcommand{\MF}{{\rm MF}}
+\newcommand{\tr}{{\rm trace}}
+\newcommand{\univ}{{\rm univ}}
+\newcommand{\Ext}{{\rm Ext}}
+\newcommand{\Tor}{{\rm Tor}}
+\newcommand{\nul}{{\rm nul}}
+\newcommand{\Sub}{{\rm Sub}}
+\newcommand{\A}{\alpha}
+\newcommand{\B}{\beta}
+\renewcommand{\D}{\Delta}
+\renewcommand{\d}{\delta}
+\newcommand{\f}{\phi}
+\newcommand{\G}{\Gamma}
+\newcommand{\g}{\gamma}
+\newcommand{\K}{\kappa}
+\renewcommand{\l}{\lambda}
+\renewcommand{\o}{\omega}
+\newcommand{\ou}{\underline{\omega\!}}
+\newcommand{\si}{\sigma}
+\newcommand{\T}{\tau}
+\newcommand{\om}{\underline{\omega\!}_{~E/S}}
+\newcommand{\p}{\psi^3}
+\newcommand{\s}{S^\bullet}
+\newcommand{\ce}{\coloneqq}
+\newcommand{\lb}{\llbracket}
+\newcommand{\rb}{\rrbracket}
+\newcommand{\lp}{(\!(}
+\newcommand{\rp}{)\!)}
+\newcommand{\Ht}{\widehat{T}}
+\newcommand{\Tt}{\widetilde{T}}
+\newcommand{\mt}{\widetilde{m}}
+\newcommand{\lt}{\widetilde{\lambda}}
+\newcommand{\todo}{\spadesuit}
+\newcommand{\totodo}{\heartsuit}
+\renewcommand{\=}{\approx}
+\renewcommand{\-}{\sim}
+\newcommand{\isog}[1]{Proposition \ref{prop:isog}\thinspace \eqref{isog(#1)}}
+\newcommand{\q}[1]{Proposition \ref{prop:Q}\thinspace \eqref{Q(#1)}}
+\newcommand{\go}[1]{Definition \ref{def:go}\thinspace \eqref{go(#1)}}
+\newcommand{\rd}[1]{\textcolor{red}{#1}}
+\newcommand{\bl}[1]{\textcolor{blue}{#1}}
+\newcommand{\wt}[1]{\textcolor{white}{#1} \!~}
+\newcommand{\gl}{{\rm gl}}
+\newcommand{\GL}{{\rm GL}}
+\newcommand{\SL}{{\rm SL}}
+\newcommand{\Tate}{{\rm Tate}}
+\newcommand{\ch}[2]{{#1 \choose #2}}
+
+\makeatletter
+\DeclareRobustCommand\widecheck[1]{{\mathpalette\@widecheck{#1}}}
+\def\@widecheck#1#2{%
+    \setbox\z@\hbox{\m@th$#1#2$}%
+    \setbox\tw@\hbox{\m@th$#1%
+       \widehat{%
+          \vrule\@width\z@\@height\ht\z@
+          \vrule\@height\z@\@width\wd\z@}$}%
+    \dp\tw@-\ht\z@
+    \@tempdima\ht\z@ \advance\@tempdima2\ht\tw@ \divide\@tempdima\thr@@
+    \setbox\tw@\hbox{%
+       \raise\@tempdima\hbox{\scalebox{1}[-1]{\lower\@tempdima\box
+\tw@}}}%
+    {\ooalign{\box\tw@ \cr \box\z@}}}
+\makeatother
+
+\numberwithin{equation}{section}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+
+
+\begin{document}
+
+
+
+\begin{abstract}
+ We give an integral lift of the Kronecker congruence for moduli of finite 
+ subgroups of elliptic curves.  This leads to a uniform presentation for the 
+ power operation structure on Morava $E$-theories of height 2.  
+\end{abstract}
+
+\maketitle
+
+
+
+\section{Introduction}
+
+\subsection{Moduli of elliptic curves and of formal groups}
+
+The Kronecker congruence 
+\begin{equation}
+ \label{Kronecker}
+ \big(\,\tj - \,j^{\,p}\big) \,\! \big(\,\tj^{\,p} - \,j\,\big) \equiv 0 \md p 
+\end{equation}
+gives an equation for a curve that represents the moduli problem $[\G_0(p)]$ for 
+elliptic curves over a perfect field of characteristic $p$.  This moduli problem 
+associates to such an elliptic curve its finite flat subgroup schemes of rank 
+$p$.  A choice of such a subgroup scheme is equivalent to an isogeny from the 
+elliptic curve with a prescribed kernel.  The $j$-invariants of the source and 
+target curves of this isogeny are parametrized by the coordinates $j$ and $\tj$.  
+
+More precisely, the Kronecker congruence provides a {\em local} description for 
+$[\G_0(p)]$ at a supersingular point.  For large primes $p$, the supersingular 
+locus at $p$ may consist of more than one closed point.  In this case, the 
+modular curve does not have an equation in the simple form above; only its 
+completion at a single supersingular point does.  
+
+Integrally, there are polynomials that describe the modular curve for 
+$[\G_0(p)]$ over $\Spec \BZ$.  The ``classical modular polynomials'' lift and 
+globalize the Kronecker congruence, while the ``canonical modular polynomials,'' 
+in a different pair of parameters, appear simpler (see the Modular Polynomial 
+Databases in \href{http://magma.maths.usyd.edu.au/magma/handbook/modular_curves}
+{Magma} for the terminology and numerical examples).  Computing these modular 
+equations for $[\G_0(p)]$ can be difficult.  As Milne warns in 
+\cite[Section 6]{Milne}, ``one gets nowhere with brute force methods in this 
+subject.''  
+
+On a related subject, Lubin and Tate developed the deformation theory for 
+one-dimensional formal groups of finite height \cite{LubinTate}.  Later, with 
+motivation from algebraic topology, Strickland studied the classification of 
+finite subgroups of Lubin-Tate universal deformations.  In particular, he proved 
+a representability theorem for this moduli of deformations 
+\cite[Theorem 42]{Str97}.  
+
+At height 2, there is a connection between the moduli of formal groups and the 
+moduli of elliptic curves.  This is the Serre-Tate theorem, which states that 
+$p$-adically, the deformation theory of an elliptic curve is equivalent to the 
+deformation theory of its $p$-divisible group \cite[Section 6]{LST}.  In 
+particular, the $p$-divisible group of a supersingular elliptic curve is formal.  
+
+Thus the local information provided by the Kronecker congruence (and its 
+integral lifts) becomes useful for understanding deformations of formal groups 
+of height 2.  In this paper, we give an explicitation for the representing 
+formal scheme in Strickland's theorem.  Equivalently, this describes the 
+complete local ring of $[\G_0(p)]$ at a supersingular point, i.e., relative to 
+the universal formal deformation of a supersingular elliptic curve in 
+characteristic $p$, as studied by Katz and Mazur \cite{KM}.  
+
+\begin{thm}
+ \label{thm:me}
+ Let $\BG_0$ be a formal group over $\cF_p$ of height $2$, and let $\BG$ be its 
+ universal deformation.  Write $A_m$ for the ring $\CO_{\Sub_m(\BG)}$ studied in 
+ \cite{Str97}, which classifies degree-$p^m$ subgroups of the formal group 
+ $\BG$.  In particular, write $A_0 \cong \BW\big(\cF_p\big)\lb h \rb$ according 
+ to the Lubin-Tate theorem.  
+
+ Then the ring $A_1 \cong \BW\big(\cF_p\big)\lb h, \A \rb / \big(w(h,\A)\big)$ 
+ is determined by the polynomial 
+ \begin{equation}
+  \label{me}
+  w(h,\A) = (\A - p) \big(\A + (-1)^{\,p}\big)^p 
+            - \big(h - p^2 + (-1)^{\,p}\big) \A 
+ \end{equation}
+ which reduces to $\A (\A^{\,p} - h)$ modulo $p$.  
+\end{thm}
+
+\begin{rmk}
+ As a result of a different choice of parameters, the last congruence above is 
+ not in the form of Kronecker's (cf.~\cite[Remark 7.7.1]{KM} and see Section 
+ \ref{sec:parameter} below).  In fact, let $\tA$ denote the image of $\A$ under 
+ the Atkin-Lehner involution, so that $\A \cdot \tA = (-1)^{\,p + 1} p$, which 
+ is the constant term of \eqref{me} as a polynomial in $\A$.  Dividing a factor 
+ of $\A$ from the modular equation $w(h,\A) = 0$, we obtain a congruence 
+ \[
+  h \equiv \A^{\,p} + \tA \md p 
+ \]
+ This is a manifest of the Eichler-Shimura relation $T_p \equiv F + V \md p$ 
+ between the Hecke, Frobenius, and Verschiebung operators, which reinterprets 
+ $[\G_0(p)]$ in characteristic $p$.  
+
+ The polynomial $w(h,\A)$ can be viewed as a local variant of a canonical 
+ modular polynomial, whose parameters are the $j$-invariant and a certain 
+ eta-quotient.  See \cite[Example 2.4, esp.~(2.4)]{Choi} for an algorithm that 
+ we will adapt to prove Theorem \ref{thm:me} in Section \ref{sec:pf} below.  
+ Related to this, compare the sequences $\{\,j_n^{\,(p)}(z)\}_{n = 1}^\infty$ in 
+ \cite{Ahlgren}, with $p \in \{2,3,5,7,13\}$, and $\{\,j_m(z)\}_{m = 0}^\infty$ 
+ in \cite{BKO} of Hecke translates of Hauptmoduln, which explain the relation 
+ $h = T_p \, \A$ from above.  
+\end{rmk}
+
+
+
+\subsection{Algebras of cohomology operations}
+
+The Adem relations 
+\begin{equation}
+ \label{Adem}
+ \Sq^i\,\Sq^{\,j} = \sum_{k = 0}^{\left[\frac{i}{2}\right]} 
+                    \ch{j - k - 1}{i - 2 k} \Sq^{i + j - k}\,\Sq^k 
+ \hskip 2cm 0 < i < 2\,j 
+\end{equation}
+describe the multiplication rule for the Steenrod squares $\Sq^i$.  These are 
+power operations in ordinary cohomology with $\BZ/2$-coefficients.  In general, 
+for ordinary cohomology with $\BZ/p$-coefficients, the collection of its power 
+operations has the structure of a Steenrod algebra.  
+
+Quillen's work connects complex cobordism and the theory of one-dimensional 
+formal groups \cite{Quillen}.  From this viewpoint, ordinary cohomology theories 
+with $\BZ/p$-coefficients fit into a framework of chromatic homotopy theory, as 
+theories concentrated at height $\infty$.  
+
+The power operation algebras for cohomology theories at other chromatic levels 
+have been studied as well.  In particular, key to the chromatic viewpoint is a 
+family of Morava $E$-theories, one for each finite height $n$ at a particular 
+prime $p$.  More precisely, given any formal group $\BG_0$ of height $n$ over a 
+perfect field of characteristic $p$, there is a Morava $E$-theory associated to 
+the Lubin-Tate universal deformation of $\BG_0$.  Via Bousfield localizations, 
+these Morava $E$-theories determine the chromatic filtration of the stable 
+homotopy category.  
+
+There is a connection between (stable) power operations in a Morava $E$-theory 
+$E$ and deformations of powers of Frobenius on its corresponding formal group 
+$\BG_0$.  This is Rezk's theorem, built on the work of Ando, Hopkins, and 
+Strickland \cite{Ando95, Str97, Str98, AHS04}.  It gives an equivalence of 
+categories between (i) graded commutative algebras over a \DL algebra for $E$ 
+and (ii) quasicoherent sheaves of graded commutative algebras over the moduli 
+problem of deformations of $\BG_0$ and Frobenius isogenies 
+\cite[Theorem B]{cong}.  Here, the \DL algebra is a collection of power 
+operations that governs all homotopy operations on commutative $E$-algebra 
+spectra \cite[Theorem A]{cong}.  
+
+At height 2, information from the moduli of elliptic curves allows a concrete 
+understanding of the power operation structure on Morava $E$-theories.  Rezk 
+computed the first example of a presentation for an $E$-\DL algebra, in terms of 
+explicit generators and quadratic relations analogous to the Adem relations 
+\eqref{Adem} \cite{h2p2}.  Moreover, he gave a uniform presentation, which 
+applies to $E$-theories at all primes $p$, for the mod-$p$ reduction of their 
+\DL algebras \cite[4.8]{mc1}.  Underlying this presentation is the Kronecker 
+congruence \eqref{Kronecker} \cite[Proposition 3.15]{mc1}.  
+
+In this paper, we provide an ``integral lift'' of Rezk's presentation, in the 
+same sense that Theorem \ref{thm:me} above lifts the Kronecker congruence.  We 
+start with the following.  
+
+\begin{thm}
+ \label{thm:po}
+ Let $E$ be a Morava $E$-theory spectrum of height $2$ at the prime $p$.  There 
+ is a total power operation 
+ \[
+  \begin{split}
+                \psi^p \co E^0 \to & ~ E^0(B\Sigma_p) / I \\
+   \BW\big(\cF_p\big)\lb h \rb \to & ~ \BW\big(\cF_p\big)\lb h,\A \rb 
+                                       / \big( w(h,\A) \big) 
+  \end{split}
+ \]
+ where $I$ is an ideal of transfers.  
+
+ \begin{enumerate}[{\em (i)}]
+  \item The polynomial 
+  \[
+   w(h,\A) = w_{p + 1} \A^{\,p + 1} + \cdots + w_1 \A + w_0 
+   \hskip 2cm w_i \in E^0 
+  \]
+  can be given as \eqref{me} from Theorem \ref{thm:me}.  In particular, 
+  $w_{p + 1} = 1$, $w_1 = -h$, $w_0 = (-1)^{\,p + 1} p$, and the remaining 
+  coefficients 
+  \[
+   w_i = (-1)^{\,p\,(\,p - i + 1)} \left[ \ch{p}{i - 1} 
+         + (-1)^{\,p + 1} \, p \, \ch{\,p\,}{i} \right] 
+  \]
+
+  \item The image $\psi^p(h) = \sum_{i = 0}^p Q_i(h) \, \A^i$ is then given by 
+  \[
+   \psi^p(h) = \A + \sum_{i = 0}^p \A^i \sum_{\T = 1}^p w_{\T + 1} \, d_{i,\T} 
+  \]
+  where 
+  \[
+   d_{i,\T} = \sum_{n = 0}^{\T - 1} (-1)^{\T - n} \, w_0^n 
+              \sum_{\stackrel{\scriptstyle m_1 + \cdots + m_{\T - n} = \T + i} 
+              {1 \,\leq\, m_s \,\leq\, m_{s + 1} \,\leq\, p + 1}} w_{m_1} \cdots 
+              w_{m_{\T - n}} 
+  \]
+  In particular, $Q_0(h) \equiv h^{\,p} \md p$.  
+ \end{enumerate}
+\end{thm}
+
+This leads to the following.  
+
+\begin{thm}
+ \label{thm:DL}
+ Continue with the notation in Theorem \ref{thm:po}.  Let $\G$ be the \DL 
+ algebra for $E$, in the sense of \cite{cong}, which is the ring of additive 
+ power operations on $K(2)$-local commutative $E$-algebras.  
+
+ Then $\G$ admits a presentation as the associative ring generated over 
+ $E^0 \cong \BW\big(\cF_p\big)\lb h \rb$ by elements $Q_i$, $0 \leq i \leq p$, 
+ subject to a set of relations.  
+
+ \begin{enumerate}[{\em (i)}]
+  \item Adem relations 
+  \[
+   Q_k Q_0 = -\sum_{j = 1}^{p - k} w_0^{\,j} \, Q_{k + j} Q_j \, 
+             - \sum_{j = 1}^p \sum_{i = 0}^{j - 1} w_0^i \, d_{k,\,j - i} \, 
+             Q_i Q_j \hskip 2.3cm \text{for $1 \leq k \leq p$} 
+  \]
+  where the first summation is vacuous if $k = p$.  
+
+  \item Commutation relations 
+  \[
+   \begin{split}
+    Q_i \, c = & ~ (F c) \, Q_i ~~~ \text{for $\, c \in \BW\big(\cF_p\big)$ and 
+                 all $i$, with $F$ the Frobenius automorphism} \\
+    Q_0 \, h = & ~ e_0 + (-1)^{\,p + 1} r \sum_{m = 0}^{p - 1} s^m e_{p + m + 1} 
+                 + (-1)^{\,p} \Bigg( e_p + r \, e_{2 p} 
+                 + \sum_{m = 1}^p s^m e_{p + m} \Bigg) \\
+               & + \sum_{j = 1}^{p - 1} \, (-1)^{\,p \, j} \Bigg[ e_j 
+                 + r \, s^{\,p - j} e_{2 p} + r \! \sum_{m = 0}^{p - j - 1} s^m 
+                   \big(e_{p + j + m} + (-1)^{\,p + 1} e_{p + j + m + 1}\big) 
+                   \Bigg] \\
+    Q_k \, h = & ~ (-1)^{\,p\,(p - k)} \ch{p}{k} \Bigg( e_p + r \, e_{2 p} 
+                 + \sum_{m = 1}^p s^m e_{p + m} \Bigg) 
+                 + \sum_{j = k}^{p - 1} \, (-1)^{\,p\,(\,j - k)} \ch{\,j\,}{k} 
+                   \Bigg[ e_j \\
+               & + r \, s^{\,p - j} e_{2 p} + r \! \sum_{m = 0}^{p - j - 1} s^m 
+                   \big(e_{p + j + m} + (-1)^{\,p + 1} e_{p + j + m + 1}\big) 
+                   \Bigg] ~~~\, \text{for \,\! $0 < k < p$} \\
+    Q_p \, h = & ~ e_p + r \, e_{2 p} + \sum_{m = 1}^p s^m e_{p + m} 
+   \end{split}
+  \]
+  where $r = h - p^2 + (-1)^{\,p}$, $s = p + (-1)^{\,p}$, and 
+  \[
+   \begin{split}
+    e_n = & ~ \sum_{m = n}^{p + 1} (-1)^{(p + 1) (m - n)} \ch{m}{n} Q_{m - 1} \\
+          & + \sum_{m = n}^{2 p} (-1)^{(p + 1) (m - n)} \ch{m}{n} 
+              \sum_{\stackrel{\scriptstyle i + j = m} 
+              {0 \,\leq\, i, \, j \,\leq\, p}} \sum_{\T = 1}^p 
+              w_{\T + 1} \, d_{i,\T} \, Q_j 
+   \end{split}
+  \]
+  the first summation for $e_n$ being vacuous if $p + 2 \leq n \leq 2\,p$, and 
+  being vacuous in its term $m = 0$ if $n = 0$.  
+ \end{enumerate}
+\end{thm}
+
+\begin{rmk}
+ The \DL algebra $\G$ has the structure of a twisted bialgebra over $E^0$.  The 
+ ``twists'' are described by the commutation relations above.  The product 
+ structure is encoded in the Adem relations.  Certain Cartan formulas give rise 
+ to the coproduct structure.  
+
+ In Section \ref{subsec:comm} below, we will present a proof for the commutation 
+ relations, in such a way that the same method applies to give the Cartan 
+ formulas: for each $0 \leq k \leq p$, $Q_k(x y)$ equals the expression on the 
+ right-hand side of the commutation relation for $Q_k \, h$, where 
+ $r = h - p^2 + (-1)^{\,p}$ and $s = p + (-1)^{\,p}$ as above, and 
+ \[
+  e_n = \sum_{m = n}^{2 p} (-1)^{(p + 1) (m - n)} \ch{m}{n} 
+  \sum_{\stackrel{\scriptstyle i + j = m}{0 \,\leq\, i, \, j \,\leq\, p}} 
+  Q_i(x) \, Q_j(y) 
+ \]
+\end{rmk}
+
+\begin{rmk}
+ In \cite[Example 3.5]{ho}, we computed a slightly different presentation for 
+ the target ring of $\psi^p$ in Theorem \ref{thm:po}, when $p = 5$.  In fact, 
+ there, the parameters $h$ and $\A$ for the modular equation are a global 
+ version of the ones here.  This is due to the fact that the supersingular point 
+ at 5 for the rigidifying moduli problem $[\G_1(4)]$ splits into two closed 
+ points after a quadratic extension of $\BF_5$ (see 
+ \cite[Example 2.6]{ho}).\footnote{The formulas in Theorems \ref{thm:po} and 
+ \ref{thm:DL} are independent of the choice of such a rigidification.  }  The 
+ agreement of the global and local versions for ``$\psi^5(h)$'' is a manifest of 
+ the functoriality of the \DL algebra.  
+
+ Although our earlier computation did not determine $\psi^5$ completely, it 
+ connected to calculations with modular forms.  In contrast, the method here for 
+ establishing Theorem \ref{thm:po} is incapable of specifying $h$ as a modular 
+ form.  
+\end{rmk}
+
+\begin{rmk}
+ Let $E$ be a Morava $E$-theory of height $n$.  Recent work of Behrens and Rezk 
+ has identified (i) the completed $E$-homology of the $n$'th Bousfield-Kuhn 
+ functor applied to an odd-dimensional sphere with (ii) the $E$-cohomology of 
+ the $K(n)$-localized Andr\'e-Quillen homology of the spectrum of cochains on 
+ the odd-dimensional sphere valued in the $K(n)$-local sphere spectrum 
+ \cite[Theorem 8.1]{BKTAQ}.  The former (i) computes unstable $v_n$-periodic 
+ homotopy groups of spheres via a homotopy fixed point spectral sequence of 
+ Devinatz and Hopkins.  By calculations of Rezk, the latter (ii) can be 
+ identified at heights $n = 1$ and $n = 2$ via another spectral sequence, whose 
+ $E_2$-page consists of Ext-groups of certain rank-one modules over the \DL 
+ algebra of $E$ (see \cite[Example 2.13]{h2}).  
+
+ Theorems \ref{thm:me} and \ref{thm:po} can thus be applied in this context to 
+ make these homotopy groups more explicit.  We hope to discuss this in a future 
+ paper.  
+\end{rmk}
+
+
+
+\subsection{Acknowledgements}
+
+I thank Mark Behrens, Paul Goerss, Charles Rezk, and Joel Specter for helpful 
+discussions.  
+
+I thank my friends Tzu-Yu Liu and Meng Yu for their continued support, 
+especially during me sketching Section \ref{sec:pf} in their home in California.  
+
+
+
+\section{Parameters in a modular equation}
+\label{sec:parameter}
+
+In this section, we discuss preliminaries needed for proving the main results.  
+For some of the details, with examples, we refer the reader to 
+\cite[Sections 2 and 3]{ho}.  
+
+Given a formal group $\BG_0$ over $\cF_p$ of height 2, let $\BG$ be its 
+universal deformation over the Lubin-Tate ring $\BW\big(\cF_p\big) \lb h \rb$.  
+Let $E$ be a Morava $E$-theory spectrum of height 2 at the prime $p$, such that 
+$E^0 \cong \BW\big(\cF_p\big) \lb h \rb$ and $\Spf E^0 \BC\BP^\infty \cong \BG$.  
+
+Recall from \cite[Section 2, esp.~Definition 2.8]{ho} that there are 
+{\em $\CP_N$-models} for the above data, constructed from the moduli of smooth 
+elliptic curves, where $N > 3$ are integers prime to $p$.  Specifically, each 
+$\CP_N$ is a moduli problem that encodes the choice of a point of exact order 
+$N$ and a nonvanishing one-form.  It is represented by a scheme $\CM_N$ over 
+$\BZ[1/N]$.  Via the Serre-Tate theorem, the formal group of the representing 
+elliptic curve is isomorphic to the universal deformation $\BG$ of $\BG_0$.  Up 
+to isomorphism, the $E$-theory is independent of the choice of a $\CP_N$-model.  
+
+The purpose of choosing a $\CP_N$-model is to enable explicit calculations for 
+power operations in the $E$-theory.  In particular, there are parameters from 
+the moduli of elliptic curves that are both geometrically interesting and 
+computationally convenient.  
+
+Recall from \cite[Section 3.1]{ho} that an additive total power operation 
+$\psi^p$ on $E^0$ corresponds to a deformation of $p$-power Frobenius 
+$\Psi_N^{(p)}$ on the universal $\CP_N$-curve \cite[Theorem B]{cong}.  In 
+particular, under this correspondence, we choose a pair of parameters $h$ (as 
+for $E^0$ above) and $\A$ for $\psi^p$ as follows, which translate respectively 
+to the {\em deformation} parameter $\rm T$ and the {\em norm} parameter 
+$\rm {\bf N}(X(P))$ for the moduli problem $[\G_0(p)]$ at a supersingular point 
+in \cite[Section 7.7]{KM}.  
+
+The simultaneous moduli problem $\big(\CP_N,[\G_0(p)]\big)$ is represented by a 
+scheme $\CM_{N,\,p}$, which is finite and flat over $\CM_N$ of degree $p + 1$.  
+Upon formal completion at the supersingular point corresponding to $\BG_0$, the 
+scheme $\CM_{N,\,p}$ is isomorphic to the formal spectrum of the target ring of 
+$\psi^p$ \cite[Theorem 1.1]{Str98}.  
+
+By a {\em dehomogenization} procedure, the parameters $h$ and $\A$ are 
+constructed from weakly holomorphic modular forms $H$ (a factor of a Hasse 
+invariant) and $\K$ on $\G_1(N) \times \G_0(p)$ (see 
+\cite[Proposition 2.9 and Examples 2.6 and 3.5]{ho}).  Moreover, the 
+{\em Atkin-Lehner involution} of $[\G_0(p)]$ gives a new pair of parameters 
+$\th$ and $\tA$ for $\psi^p$ (cf.~\cite[11.3.1]{KM}).  In fact, they are the 
+images of $h$ and $\A$ under $\psi^p$.  
+
+As a result of Lubin's isogeny construction in 
+\cite[proof of Theorem 1.4]{Lubin}, the parameter $\A$ plays a double role, 
+which is important for our application.  Algebraically, it is a norm by 
+construction and is hence $\G_0(p)$-invariant \cite[Construction 3.1\,(ii)]{ho}.  
+Geometrically, it defines the cotangent map to the isogeny $\Psi_N^{(p)}$ 
+\cite[Remark 3.2]{ho}.  
+
+
+
+\section{Proof of Theorem \ref{thm:me}}
+\label{sec:pf}
+
+Choose any preferred $\CP_N$-model for $\BG$, that is, for a Morava $E$-theory 
+whose formal group is $\BG$, in the sense of \cite[Definition 3.29]{ho}.  We may 
+assume that the $j$-invariant for the supersingular point of this model lies in 
+$\BF_p$ (see, e.g., \cite[Theorem 14.18 and Proposition 14.15]{Cox}).  Let 
+$j_0 \in \BZ$ be a lift of this $j$-invariant.  In the scheme $\CM_{N,\,p}$ 
+representing the simultaneous moduli problem $\big(\CP_N,[\G_0(p)]\big)$, 
+consider a formal neighborhood $U$ that contains this single supersingular 
+point.  Note that $U \cong \Spf A_1$ and that it is preserved under the 
+Atkin-Lehner involution.  
+
+Define a modular function $h \ce j - j_0$, where $j\,(z) = q^{-1} + 744 + O(q)$ 
+as usual.  It then serves as a deformation parameter for $A_0$ and $A_1$.  Let 
+$\A$ be the norm parameter (locally near the supersingular point) for $A_1$ 
+associated with this $\CP_N$-model.  Thus there exists a unique polynomial 
+\begin{equation}
+ \label{w}
+ w(h,\A) = \A^{\,p + 1} + \sum_{i = 0}^p w_i \, \A^i 
+\end{equation}
+with $w_i \in \BW\big(\cF_p\big)\lb h \rb$ such that 
+$A_1 \cong A_0[\A] / \big(w(h,\A)\big)$.  Write $\th$ and $\tA$ for the images 
+of $h$ and $\A$ under the Atkin-Lehner involution.  
+
+Given the geometric interpretation of $\tA$ in Section \ref{sec:parameter} and 
+in view of the Hasse invariant as defined in \cite[12.4.1]{KM}, since the 
+deformation parameter $h = j - j_0$, we have 
+\[
+ \tA \equiv \mu \, h \md p 
+\]
+for some unit $\mu \in A_1/(p)$.  
+We then claim that as a modular function on $\G_0(p)$, $\tA$ has a $q$-expansion 
+\[
+ \tA(z) = \mu_0 (q^{-1} + a_0) + O(q) = \mu_0 \, q^{-1} + O(1) 
+\]
+for some $\mu_0 \in \BW\big(\cF_p\big)^{\!\times} \!\cap \BZ$ and 
+$a_0 \in \BZ$ such that $a_0 \equiv 744 - j_0 \md p$.  
+In fact, 
+
+Thus for $2 \leq i \leq p$, there exist constants $\tw_i \in p\BZ$ such that 
+\[
+ \tA^{\,p} + \tw_p \, \tA^{\,p - 1} + \cdots + \tw_2 \, \tA = \mu_0^{\,p} q^{-p} 
+ + O(1) 
+\]
+On the other hand, we have 
+\[
+ \th\,(z) = j\,(p z) - j_0 = q^{-p} + O(1) 
+\]
+Comparing the two displays above, we then have 
+\[
+ \tA^{\,p} + \tw_p \, \tA^{\,p - 1} + \cdots + \tw_2 \, \tA = \mu_0^{\,p} \, \th 
+ + K + O(q) 
+\]
+for some $K \in \BZ$.  Passing to the mod-$p$ reduction of this identity, we see 
+that $K \in p\BZ$.  
+
+Therefore, by an abuse of notation, we can instead choose a deformation 
+parameter $h$ (and $w_i$ in \eqref{w} accordingly) such that 
+\[
+ \tA^{\,p} + \tw_p \, \tA^{\,p - 1} + \cdots + \tw_2 \, \tA = \th + O(q) 
+\]
+without changing the expressions for $A_0$ and $A_1$ (note that $\A$ and $\tA$ 
+are both independent of the choice of $h$).  From this we obtain 
+\[
+ \tA^{\,p + 1} + \tw_p \, \tA^{\,p} + \cdots + \tw_2 \, \tA^2 = \th \, \tA 
+ + O(1) 
+\]
+In view of the expression (under the Atkin-Lehner involution) for $A_1$ as a 
+free module over $A_0$ of rank $p + 1$, and in view of the $q$-expansions for 
+$\th$ and $\tA$, we see that the last term $O(1)$ above must be constant.  
+
+Applying the Atkin-Lehner involution to this polynomial relation between $\th$ 
+and $\tA$, we then conclude that except for $i = 1$, the coefficients $w_i$ in 
+\eqref{w} are all constants, or more precisely, $w_i \in \BZ$.  It remains to 
+determine their values, which follows from \cite[(3.26) and (3.27)]{ho} by 
+continuity of modular functions over the moduli scheme.  \qed
+
+
+
+\section{Proof of Theorems \ref{thm:po} and \ref{thm:DL}}
+
+Theorem \ref{thm:po}\,(i) follows from \cite[Theorem 1.1]{Str98}.  We show the 
+remaining parts in two steps.  
+
+\subsection{The total power operation formula and the Adem relations}
+
+To compute $\psi^p(h)$, we follow the recipe illustrated in 
+\cite[Example 3.5]{ho} and generalize \cite[proof of Proposition 6.4]{ho}.  
+Since 
+\[
+ \begin{split}
+  w(h,\A) = & ~ w_{p + 1} \A^{\,p + 1} + \cdots + w_1 \A + w_0 \\
+          = & ~ w_{p + 1} \A^{\,p + 1} + \cdots - h \, \A + \tA \, \A 
+ \end{split}
+\]
+is zero in the target ring of $\psi^p$, we have 
+\[
+ \hskip .5cm h = w_{p + 1} \A^{\,p} + \cdots + w_2 \, \A + \tA 
+\]
+where $w_{p + 1}$, \ldots, $w_2$ are constants, i.e., they do not involve $h$, 
+as computed in Theorem \ref{thm:po}\,(i).  Applying the Atkin-Lehner involution 
+to this identity, we then get 
+\[
+ \hskip -.8cm \psi^p(h) = \th = w_{p + 1} \, \tA^{\,p} + \cdots + w_2 \, \tA 
+ + \A 
+\]
+For $1 \leq \T \leq p$, we need only express each $\tA^\T$ as a polynomial in 
+$\A$ of degree at most $p$ with coefficients in $E^0$.  The constant terms 
+$d_{0,\T}$ of these polynomials have been computed as $d_\T$ in 
+\cite[proof of Proposition 6.4]{ho}.  The same method there applies to give the 
+stated formulas for the higher coefficients $d_{i,\T}$ with $1 \leq i \leq p$.  
+
+To derive the Adem relations, we generalize 
+\cite[proof of Proposition 3.6\,(iv)]{p3} 
+(cf.~\cite[proof of Proposition 6.4]{ho}).  
+In view of the relation $\A \cdot \tA = w_0$, we have 
+\[
+ \begin{split}
+  \psi^p\big(\psi^p(x)\big) = & ~ \psi^p \sum_{j = 0}^p Q_j(x) \, \A^{\,j} \\
+                            = & ~ \sum_{j = 0}^p \psi^p\big(Q_j(x)\big) \, 
+                                  \psi^p(\A)^{\,j} \\
+                            = & ~ \sum_{j = 0}^p \Bigg( \sum_{i = 0}^p 
+                                  Q_i Q_j(x) \, \A^i \Bigg) \tA^{\,j} \\
+                            = & ~ \sum_{j = 0}^p \Bigg( \sum_{i = 0}^j w_0^i \, 
+                                  Q_i Q_j(x) \, \tA^{\,j - i} 
+                                + \sum_{i = j + 1}^p w_0^{\,j} \, Q_i Q_j(x) \, 
+                                \A^{i - j} \Bigg) \\
+                            = & ~ \sum_{k = 0}^p \A^k \Bigg( \sum_{j = 0}^p 
+                                  \sum_{i = 0}^j w_0^i \, d_{k,\,j - i} \, 
+                                  Q_i Q_j(x) + \sum_{j = 0}^{p - k} w_0^{\,j} \, 
+                                  Q_{k + j} Q_j (x) \Bigg) 
+ \end{split}
+\]
+where $d_{k,0} = 0$ if $k > 0$.  Write the expression in the last line above as 
+$\sum_{k = 0}^p \Psi_k(x) \, \A^k$.  For $1 \leq k \leq p$, the vanishing of 
+each $\Psi_k$ then gives the stated relation for $Q_k Q_0$.  
+
+
+
+\subsection{The commutation relations}
+\label{subsec:comm}
+
+To facilitate computations, we perform a change of variables 
+\[
+ \B \ce \A + (-1)^{\,p} 
+\]
+We then have 
+\[
+ \begin{split}
+  \psi^p(h x) = & ~ \psi^p(h) \, \psi^p(x) \hskip 7.7cm \\
+              = & ~ \sum_{i = 0}^p Q_i(h) \, \A^i \, \sum_{j = 0}^p Q_j(x) \, 
+                    \A^{\,j} \\
+              = & ~ \sum_{m = 0}^{2 p} \Bigg(\!\! 
+                    \sum_{\stackrel{\scriptstyle i + j = m}
+                    {0 \,\leq\, i, \, j \,\leq\, p}} Q_i(h) \, Q_j(x) \Bigg) 
+                    \A^m \\
+              = & ~ \sum_{m = 0}^{2 p} \Bigg(\!\! 
+                    \sum_{\stackrel{\scriptstyle i + j = m}
+                    {0 \,\leq\, i, \, j \,\leq\, p}} Q_i(h) \, Q_j(x) \Bigg) 
+                    \big(\B + (-1)^{\,p + 1}\big)^m \\
+              = & ~ \sum_{m = 0}^{2 p} \Bigg(\!\! 
+                    \sum_{\stackrel{\scriptstyle i + j = m}
+                    {0 \,\leq\, i, \, j \,\leq\, p}} Q_i(h) \, Q_j(x) \Bigg) 
+                    \sum_{n = 0}^m \ch{m}{n} \B^n (-1)^{(p + 1) (m - n)} \\
+              = & ~ \sum_{n = 0}^{2 p} e_n \, \B^n 
+ \end{split}
+\]
+where 
+\[
+  e_n = \sum_{m = n}^{2 p} (-1)^{(p + 1) (m - n)} \ch{m}{n} \! 
+        \sum_{\stackrel{\scriptstyle i + j = m}{0 \,\leq\, i, \, j \,\leq\, p}} 
+        Q_i(h) \, Q_j(x) 
+\]
+Formulas for the terms $Q_i(h)$ above are given by Theorem \ref{thm:po}\,(ii).  
+Note that $Q_1(h)$ includes a term of 1.  
+
+We now reduce $\psi^p(h x)$ above modulo $w(h,\A)$, by first rewriting the 
+latter as a polynomial in $\B$: 
+\[
+ \begin{split}
+  w(h,\A) = & ~ (\A - p) \big(\A + (-1)^{\,p}\big)^p 
+              - \big(h - p^2 + (-1)^{\,p}\big) \A \\
+          = & ~ \big(\B + (-1)^{\,p + 1} - p\big) \B^{\,p} 
+              - \big(h - p^2 + (-1)^{\,p}\big) \big(\B + (-1)^{\,p + 1}\big) \\
+          = & ~ \B^{\,p + 1} + v_p \, \B^{\,p} + v_1 \, \B + v_0 
+ \end{split}
+\]
+where 
+\[
+ v_p = (-1)^{\,p + 1} - p, \quad v_1 = -\big(h - p^2 + (-1)^{\,p}\big), 
+ \quad \ad \quad v_0 = (-1)^{\,p + 1} v_1 
+\]
+Performing long division of $\psi^p(h x)$ by $w(h,\A)$ with respect to $\B$, we 
+get 
+\[
+ \psi^p(h x) \equiv \sum_{j = 0}^p \, f_{\,j} \, \B^{\,j} \md w(h,\A) 
+\]
+where 
+\[
+ f_{\,j} = \left\{ \hskip -.1cm
+  \begin{array}{lll}
+   \displaystyle e_p - v_1 e_{2 p} + v_p \sum_{m = 0}^{p - 1} (-1)^{m + 1} 
+                 e_{p + 1 + m} \, v_p^m              && \,j = p \\
+   \displaystyle e_j + v_0 \sum_{m = 0}^{p - j - 1} (-1)^{m + 1} 
+                 e_{p + j + 1 + m} \, v_p^m + v_1 \sum_{m = 0}^{p - j} 
+                 (-1)^{m + 1} e_{p + j + m} \, v_p^m && 0 < j < p \\
+   \displaystyle e_0 + v_0 \sum_{m = 0}^{p - 1} (-1)^{m + 1} e_{p + 1 + m} \, 
+                 v_p^m                               && \,j = 0 
+  \end{array}
+ \right. 
+\]
+Thus we can rewrite 
+\[
+ \begin{split}
+  \psi^p(h x) = & ~ \sum_{j = 0}^p \, f_{\,j} \, \big(\A + (-1)^{\,p}\big)^j \\
+              = & ~ \sum_{j = 0}^p \, f_{\,j} \, \sum_{i = 0}^j \ch{\,j\,}{i} 
+                    \A^i \, (-1)^{\,p \, (\,j - i)} \\
+              = & ~ \sum_{i = 0}^p \Bigg[ \sum_{j = i}^p (-1)^{\,p \, (\,j - i)} 
+                    \ch{\,j\,}{i} \, f_{\,j} \Bigg] \A^i 
+ \end{split}
+\]
+
+On the other hand, $\psi^p(h x) = \sum_{i = 0}^p Q_i (h x) \, \A^i$.  Comparing 
+this to the last expression for $\psi^p(h x)$ above, term by term, we obtain the 
+commutation relations as stated.  \qed
+
+
+
+% \bibliographystyle{amsalpha}
+% \bibliography{me}
+% \end{document}
+
+\renewcommand\refname{}
+\newcommand{\AX}[1]{\href{http://arxiv.org/abs/#1}{arXiv:#1}}
+\newcommand{\MRn}[2]{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{MR#1#2}}
+\newcommand{\name}{TateNormalLevelResolutions.pdf}
+\wt{.}\vspace{-.5in}
+\begin{thebibliography}
+
+\section*{\leftskip=-.44in References \vspace{.17in}}
+
+\bibitem[Ahlgren2003]{Ahlgren}
+Scott Ahlgren, \emph{The theta-operator and the divisors of modular forms on
+  genus zero subgroups}, Math. Res. Lett. \textbf{10} (2003), no.~6,
+  787--798. \MRn{2024734}{(2004m:11059)}
+
+\bibitem[Ando1995]{Ando95}
+Matthew Ando, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MRn{1344767}{(97a:55006)}
+
+\bibitem[Ando-Hopkins-Strickland2004]{AHS04}
+Matthew Ando, Michael~J. Hopkins, and Neil~P. Strickland, \emph{The sigma
+  orientation is an {$H\sb \infty$} map}, Amer. J. Math. \textbf{126} (2004),
+  no.~2, 247--334. \MRn{2045503}{(2005d:55009)}
+
+\bibitem[Behrens-Rezk2015]{BKTAQ}
+Mark Behrens, Charles Rezk, \emph{The Bousfield-Kuhn functor and topological 
+  Andr\'e-Quillen cohomology}, available at \\
+  \href{http://www3.nd.edu/~mbehren1/papers/BKTAQ6.pdf}
+  {http://www3.nd.edu/\textasciitilde mbehren1/papers/BKTAQ6.pdf}.
+
+\bibitem[Bruinier-Kohnen-Ono2004]{BKO}
+Jan~H. Bruinier, Winfried Kohnen, and Ken Ono, \emph{The arithmetic of the
+  values of modular functions and the divisors of modular forms}, Compos. Math.
+  \textbf{140} (2004), no.~3, 552--566. \MRn{2041768}{(2005h:11083)}
+
+\bibitem[Choi2006]{Choi}
+D.~Choi, \emph{On values of a modular form on {$\Gamma\sb 0(N)$}}, Acta Arith.
+  \textbf{121} (2006), no.~4, 299--311. \MRn{2224397}{(2006m:11051)}
+
+\bibitem[Cox2013]{Cox}
+David~A. Cox, \emph{Primes of the form {$x\sp 2 + ny\sp 2$}}, second ed., Pure
+  and Applied Mathematics (Hoboken), John Wiley \& Sons, Inc., Hoboken, NJ,
+  2013, Fermat, class field theory, and complex multiplication. \MRn{3236783}{}
+
+\bibitem[Katz-Mazur1985]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MRn{772569}{(86i:11024)}
+
+\bibitem[Lubin1967]{Lubin}
+Jonathan Lubin, \emph{Finite subgroups and isogenies of one-parameter formal
+  {L}ie groups}, Ann. of Math. (2) \textbf{85} (1967), 296--302. 
+  \MRn{0209287}{(35 \#189)}
+
+\bibitem[Lubin-Serre-Tate1964]{LST}
+J.~Lubin, J.-P. Serre, and J.~Tate, \emph{Elliptic curves and formal groups},
+  available at \,\! \href{http://www.ma.utexas.edu/users/voloch/lst.html}
+  {http://www.ma.utexas.edu/users/voloch/lst.html}.
+
+\bibitem[Lubin-Tate1966]{LubinTate}
+Jonathan Lubin and John Tate, \emph{Formal moduli for one-parameter formal
+  {L}ie groups}, Bull. Soc. Math. France \textbf{94} (1966), 49--59.
+  \MRn{0238854}{(39 \#214)}
+
+\bibitem[Milne2012]{Milne}
+J.S. Milne, \emph{Modular functions and modular forms}, available at \\
+  \href{http://www.jmilne.org/math/CourseNotes/MF.pdf}
+  {http://www.jmilne.org/math/}.
+
+\bibitem[Quillen1969]{Quillen}
+Daniel Quillen, \emph{On the formal group laws of unoriented and complex
+  cobordism theory}, Bull. Amer. Math. Soc. \textbf{75} (1969), 1293--1298.
+  \MRn{0253350}{(40 \#6565)}
+
+\bibitem[Rezk2008]{h2p2}
+Charles Rezk, \emph{Power operations for {M}orava {$E$}-theory of height 2 at 
+  the prime 2}. \AX{0812.1320}
+
+\bibitem[Rezk2009]{cong}
+Charles Rezk, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MRn{2591924}{(2011e:55021)}
+
+\bibitem[Rezk2012]{mc1}
+Charles Rezk, \emph{Modular isogeny complexes}, Algebr. Geom. Topol. \textbf{12}
+  (2012), no.~3, 1373--1403. \MRn{2966690}{}
+
+\bibitem[Rezk2013]{h2}
+Charles Rezk, \emph{Power operations in Morava E-theory: structure and 
+  calculations}, available at 
+  \href{http://www.math.uiuc.edu/~rezk/power-ops-ht-2.pdf}
+  {http://www.math.uiuc.edu/\textasciitilde rezk/power-ops-ht-2.pdf}.
+
+\bibitem[Strickland1997]{Str97}
+Neil~P. Strickland, \emph{Finite subgroups of formal groups}, J. Pure Appl.
+  Algebra \textbf{121} (1997), no.~2, 161--208. \MRn{1473889}{(98k:14065)}
+
+\bibitem[Strickland1998]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MRn{1607736}{(99e:55008)}
+
+\bibitem[Zhu2014]{p3}
+Yifei Zhu, \emph{The power operation structure on {M}orava {$E$}-theory of
+  height 2 at the prime 3}, Algebr. Geom. Topol. \textbf{14} (2014), no.~2,
+  953--977. \MRn{3160608}{}
+
+\bibitem[Zhu2015]{ho}
+Yifei Zhu, \emph{The {H}ecke algebra action on {M}orava {$E$}-theory of height
+  2}, available at \href{http://www.math.northwestern.edu/~zyf/ho.pdf}
+  {http://www.math.northwestern.edu/\textasciitilde zyf/ho.pdf}.
+
+\end{thebibliography}
+
+
+
+\end{document}

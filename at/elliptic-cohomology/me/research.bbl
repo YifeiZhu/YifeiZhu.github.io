@@ -1,0 +1,123 @@
+\def\cprime{$'$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{Voe03b}
+
+\bibitem[AHR]{koandtmf}
+Matthew Ando, Michael~J. Hopkins, and Charles Rezk, \emph{Multiplicative
+  orientations of {$KO$}-theory and the spectrum of topological modular forms}.
+
+\bibitem[AHS04]{AHS04}
+Matthew Ando, Michael~J. Hopkins, and Neil~P. Strickland, \emph{The sigma
+  orientation is an {$H\sb \infty$} map}, Amer. J. Math. \textbf{126} (2004),
+  no.~2, 247--334. \MR{2045503 (2005d:55009)}
+
+\bibitem[And95]{Ando95}
+Matthew Ando, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MR{1344767 (97a:55006)}
+
+\bibitem[Cho06]{Choi}
+D.~Choi, \emph{On values of a modular form on {$\Gamma\sb 0(N)$}}, Acta Arith.
+  \textbf{121} (2006), no.~4, 299--311. \MR{2224397 (2006m:11051)}
+
+\bibitem[Gre88]{blind}
+J.~P.~C. Greenlees, \emph{How blind is your favourite cohomology theory?},
+  Exposition. Math. \textbf{6} (1988), no.~3, 193--208. \MR{949783 (89j:55001)}
+
+\bibitem[HL]{logetaletmf}
+Michael Hill and Tyler Lawson, \emph{Topological modular forms with level
+  structure}.
+
+\bibitem[HS99]{HoveyStrickland}
+Mark Hovey and Neil~P. Strickland, \emph{Morava {$K$}-theories and
+  localisation}, Mem. Amer. Math. Soc. \textbf{139} (1999), no.~666, viii+100.
+  \MR{1601906 (99b:55017)}
+
+\bibitem[Kat73]{padicprop}
+Nicholas~M. Katz, \emph{{$p$}-adic properties of modular schemes and modular
+  forms}, Modular functions of one variable, {III} ({P}roc. {I}nternat.
+  {S}ummer {S}chool, {U}niv. {A}ntwerp, {A}ntwerp, 1972), Springer, Berlin,
+  1973, pp.~69--190. Lecture Notes in Mathematics, Vol. 350. \MR{0447119 (56
+  \#5434)}
+
+\bibitem[KM85]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MR{772569 (86i:11024)}
+
+\bibitem[KM11]{KnoppMason}
+Marvin Knopp and Geoffrey Mason, \emph{Logarithmic vector-valued modular
+  forms}, Acta Arith. \textbf{147} (2011), no.~3, 261--262. \MR{2773205
+  (2012c:11094)}
+
+\bibitem[Law15]{prime2}
+Tyler Lawson, \emph{The {S}himura curve of discriminant 15 and topological
+  automorphic forms}, Forum Math. Sigma \textbf{3} (2015), e3, 32. \MR{3324940}
+
+\bibitem[LST]{LST}
+J.~Lubin, J.-P. Serre, and J.~Tate, \emph{Elliptic curves and formal groups}.
+
+\bibitem[Lub79]{can}
+Jonathan Lubin, \emph{Canonical subgroups of formal groups}, Trans. Amer. Math.
+  Soc. \textbf{251} (1979), 103--127. \MR{531971 (80j:14039)}
+
+\bibitem[Rav84]{Ravenel}
+Douglas~C. Ravenel, \emph{Localization with respect to certain periodic
+  homology theories}, Amer. J. Math. \textbf{106} (1984), no.~2, 351--414.
+  \MR{737778 (85k:55009)}
+
+\bibitem[Reza]{h2p2}
+Charles Rezk, \emph{Power operations for {M}orava {$E$}-theory of height 2 at
+  the prime 2}.
+
+\bibitem[Rezb]{Koszul}
+\bysame, \emph{Rings of power operations for {M}orava {$E$}-theories are
+  {K}oszul}.
+
+\bibitem[Rez06]{log}
+\bysame, \emph{The units of a ring spectrum and a logarithmic cohomology
+  operation}, J. Amer. Math. Soc. \textbf{19} (2006), no.~4, 969--1014.
+  \MR{2219307 (2007h:55006)}
+
+\bibitem[Rez09]{cong}
+\bysame, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MR{2591924 (2011e:55021)}
+
+\bibitem[Rez12]{mc1}
+\bysame, \emph{Modular isogeny complexes}, Algebr. Geom. Topol. \textbf{12}
+  (2012), no.~3, 1373--1403. \MR{2966690}
+
+\bibitem[Str97]{Str97}
+Neil~P. Strickland, \emph{Finite subgroups of formal groups}, J. Pure Appl.
+  Algebra \textbf{121} (1997), no.~2, 161--208. \MR{1473889 (98k:14065)}
+
+\bibitem[Str98]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MR{1607736 (99e:55008)}
+
+\bibitem[Voe03a]{V2}
+Vladimir Voevodsky, \emph{Motivic cohomology with {${\bf Z}/2$}-coefficients},
+  Publ. Math. Inst. Hautes \'Etudes Sci. (2003), no.~98, 59--104. \MR{2031199
+  (2005b:14038b)}
+
+\bibitem[Voe03b]{V1}
+\bysame, \emph{Reduced power operations in motivic cohomology}, Publ. Math.
+  Inst. Hautes \'Etudes Sci. (2003), no.~98, 1--57. \MR{2031198 (2005b:14038a)}
+
+\bibitem[Zhu]{ho}
+Yifei Zhu, \emph{The {H}ecke algebra action on {M}orava {$E$}-theory of height
+  2}.
+
+\bibitem[Zhu14]{p3}
+\bysame, \emph{The power operation structure on {M}orava {$E$}-theory of height
+  2 at the prime 3}, Algebr. Geom. Topol. \textbf{14} (2014), no.~2, 953--977.
+  \MR{3160608}
+
+\end{thebibliography}
