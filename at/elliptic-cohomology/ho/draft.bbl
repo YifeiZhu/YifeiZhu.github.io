@@ -1,0 +1,294 @@
+\def\cprime{$'$}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{BGJGP05}
+
+\bibitem[Ahl03]{Ahlgren}
+Scott Ahlgren, \emph{The theta-operator and the divisors of modular forms on
+  genus zero subgroups}, Math. Res. Lett. \textbf{10} (2003), no.~5-6,
+  787--798. \MR{2024734 (2004m:11059)}
+
+\bibitem[AHR]{koandtmf}
+Matthew Ando, Michael~J. Hopkins, and Charles Rezk, \emph{Multiplicative
+  orientations of {$KO$}-theory and the spectrum of topological modular forms}.
+
+\bibitem[AHS01]{AHS01}
+M.~Ando, M.~J. Hopkins, and N.~P. Strickland, \emph{Elliptic spectra, the
+  {W}itten genus and the theorem of the cube}, Invent. Math. \textbf{146}
+  (2001), no.~3, 595--687. \MR{1869850 (2002g:55009)}
+
+\bibitem[AHS04]{AHS04}
+Matthew Ando, Michael~J. Hopkins, and Neil~P. Strickland, \emph{The sigma
+  orientation is an {$H\sb \infty$} map}, Amer. J. Math. \textbf{126} (2004),
+  no.~2, 247--334. \MR{2045503 (2005d:55009)}
+
+\bibitem[AL70]{AtkinLehner}
+A.~O.~L. Atkin and J.~Lehner, \emph{Hecke operators on {$\Gamma \sb{0}(m)$}},
+  Math. Ann. \textbf{185} (1970), 134--160. \MR{0268123 (42 \#3022)}
+
+\bibitem[And92]{Ando92}
+Matthew Ando, \emph{Operations in complex-oriented cohomology theories related
+  to subgroups of formal groups}, ProQuest LLC, Ann Arbor, MI, 1992, Thesis
+  (Ph.D.)--Massachusetts Institute of Technology. \MR{2716371}
+
+\bibitem[And95]{Ando95}
+\bysame, \emph{Isogenies of formal group laws and power operations in the
+  cohomology theories {$E\sb n$}}, Duke Math. J. \textbf{79} (1995), no.~2,
+  423--485. \MR{1344767 (97a:55006)}
+
+\bibitem[And00]{Ando00}
+\bysame, \emph{Power operations in elliptic cohomology and representations of
+  loop groups}, Trans. Amer. Math. Soc. \textbf{352} (2000), no.~12,
+  5619--5666. \MR{1637129}
+
+\bibitem[Bak89]{Baker89}
+Andrew Baker, \emph{Elliptic cohomology, {$p$}-adic modular forms and {A}tkin's
+  operator {$U\sb p$}}, Algebraic topology ({E}vanston, {IL}, 1988), Contemp.
+  Math., vol.~96, Amer. Math. Soc., Providence, RI, 1989, pp.~33--38.
+  \MR{1022672 (90i:55007)}
+
+\bibitem[Bak90]{Baker90}
+\bysame, \emph{Hecke operators as operations in elliptic cohomology}, J. Pure
+  Appl. Algebra \textbf{63} (1990), no.~1, 1--11. \MR{1037690 (91m:55005)}
+
+\bibitem[BGJGP05]{Poonenetal}
+Matthew~H. Baker, Enrique Gonz{\'a}lez-Jim{\'e}nez, Josep Gonz{\'a}lez, and
+  Bjorn Poonen, \emph{Finiteness results for modular curves of genus at least
+  2}, Amer. J. Math. \textbf{127} (2005), no.~6, 1325--1387. \MR{2183527
+  (2006i:11065)}
+
+\bibitem[BKO04]{BKO}
+Jan~H. Bruinier, Winfried Kohnen, and Ken Ono, \emph{The arithmetic of the
+  values of modular functions and the divisors of modular forms}, Compos. Math.
+  \textbf{140} (2004), no.~3, 552--566. \MR{2041768 (2005h:11083)}
+
+\bibitem[BMMS86]{H_infty}
+R.~R. Bruner, J.~P. May, J.~E. McClure, and M.~Steinberger, \emph{{$H\sb \infty
+  $} ring spectra and their applications}, Lecture Notes in Mathematics, vol.
+  1176, Springer-Verlag, Berlin, 1986. \MR{836132 (88e:55001)}
+
+\bibitem[BO]{tmf5}
+Mark Behrens and Kyle Ormsby, \emph{On the homotopy of {$Q(3)$} and {$Q(5)$} at
+  the prime 2}.
+
+\bibitem[BO03]{BruinierOno}
+Jan~H. Bruinier and Ken Ono, \emph{The arithmetic of {B}orcherds' exponents},
+  Math. Ann. \textbf{327} (2003), no.~2, 293--303. \MR{2015071 (2005b:11055)}
+
+\bibitem[BOSS]{BOSS}
+M.~Behrens, K.~Ormsby, N.~Stapleton, and V.~Stojanoska, \emph{On the ring of
+  cooperations for 2-primary connective topological modular forms}.
+
+\bibitem[Cho06]{Choi}
+D.~Choi, \emph{On values of a modular form on {$\Gamma\sb 0(N)$}}, Acta Arith.
+  \textbf{121} (2006), no.~4, 299--311. \MR{2224397 (2006m:11051)}
+
+\bibitem[DLM00]{DongLiMason}
+Chongying Dong, Haisheng Li, and Geoffrey Mason, \emph{Modular-invariance of
+  trace functions in orbifold theory and generalized {M}oonshine}, Comm. Math.
+  Phys. \textbf{214} (2000), no.~1, 1--56. \MR{1794264 (2001k:17043)}
+
+\bibitem[DR14]{DumasRoyer}
+Fran{\c{c}}ois Dumas and Emmanuel Royer, \emph{Poisson structures and star
+  products on quasimodular forms}, Algebra Number Theory \textbf{8} (2014),
+  no.~5, 1127--1149. \MR{3263138}
+
+\bibitem[Fun07]{Funke}
+Jens Funke, \emph{C{M} points and weight 3/2 modular forms}, Analytic number
+  theory, Clay Math. Proc., vol.~7, Amer. Math. Soc., Providence, RI, 2007,
+  pp.~107--127. \MR{2362196 (2008j:11054)}
+
+\bibitem[Gan]{stringy}
+Nora Ganter, \emph{Stringy power operations in {T}ate {$K$}-theory}.
+
+\bibitem[Gan06]{orbifold}
+\bysame, \emph{Orbifold genera, product formulas and power operations}, Adv.
+  Math. \textbf{205} (2006), no.~1, 84--133. \MR{2254309}
+
+\bibitem[Gan09]{moonshine}
+\bysame, \emph{Hecke operators in equivariant elliptic cohomology and
+  generalized {M}oonshine}, Groups and symmetries, CRM Proc. Lecture Notes,
+  vol.~47, Amer. Math. Soc., Providence, RI, 2009, pp.~173--209. \MR{2500561
+  (2011j:55012)}
+
+\bibitem[Get]{Getz}
+Jayce Getz, \emph{Classical and {$p$}-adic modular forms arising from the
+  {B}orcherds exponents of other modular forms}.
+
+\bibitem[GH04]{GH}
+P.~G. Goerss and M.~J. Hopkins, \emph{Moduli spaces of commutative ring
+  spectra}, Structured ring spectra, London Math. Soc. Lecture Note Ser., vol.
+  315, Cambridge Univ. Press, Cambridge, 2004, pp.~151--200. \MR{2125040
+  (2006b:55010)}
+
+\bibitem[HL16]{logetaletmf}
+Michael Hill and Tyler Lawson, \emph{Topological modular forms with level
+  structure}, Invent. Math. \textbf{203} (2016), no.~2, 359--416. \MR{3455154}
+
+\bibitem[hp]{Poonen}
+Bjorn~Poonen (http://mathoverflow.net/users/2757/bjorn poonen),
+  \emph{Supersingular elliptic curves and their functorial structure over},
+  MathOverflow, URL:http://mathoverflow.net/q/19013 (version: 2010-03-22).
+
+\bibitem[hzb]{MO}
+David Zureick-Brown (http://mathoverflow.net/users/2/david-zureick brown),
+  \emph{Where can {I} find a comprehensive list of equations for small genus
+  modular curves?}, MathOverflow, URL:http://mathoverflow.net/q/14054 (version:
+  2010-02-03).
+
+\bibitem[Kat73]{padicprop}
+Nicholas~M. Katz, \emph{{$p$}-adic properties of modular schemes and modular
+  forms}, Modular functions of one variable, {III} ({P}roc. {I}nternat.
+  {S}ummer {S}chool, {U}niv. {A}ntwerp, {A}ntwerp, 1972), Springer, Berlin,
+  1973, pp.~69--190. Lecture Notes in Mathematics, Vol. 350. \MR{0447119 (56
+  \#5434)}
+
+\bibitem[Kat76]{padicinterp}
+\bysame, \emph{{$p$}-adic interpolation of real analytic {E}isenstein series},
+  Ann. of Math. (2) \textbf{104} (1976), no.~3, 459--571. \MR{0506271 (58
+  \#22071)}
+
+\bibitem[KL81]{KubertLang}
+Daniel~S. Kubert and Serge Lang, \emph{Modular units}, Grundlehren der
+  Mathematischen Wissenschaften [Fundamental Principles of Mathematical
+  Science], vol. 244, Springer-Verlag, New York-Berlin, 1981. \MR{648603
+  (84h:12009)}
+
+\bibitem[KM85]{KM}
+Nicholas~M. Katz and Barry Mazur, \emph{Arithmetic moduli of elliptic curves},
+  Annals of Mathematics Studies, vol. 108, Princeton University Press,
+  Princeton, NJ, 1985. \MR{772569 (86i:11024)}
+
+\bibitem[KM11]{KnoppMason}
+Marvin Knopp and Geoffrey Mason, \emph{Logarithmic vector-valued modular
+  forms}, Acta Arith. \textbf{147} (2011), no.~3, 261--262. \MR{2773205
+  (2012c:11094)}
+
+\bibitem[Kob84]{padic}
+Neal Koblitz, \emph{{$p$}-adic numbers, {$p$}-adic analysis, and
+  zeta-functions}, second ed., Graduate Texts in Mathematics, vol.~58,
+  Springer-Verlag, New York, 1984. \MR{754003 (86c:11086)}
+
+\bibitem[Law63]{Lawvere}
+F.~William Lawvere, \emph{Functorial semantics of algebraic theories}, Proc.
+  Nat. Acad. Sci. U.S.A. \textbf{50} (1963), 869--872. \MR{0158921 (28 \#2143)}
+
+\bibitem[Laz55]{Lazard}
+Michel Lazard, \emph{Sur les groupes de {L}ie formels \`a un param\`etre},
+  Bull. Soc. Math. France \textbf{83} (1955), 251--274. \MR{0073925 (17,508e)}
+
+\bibitem[LN14]{level3II}
+Tyler Lawson and Niko Naumann, \emph{Strictly commutative realizations of
+  diagrams over the {S}teenrod algebra and topological modular forms at the
+  prime 2}, Int. Math. Res. Not. IMRN (2014), no.~10, 2773--2813. \MR{3214285}
+
+\bibitem[LST]{LST}
+J.~Lubin, J.-P. Serre, and J.~Tate, \emph{Elliptic curves and formal groups}.
+
+\bibitem[LT66]{LT}
+Jonathan Lubin and John Tate, \emph{Formal moduli for one-parameter formal
+  {L}ie groups}, Bull. Soc. Math. France \textbf{94} (1966), 49--59.
+  \MR{0238854 (39 \#214)}
+
+\bibitem[Lub67]{Lubin67}
+Jonathan Lubin, \emph{Finite subgroups and isogenies of one-parameter formal
+  {L}ie groups}, Ann. of Math. (2) \textbf{85} (1967), 296--302. \MR{0209287
+  (35 \#189)}
+
+\bibitem[Mil]{Milne}
+J.S. Milne, \emph{Modular functions and modular forms}.
+
+\bibitem[MR09]{tmf3}
+Mark Mahowald and Charles Rezk, \emph{Topological modular forms of level 3},
+  Pure Appl. Math. Q. \textbf{5} (2009), no.~2, Special Issue: In honor of
+  Friedrich Hirzebruch. Part 1, 853--872. \MR{2508904 (2010g:55010)}
+
+\bibitem[MS74]{cc}
+John~W. Milnor and James~D. Stasheff, \emph{Characteristic classes}, Princeton
+  University Press, Princeton, N. J.; University of Tokyo Press, Tokyo, 1974,
+  Annals of Mathematics Studies, No. 76. \MR{0440554 (55 \#13428)}
+
+\bibitem[Ono04]{web}
+Ken Ono, \emph{The web of modularity: arithmetic of the coefficients of modular
+  forms and {$q$}-series}, CBMS Regional Conference Series in Mathematics, vol.
+  102, Published for the Conference Board of the Mathematical Sciences,
+  Washington, DC; by the American Mathematical Society, Providence, RI, 2004.
+  \MR{2020489 (2005c:11053)}
+
+\bibitem[Orm]{Tnf}
+Kyle~M. Ormsby, \emph{Tate normal form and level resolutions of the
+  {$K(2)$}-local sphere}.
+
+\bibitem[Reza]{lpo}
+Charles Rezk, \emph{Lectures on power operations}.
+
+\bibitem[Rezb]{h2p2}
+\bysame, \emph{Power operations for {M}orava {$E$}-theory of height 2 at the
+  prime 2}.
+
+\bibitem[Rez06]{log}
+\bysame, \emph{The units of a ring spectrum and a logarithmic cohomology
+  operation}, J. Amer. Math. Soc. \textbf{19} (2006), no.~4, 969--1014.
+  \MR{2219307 (2007h:55006)}
+
+\bibitem[Rez09]{cong}
+\bysame, \emph{The congruence criterion for power operations in {M}orava
+  {$E$}-theory}, Homology, Homotopy Appl. \textbf{11} (2009), no.~2, 327--379.
+  \MR{2591924 (2011e:55021)}
+
+\bibitem[Rez12]{mc1}
+\bysame, \emph{Modular isogeny complexes}, Algebr. Geom. Topol. \textbf{12}
+  (2012), no.~3, 1373--1403. \MR{2966690}
+
+\bibitem[Ser73]{fmpadiq}
+Jean-Pierre Serre, \emph{Formes modulaires et fonctions z\^eta {$p$}-adiques},
+  Modular functions of one variable, {III} ({P}roc. {I}nternat. {S}ummer
+  {S}chool, {U}niv. {A}ntwerp, 1972), Springer, Berlin, 1973, pp.~191--268.
+  Lecture Notes in Math., Vol. 350. \MR{0404145 (53 \#7949a)}
+
+\bibitem[Shi94]{AF}
+Goro Shimura, \emph{Introduction to the arithmetic theory of automorphic
+  functions}, Publications of the Mathematical Society of Japan, vol.~11,
+  Princeton University Press, Princeton, NJ, 1994, Reprint of the 1971
+  original, Kan{\^o} Memorial Lectures, 1. \MR{1291394 (95e:11048)}
+
+\bibitem[Sil09]{AEC}
+Joseph~H. Silverman, \emph{The arithmetic of elliptic curves}, second ed.,
+  Graduate Texts in Mathematics, vol. 106, Springer, Dordrecht, 2009.
+  \MR{2514094 (2010i:11005)}
+
+\bibitem[Spr]{Sprang}
+Johannes Sprang, \emph{p-adic interpolation and multiplicative orientations of
+  {KO} and tmf (with an appendix by {N}iko {N}aumann)}.
+
+\bibitem[Str98]{Str98}
+N.~P. Strickland, \emph{Morava {$E$}-theory of symmetric groups}, Topology
+  \textbf{37} (1998), no.~4, 757--779. \MR{1607736 (99e:55008)}
+
+\bibitem[Zag08]{1-2-3}
+Don Zagier, \emph{Elliptic modular forms and their applications}, The 1-2-3 of
+  modular forms, Universitext, Springer, Berlin, 2008, pp.~1--103. \MR{2409678
+  (2010b:11047)}
+
+\bibitem[Zag09]{mock}
+\bysame, \emph{Ramanujan's mock theta functions and their applications
+  [d'apr\`es {Z}wegers and {B}ringmann--{O}no]}, Ast\'erisque (2009), no.~326,
+  Exp. No. 986, vii--viii, 143--164 (2010), S{\'e}minaire Bourbaki. Vol.
+  2007/2008. \MR{2605321 (2011h:11049)}
+
+\bibitem[Zhu96]{Zhu}
+Yongchang Zhu, \emph{Modular invariance of characters of vertex operator
+  algebras}, J. Amer. Math. Soc. \textbf{9} (1996), no.~1, 237--302.
+  \MR{1317233 (96c:17042)}
+
+\bibitem[Zhu14]{p3}
+Yifei Zhu, \emph{The power operation structure on {M}orava {$E$}-theory of
+  height 2 at the prime 3}, Algebr. Geom. Topol. \textbf{14} (2014), no.~2,
+  953--977. \MR{3160608}
+
+\end{thebibliography}

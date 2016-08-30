@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: draft.aux
+The style file: amsalpha.bst
+Database file #1: ho.bib
+Repeated entry---line 353 of file ho.bib
+ : @article {orbifold
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "iph"
+Warning--I didn't find a database entry for "Wilson"
+Warning--missing note in koandtmf
+Warning--missing note in tmf5
+Warning--missing note in BOSS
+Warning--missing note in stringy
+Warning--missing note in Getz
+Warning--missing note in LST
+Warning--missing note in Milne
+Warning--missing note in Tnf
+Warning--missing note in lpo
+Warning--missing note in h2p2
+Warning--missing note in Sprang
+You've used 59 entries,
+            2624 wiz_defined-function locations,
+            990 strings with 13332 characters,
+and the built_in function-call counts, 22042 in all, are:
+= -- 2100
+> -- 753
+< -- 48
++ -- 241
+- -- 231
+* -- 1945
+:= -- 3378
+add.period$ -- 59
+call.type$ -- 59
+change.case$ -- 331
+chr.to.int$ -- 58
+cite$ -- 70
+duplicate$ -- 937
+empty$ -- 1821
+format.name$ -- 325
+if$ -- 4472
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 114
+newline$ -- 188
+num.names$ -- 166
+pop$ -- 322
+preamble$ -- 2
+purify$ -- 388
+quote$ -- 0
+skip$ -- 661
+stack$ -- 0
+substring$ -- 1698
+swap$ -- 186
+text.length$ -- 48
+text.prefix$ -- 35
+top$ -- 0
+type$ -- 436
+warning$ -- 11
+while$ -- 211
+width$ -- 65
+write$ -- 681
+(There was 1 error message)
