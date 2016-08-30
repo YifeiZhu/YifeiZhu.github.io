@@ -1,0 +1,79 @@
+Today's Topics:
+
+   1. E_\infty power co-operations (Andrew Salch)
+   2. Re: E_\infty power co-operations (Charles Rezk)
+
+
+----------------------------------------------------------------------
+
+Message: 1
+Date: Mon, 29 Mar 2010 11:21:15 -0400 (EDT)
+From: Andrew Salch <asalch@math.jhu.edu>
+Subject: [ALGTOP-L] E_\infty power co-operations
+To: algtop-l@lists.lehigh.edu
+Message-ID: <Pine.LNX.4.63.1003291112420.23189@chow.mat.jhu.edu>
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+
+If E is an E_\infty-ring spectrum, one has a ring \Gamma of power 
+operations on E^*. As I understand it (and I am a total novice when it 
+comes to power operations), the pair (E^*, \Gamma), together with some 
+structure maps, forms a small category object in co-commutative coalgebras 
+(over the integers).
+
+I would really like to work in a dual setting, and think about 
+co-small-category objects in commutative rings, instead. One can just take 
+continuous linear duals of everything, but it would be much more 
+satisfying to know that the continuous linear dual of \Gamma is actually 
+some kind of ring of power co-operations on E_*. This would fit very 
+nicely with how things work for stable operations and unstable additive 
+operations, and it would also let you use some algebraic geometry to think 
+about power (co-)operations. Are there basic ideas about power 
+co-operations anywhere in the literature?
+
+Thanks,
+Andrew S.
+
+
+
+------------------------------
+
+Message: 2
+Date: Mon, 29 Mar 2010 12:55:40 -0500
+From: Charles Rezk <rezk@math.uiuc.edu>
+Subject: Re: [ALGTOP-L] E_\infty power co-operations
+To: algtop-l@lists.lehigh.edu
+Message-ID: <11401.1269885340@u14.math.uiuc.edu>
+
+> > If E is an E_\infty-ring spectrum, one has a ring \Gamma of power 
+> > operations on E^*. As I understand it (and I am a total novice when it 
+> > comes to power operations), the pair (E^*, \Gamma), together with some 
+> > structure maps, forms a small category object in co-commutative coalgebras 
+> > (over the integers).
+Andrew,
+
+There are subtleties about making sense of this, starting with the fact
+that E^*BG may not be a nice (e.g., free, or dual of a free) E^*-module,
+even if G is finite abelian.  
+
+It's not about power operations per se, but you might want to look at
+the papers by Andrew Stacey and Sarah Whitehouse, especially "The
+Hunting of the Hopf Ring".  They have a formalism for dealing with
+unstable co-operations, i.e., describing unstable operations of a theory
+E in terms of the Hopf ring of E.  If you want to link up with algebraic
+geometry, this is probably something to look at.
+
+-- Charles
+
+
+
+------------------------------
+
+_______________________________________________
+ALGTOP-L mailing list
+ALGTOP-L@lists.lehigh.edu
+https://lists.lehigh.edu/mailman/listinfo/algtop-l
+
+
+End of ALGTOP-L Digest, Vol 391, Issue 1
+****************************************
+
