@@ -5187,17 +5187,14 @@ so that the following diagram commutes.
   \draw [red,->] (AB) -- node [above] {$\scriptstyle \eta$} (AC);
   \draw [red,->] (AC) -- (AD);
   \draw [->] (BC) -- (BD);
-  \draw [red,->] (BB) -- (BA);
   \draw [red,dashed,->] (BB) -- node [above] {$\scriptstyle \!\! \eta'$} (BC);
-  \draw [red,->] (CC) -- (CD);
   \draw [red,->] (AA) -- node [left] {$\scriptstyle \psi$} (BA);
   \draw [->] (AB) -- node [left] {$\scriptstyle \pi^*\psi$} (BB);
   \draw [->] (AC) -- node [left] {$\scriptstyle i^*\Frob^r$} (BC);
-  \draw [red,double] (BC) -- (CC);
   \draw [red,->] (AD) -- node [left] {$\scriptstyle \Frob^r$} (BD);
-  \draw [red,->] (BD) -- (CD);
   \node (AA') at (3, 3) {$\Spec R$};
   \node (AB') at (6, 3) {$\Spec R/{\mf m}$};
+  \draw [red,double] (BC) -- (CC);
   \node (AC') at (9, 3) {$\Spec R/{\mf m}$};
   \node (AD') at (12, 3) {$\Spec k$};
   \node (BA') at (1.5, 1) {$\Spec R$};
@@ -5218,7 +5215,7 @@ so that the following diagram commutes.
   \draw [double] (AC') -- (BC');
   \draw [double] (BC') -- (CC');
   \draw [double] (AD') -- (BD');
-  \draw [->] (BD') -- node [left] {$\scriptstyle \sigma^r$} (CD');
+ \draw [->] (BD') -- node [left] {$\scriptstyle \sigma^r$} (CD');
   \draw [->] (AA) -- (AA');
   \draw [->] (AB) -- (AB');
   \draw [->] (AC) -- (AC');
@@ -5229,7 +5226,10 @@ so that the following diagram commutes.
   \draw [->] (BB) -- (BB');
   \draw [->] (CC) -- (CC');
   \draw [->] (CD) -- (CD');
- \end{tikzpicture}
+  \draw [red,->] (BB) -- (BA);
+  \draw [red,->] (CC) -- (CD);
+  \draw [red,->] (BD) -- (CD);
+  \end{tikzpicture}
 \end{center}
 This lifts the endomorphism $\Phi^r \co G \to G$ in the wide category $\FG_\isog$ to $\Def_\isog(R)$.  
 
