@@ -1,0 +1,298 @@
+[ALGTOP-L] de Rham (co)homology
+jim stasheff jds at upenn.edu 
+Mon Aug 13 12:00:40 EDT 2018
+
+Apparently ``cohomology' didn't exist until around 1935 so how did de 
+Rham state his theorem?
+
+Is the original article available on line?
+
+jim
+
+
+Massey's article in/History of Topology/edited by Ioan James, suggesting 
+that from 1895 and the inception of homology, it took four decades for 
+"dual homology groups" to get onto the serious agenda of topologists.
+
+It happens that 1935 was also the date of a big international topology 
+conference in Stalin's Moscow, organised by Alexandrov. This might be 
+taken as the moment at which cohomology was "up in the air".
+
+Now de Rham's theorem is definitely somewhat earlier.
+
+Duality on manifolds is quite a bit earlier in a homology formulation.
+
+It is apparently the case that/At the Moscow conference of 1935 /
+
+/both Kolmogorov and Alexander announced the definition of /
+
+/cohomology, which they had discovered independently of one another./
+
+-------------------------------------------------------------------------
+
+[ALGTOP-L] ALGTOP-L Digest, Vol 1835, Issue 1
+Dr Theodore Voronov tv at maths.manchester.ac.uk 
+Tue Aug 14 20:06:32 EDT 2018
+
+To Jim's question:
+
+A._About the statement of the de Rham theorem. _
+
+A piece of oral tradition: I heard from *Novikov* many times when I was 
+a student, that the original form of de Rham's theorem was: /"A closed 
+form is exact if all its periods vanish"/.  "Period" means integral over 
+cycle (whatever cycle could mean).  In such a form de Rham's theorem is 
+presented in the book "Modern geometry. Part 3. Methods of homology 
+theory" by Dubrovin, Noviko, Fomenko (see section 1 and section 14). 
+Novikov was also saying that the statement was due to Cartan as a 
+conjecture.
+
+I would guess that "cycles" meant, originally, cycles of some given 
+triangulation. Hence the statement would be that the pairing between de 
+Rham cohomology (in modern language) and simplicial homology given by 
+integration is non-degenerate, so gives a monomorphism from de Rham 
+cohomology to the dual of simplicial homology. One needs epimorphicity 
+as well, but perhaps the mono part is the trickiest.
+
+Now, the actual text of de Rham's thesis of 1931 is available on the 
+web: http://www.numdam.org/issue/THESE_1931__129__1_0.pdf
+
+I have just looked into it. The "de Rham theorem" part starts in Chapter 
+III. On p. 62, de Rham writes:
+
+/"The Stokes theorem shows that the integral of a form homologous to 
+zero over a closed field of integration is zero; and that the integral 
+of a closed form over a field homologous to zero is zero. The aim of the 
+next sections is to establish the converse of these theorems". /
+
+["Field of integration" is a notion de Rham introduces and which is very 
+close to the notion of a singular chain. It is a union of elementary 
+fields of integration, and each elementary field is given by a map of a 
+convex polyhedron into our manifold.]
+
+(So the picture that I learned from Novikov is correct!)
+
+B. _About "homology" and "cohomology"._
+
+The _name_ "cohomology" was relatively late, definitely later than 
+the_notion_ itself. And it had not become standard immediately. Below is 
+some evidence from a primary source.
+
+As late as 1947, *Pontrjagin* was referring to the characteristic 
+classes that he introduced earlier (sometime during the WWII) as 
+"characteristic cycles"  (not _co_cycles!). See: L. S. Pontrjagin, 
+Characteristic cycles of differentiable manifolds, Math. Sbornik, 1947, 
+volume 21 (63), issue 2, pp.233-284.
+
+In that paper, he was working with cycles of a particular codimension 
+and using a wrong-way map to pullback a cycle from the Grassmann 
+manifold to a given manifold for in order to define for it a 
+"characteristic cycle". Effectively he was working with cohomology 
+classes via their Poincaré-dual images in homology. When he needed to 
+refer to cohomology, he used the term "nabla-homology" (in parallel with 
+"delta-homology" for the usual homology). (I think, the same terminology 
+was in *Alexandroff*'s "Combinatorial topology", written during the war, 
+but published later.) Capital delta was the notation he applied for the 
+boundary operator; nabla was notation for the coboundary operator.
+
+In the earlier paper of 1942 (in "Doklady Akademii Nauk"), Pontrjagin  
+defined his classes both in terms of differential forms (to which he was 
+referring to as "antisymmetric tensors") and obstruction classes in 
+simplicial cohomology. Unfortunately, I don't have the paper at hand, so 
+I am writing from my recollection of it.
+
+In another work, of 1939, "Homologies of compact Lie groups" (written in 
+English; Math. Sbornik, vol. 6 (48), issue 3, pp. 389-422), Pontrjagin 
+writes, in the introduction: "The problem of finding topological 
+properties of manifolds....is very important for the topology itself as
+well as for its applications. ....For its solution in each concrete case 
+it is necessary to point out explicitly which type of manifolds is to be 
+considered and which topological properties are asked for. *É. Cartan* 
+has proposed as such a concrete problem _the question on the homological 
+invariants_ of group spaces and homogeneous spaces closely connected 
+with them. _He developed a general method of dealing with this question 
+consisting in the study of certain skew-symmetrical forms_ and thus 
+transposed a geometrical question into the domain of pure algebra."  One 
+can see that in 1930s, "de Rham cohomology" was seen as one of several 
+versions of "homology" due to Cartan. Also, from Pontrjagin's text 
+(where he uses Morse theory to calculate homology of classical compact 
+Lie groups) is clear that he does not see a difference between 
+"homology" of forms and simplicial singular homology or cell homology 
+that he uses. All those to him are clearly just different approaches to 
+finding "homological invariants" of manifolds.
+
+
+Ted Voronov
+
+-------------------------------------------------------------------------
+
+[ALGTOP-L] de Rham's 1955 book
+Dr Theodore Voronov tv at maths.manchester.ac.uk 
+Sat Aug 18 13:35:45 EDT 2018
+
+In de Rham's book (1955) the statement and proof of the de Rham theorem 
+is given in the context close to the theory of distributions in the 
+sense of L. Schwarz (or generalized functions in the Russian tradition). 
+It is a new approach, though de Rham writes there in the introduction  
+that this had been his guiding idea since 1928 (the time of the first 
+proof), but which precise implementation became possible due to the 
+introduction of distributions by L.Schwarz in 1945.
+
+In brief, de Rham introduces /currents /as linear continuous functionals 
+on smooth forms, so that singular chains and forms themselves become 
+particular cases of currents. He then states and proves the theorem that 
+inclusion of smooth forms into currents gives isomorphism on homology 
+(theorem 14 in Ch.4, sect. 18). He uses methods of functional analysis 
+for that. He then proves another theorem that homology of currents is 
+isomorphic to homology of chains of a polyhedral decomposition (a 
+variant of triangulation) of a manifold. His argument uses "mixed" 
+objects: products of chains and forms, and he remarks that it is similar 
+to Weil's proof that uses covers! He concludes that homology of smooth 
+forms and homology polyhedral chains are isomorphic (theorem 16 ibid.) 
+That's his new version of the "de Rham theorem"!
+
+Note "homology" for forms, currents and chains alike. In all arguments, 
+de Rham considers two parallel cases: arbitrary supports and compact 
+supports, and comments on their differences. (He also consistently 
+incorporates a possibility of twist by the orientation sheaf.)
+
+But the word "cohomology" makes its appearance as well --- after 
+discussing "homology" of forms, etc.! He does introduce cochains, 
+coboundary operator and cohomology. "Cochains" are defined linear 
+functions on *finite* polyhedral chains. Overall, "cycles" and 
+"cocycles" go on an equal footing in de Rham's exposition.
+
+As for the history, in the beginning of Ch. 4, de Rham makes the 
+following reference: "The usual notion of homology introduced by 
+Poincare is applicable to chains only. Cartan (see [3,4]) and de Rham 
+(see [1,2]) extended this notion to forms. Only the introduction of the 
+notion of current has made it possible to consider homology between 
+chains and forms." The works he makes reference to, are Cartan's papers 
+of 1928 and 1929 (on groups and homogeneous spaces); his own paper in 
+Comp.Rend. of 1929 and his thesis of 1931. The form of this reference 
+may indicate de Rham's desire to stress more independence of his early 
+work (?). (Just my guess, can be wrong.)
+
+(I was using the Russian translation of de Rham's book, published in 
+1956 with a magnificent foreword by P. Alexandroff. NB: Alexandroff uses 
+both "nabla-homology" and "cohomology" there.)
+
+I may comment that this all shows more complicated relation between 
+various versions and proofs of de Rham's theorem than one can first 
+imagine (e.g. the interrelation of Weil's proof and de Rham's own second 
+proof) and more complicated history of the usage/ understanding of 
+"homology" and "cohomology".  (As well as understanding of functoriality.)
+
+Ted Voronov
+
+-------------------------------------------------------------------------
+
+[ALGTOP-L] More on the origin of the de Rham theorem
+Dr Theodore Voronov tv at maths.manchester.ac.uk 
+Mon Aug 20 11:39:53 EDT 2018
+
+_More on Car__tan and de Rham and the origins of the de Rham theorem_*
+*
+
+*Cartan*'s 1928 paper:
+
+E. Cartan, Sur les nombres de Betti des espaces de groupes clos, Comptes 
+rendus, 187, 196-198 (1928)
+
+is accessible online (see 
+https://gallica.bnf.fr/ark:/12148/bpt6k3140x/f196.image).
+
+In this very brief note (3 pages) Cartan presents as a hypothesis the 
+following two theorems, saying that "if [they] were demonstrated, the 
+determination of Betti's numbers of a compact semi-simple group would be 
+reduced to a perfectly feasible problem of algebra."
+
+The theorems are (in a loose translation):
+
+_THEOREM A_:  If the integral of a closed differential p-form is zero 
+over all closed domains of integration of dimension p, then it is a 
+(p-1)-dimensional integral well-defined in the whole space (and 
+connected with original integral by the generalized Stokes formula).
+
+_THEOREM B_:  If there are h non-homologous closed manifolds of 
+dimension p, then there are h closed differential p-forms such the 
+square matrix of integrals of these forms over these manifolds has 
+determinant non-zero.
+
+A note on terminology: Cartan uses "exact differential" [différentielle 
+exacte] for "closed form"; and he may refer to a form also as 
+"p-dimensional integral" [intégrale multiple d'ordre p]. His "closed 
+manifolds of dimension p" [variétés fermées à p dimensions] stand for 
+p-cycles, loosely understood . ("Closed" here means compact without 
+boundary, so he in fact thinks about homology as a kind of bordism theory.)
+
+In other words, Theorem A states that a closed form for which all 
+periods (integrals over cycles) are zero is exact. (Because the word 
+"exact" is used for closedness in Cartan's terminology, he has to refer 
+to the Stokes formula to say what he means.) This gives a monomorphism 
+from cohomology of forms to the dual of homology. Then Theorem B states 
+that one can find a dual basis of cohomology classes of forms for a 
+given basis in homology, i.e., that there is an epimorphism and indeed 
+an isomorphism between the cohomology of forms and homology.
+
+Assuming this hypothesis, Cartan calculates (using forms) the homology 
+of compact Lie groups. In the note, he presents the Poincaré polynomial 
+for the group SU(n) as an example.
+
+As we see, Cartan's conjectured Theorems A and B are exactly the "*de 
+Rham theorem*" --- if one understands homology he refers to as ordinary 
+homology. (Following Poincaré, Cartan intuitively presents cycles as 
+"closed manifolds" in a given manifold. The idea that there may be 
+non-trivial "internal homology" of closed manifolds not mapped anywhere, 
+and a whole different (co)bordism theory had yet to emerge. One had to 
+wait for Pontrjagin, Rokhlin and Thom for that.)
+
+*De Rham* (in the introduction to his thesis) writes about the above 
+theorems: "/...it has been well known for a long time that ///Betti 
+/numbers play a role in this theory [of multiple integrals]; but when 
+one wants to specify this role, we are led to theorems that have been 
+stated in a quite explicit form by Mr. Cartan. We will present here a 
+complete demonstration of these theorems, valid for the closed manifolds 
+admitting a polyhedral subdivision./" (Here "closed" means compact. 
+Probably, compactness was assumed for finiteness of triangulation.)
+
+According to de Rham's biography, once he sees Cartan's note with the 
+statements that Cartan conjectured, his "head gets in turmoil" and the 
+next day he is "sure to have the solution." (See 
+http://sma.epfl.ch/~ojangure/Glimpse.pdf)  This led first to a 
+preliminary publication (with the help of Lebesgue) and then to the 
+preparation and submission of his thesis, which de Rham defended before 
+a commission consisting of Cartan himself as chairman, Montel and Julia. 
+De Rham's thesis was dedicated to Mr. H. Lebesgue "with great respect". 
+As follows from de Rham's biography, he was indeed very indebted to 
+Lebesgue for his kind encouragement in de Rham's essentially independent 
+work. (De Rham travelled to Paris only twice for 7 months each before 
+1928.)
+
+So the _summary reconstruction_ can be as follows:
+
+(1) A relation between multiple integrals and homology was in the air by 
+1928 (perhaps since Poincaré).
+
+(2) The first formulation of a precise form of relation was due to 
+Cartan (with some vagueness concerning "domains of integration").
+
+(3) De Rham should have been thinking about these questions 
+independently and Cartan's formulation in the CR note was the last 
+stroke for crystallizing his understanding; so that de Rham proceeded to 
+formulating his own version of Theorems A and B, and proving them. In 
+particular, de Rham clarified Cartan's "domains of integration of 
+dimension p" by introducing a precise notion of /champs/  (his version 
+of singular chains).
+
+De Rham later developed a proof based on "currents", which is connected 
+with Laurent Schwarz's distributions, on one hand, and with André Weil's 
+double "Cech-de Rham" complex, on the other; and since then we have 
+obtained sheaf cohomology, bordisms and cobordisms...  and many other 
+good things!.. Cartan's works also led to Chevalley-Eilenberg cohomology 
+of Lie algebras... and even to supergeometry and to Q-manifolds of 
+today, where a homological vector field Q on a supermanifold, Q^2=0, has 
+as its ultimate prototype the Cartan- de Rham differential on 
+differential forms!
+
+Ted Voronov
