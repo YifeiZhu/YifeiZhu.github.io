@@ -1,0 +1,13 @@
+Consider the univariate polynomial p(x)=x^4+ax^2+bx+c with parameters a,b,c (the cyan-colored curve in the plane which is located in the upper part of our film). It has a double root where both p(x) and its derivative p'(x) vanish. To determine for which a, b, c this happens, we eliminate the variable x from these two equations and obtain the so-called discriminant of p. 
+
+Many articles have been written about discriminants; here, we focus on the example p(x) above which is well-known and even appears in many text books. The discriminant s(a,b,c) which is a polynomial of degree 5 in the variables a, b, c, is called the swallowtail. This is the pink surface in our film. 
+
+Clearly, p(x) has a double root for those a, b, c for which s(a,b,c) vanishes. But s(a,b,c) holds much more information than that!
+
+Depending on the position of the point (a,b,c) w.r.t. the swallowtail, we can see how many real roots the corresponding polynomial p(x) has and which multiplicity they have. 
+
+Of course, the point (0,0,0) corresponds to the case for which the polynomial p(x) has a 4-tuple root 0. On the swallowtail, this is the most singular point. For smooth points (a,b,c) on the swallowtail, the corresponding polynomial p(x) has exactly one double root and either 0 or 2 simple roots depending on the location of the smooth point. Where the left and the right smooth part intersect transversally (i.e. in the lower middle part of our film), this happens twice and p(x) has two distinct double roots. On the real isolated half-parabola, which can be seen in the part of the film where the swallowtail rotates, these two distinct double roots are both complex (and thus complex conjugate).
+
+For points inside the triangular-shaped part of the swallowtail (i.e. in the center part of our film) p(x) has exactly four distinct real roots. On a smooth point of the part of the swallowtail which is the boundary of this triangular-shaped region p(x) has four real roots, two of which coincide. On the cuspidal edge of the triangular-shaped region, this happens twice but not symmetrically which means that p(x) has one tripled root and one simple root. 
+
+This film was made by Oliver Labs using surfex.
