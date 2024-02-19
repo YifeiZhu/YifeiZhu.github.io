@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
 <html>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" 
+  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" 
+  crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" 
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {
@@ -20,17 +22,18 @@
         });
     });
 </script>
-  <head>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" 
+  integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
 
-    <!-- The loading of KaTeX is deferred to speed up page rendering -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" 
+  crossorigin="anonymous"></script>
 
-    <!-- To automatically render math in text elements, include the auto-render extension: -->
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>MAT8021, Spring 2024</title>
-  </head>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" 
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>MAT8021, Spring 2024</title>
+</head>
 
 
 <body><center><table width="1053" align="center"><tbody><tr><td>
@@ -38,6 +41,8 @@
 <p></p>
 
 <h2><center>MAT8021 – Algebraic Topology, Spring 2024</center></h2>
+
+
 <!--
 <p>• <a href="FE.pdf" target="_blank">Here</a> is the exam.</p>
 
@@ -109,60 +114,65 @@
 <h3>Objectives</h3>
 
 <p>
-  This is a half of the graduate compulsory courses in Geometry and Topology, the other half being MAT8024 Differentiable Manifolds.  
-  The main topics are homology, cohomology, and covering maps.  
-  This includes acyclic models in proving the graded commutativity of cup products on cohomology, 
-  calculations with homology and cohomology of Grassmannians, 
-  an honest account of the machinery needed in the proof of Poincaré duality, and 
-  a brief introduction to persistent homology as a method for recognizing the <i>shape</i> of data.
+  Algebraic topology, especially in the form of homotopical methods, plays an increasingly vital role in many of today's central areas of study in mathematics and science, 
+  including number theory, data science, and condensed matter physics.  This is a half of the graduate compulsory courses in geometry and topology, the other half being 
+  MAT8024 Differentiable Manifolds.  The main topics are homology, cohomology, and covering maps.  This includes acyclic models in proving the graded commutativity of cup 
+  products on cohomology, calculations with homology and cohomology of Grassmannians, an honest account of the machinery needed in the proof of Poincaré duality, and an 
+  introduction to persistent homology as a method for recognizing the <i>shape</i> of data.  
 </p>
 
 <p>
-  For undergraduate students, this is a sequel to MA323 Topology, 
-  developing further algebraic (and computable) machinery beyond the fundamental group to analyze spaces qualitatively.  
+  For undergraduate students, this is a sequel to MA323 Topology, developing further algebraic (and computable) machinery beyond the fundamental group to analyze spaces 
+  qualitatively.  
 </p>
 
 
 <h3>References</h3>
 
 <p>
-  The main references will be Hatcher's <i>Algebraic Topology</i> 
-  (online version available <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank">here</a> 
-  along with additional exercises and content items) and 
+  The main references will be Hatcher's <i>Algebraic Topology</i> (online version available <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" 
+  target="_blank">here</a> along with additional exercises and content items) and 
   姜伯驹<a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/1u0jkqn/alma991001305909004181" target="_blank">《同调论》</a>.  
 </p>
 
 <p>
-  This semester we will cover homology and cohomology roughly corresponding to Chapters 2 and 3 of Hatcher, 
-  along with a quick recap of homotopy and the fundamental group followed by discussion on covering maps (and fiber bundles, if time permits).  
-  Jiang's Chinese text is also quite handy and helpful at times.
+  This semester we will cover homology and cohomology roughly corresponding to Chapters 2 and 3 of Hatcher, along with a quick recap of homotopy and the fundamental group 
+  followed by discussion on covering maps (and fiber bundles, if time permits).  Jiang's Chinese text is also quite handy and helpful at times.
 </p>
 
 <p>
-  Other useful references include Haynes Miller's <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001543214504181" target="_blank"><i>Lectures on algebraic topology</i></a> and 
-  John M. Lee's <a href="https://link.springer.com/book/10.1007/978-1-4419-7940-7" target="_blank"><i>Introduction to topological manifolds</i>, second edition</a>.
+  Other useful references include Haynes Miller's <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001543214504181" 
+  target="_blank"><i>Lectures on algebraic topology</i></a> (2022) and John M. Lee's <a href="https://link.springer.com/book/10.1007/978-1-4419-7940-7" 
+  target="_blank"><i>Introduction to topological manifolds</i>, second edition</a> (a main textbook for some other iterations of this course).  William Fulton's <a 
+  href="https://link.springer.com/book/10.1007/978-1-4612-4180-5" target="_blank"><i>Algebraic topology – A first course</i></a> offers non-algebraic-topologist as well as 
+  historical perspectives of the subject (to quote, "The book is designed for students of mathematics or science who are not aiming to become practicing algebraic 
+  topologists&mdash;without, we hope, discouraging budding topologists.")  Jiacheng Liang's <a href="https://552jc.github.io/ljc552.github.io//markdown/" 
+  target="_blank">blog posts</a> (he was last year's MAT8021 &amp; MA323 grader) are yet another source of informal, personal contemplation on some of the topics (you 
+  should not read them unless you really want to).
 </p>
 
 
 <h3>Exams</h3>
 
-<p>There will be one final exam worth 50% of your final grade.</p>
+<p>
+  There will be one final exam worth 50% of your final grade.  
+</p>
 
 
 <h3>Homework</h3>
 
 <p>
-  The assigned problems for each week are due each Tuesday in-class at 10:20 am, listed on this page.  
-  Homework is worth 50% of your final grade.  
-  Students must make arrangements in advance if they will not be handing in homework on time.  
-  You may send an electronic version of your homework (TeX'd up or scanned properly, in PDF format) to the grader at the mouse-over email address from above.
+  The assigned problems for each week are due each Tuesday in-class at 10:20 am, listed on this page.  Homework is worth 50% of your final grade.  Students must make 
+  arrangements in advance if they will not be handing in homework on time.  You may send an electronic version of your homework (TeX'd up or scanned properly, in PDF 
+  format) to the grader at the mouse-over email address from above.  
 </p>
 
-<p>We encourage you to discuss homework problems with your classmates, including strategies for solving different kinds of problems.  However, when you actually write up your solutions, you must do this on your own.</p>
+<p>
+  We encourage you to discuss homework problems with your classmates, including strategies for solving different kinds of problems.  However, when you actually write up 
+  your solutions, you must do this on your own.  
+</p>
 
 <p></p>
 
 </td></tr></tbody></table></center>
 </body></html>
-
-
