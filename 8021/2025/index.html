@@ -1,1 +1,265 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" 
+  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" 
+  crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" 
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" 
+  integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
 
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" 
+  crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" 
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>MAT8021, Spring 2025</title>
+</head>
+
+
+<body><center><table width="1053" align="center"><tbody><tr><td>
+
+<p></p>
+
+<h2><center>MAT8021 – Algebraic Topology, Spring 2025</center></h2>
+
+
+<!--
+<p>• <a href="FE.pdf" target="_blank">Here</a> is the exam.</p>
+
+
+
+<ul>
+  <li>
+    The topics course next semester will cover homotopy theory roughly corresponding to Chapter 4 of Hatcher, along with supplementary materials such as fiber bundles, 
+    characteristic classes, spectral sequences, rational homotopy theory, cohomology operations, bordism, and Thom spaces.  
+  </li>
+  </br>
+  
+  <li>The final exam will take place on Thursday, June 13, 2–4 pm, in <a style="color:red">Lecture Hall 1</a>, Room 305.</li></br>
+  
+  <li>Office hours during the final exam weeks: Thursday, June 13, 10:20 am–12:10 pm.</li></br>
+
+  <li>
+    More (non)examples of regular coverings: 
+    <ul>
+      <li>
+        The example of the double cover $S^1\vee S^1\vee S^1\to S^1\vee S^1$ given in the last lecture is in fact regular.  This corresponds to the algebraic fact that any 
+        subgroup of index 2 is normal (and arises in a not-so-satisfying topological classification for certain quantum mechanical systems, see Fig. 1 
+        <a href="https://doi.org/10.1038/s42005-023-01417-4" target="_blank">here</a>).  <a href="irregular.jpeg" target="_blank">Here</a> is an example of a covering space 
+        that is not.  
+      </li>
+
+      <li>
+        A normal covering with the symmetric group as the deck transformation group: <a href="conf.pdf" target="_blank">configuration spaces and the phenomenon of 
+        homological stability</a>.  <a href="swallowtail.jpg" target="_blank">Here</a> is a portrait of the "fat diagonal" from the article in the case of 
+        $C_4({\mathbb C})$.  See <a href="Arnold.pdf" target="_blank">here</a> for Arnold's original paper.  
+      </li>
+    </ul>
+  </li>
+  </br>
+  
+  <li><a href="HW15.pdf" target="_blank">Assignment 15</a></li></br>
+  
+  <li><a href="HW14.pdf" target="_blank">Assignment 14</a> due Tuesday, May 28</li></br>
+  
+  <li>
+    The spectral cover associated to a Higgs bundle (Figure 6 <a href="https://doi.org/10.1016/j.aim.2022.108664" target="_blank">here</a>) and, speaking of branched covers, 
+    <a href="https://mathoverflow.net/a/118596" target="_blank">higher-dimensional versions of the Hurwitz formula</a>?  
+  </li>
+  </br>
+  
+  <li><a href="HW13.pdf" target="_blank">Assignment 13</a> due Tuesday, May 21</li></br>
+  
+  <li><a href="HW12.pdf" target="_blank">Assignment 12</a> due Tuesday, May 14</li></br>
+  
+  <li><a href="HW11.pdf" target="_blank">Assignment 11</a> due Tuesday, May 7</li></br>
+  
+  <li><a href="HW10.pdf" target="_blank">Assignment 10</a> due Tuesday, Apr. 30</li></br>
+  
+  <li><a href="HW9.pdf" target="_blank">Assignment 9</a> due Tuesday, Apr. 23</li></br>
+  
+  <li>
+    <a href="HW8.pdf" target="_blank">Assignment 8</a> due Tuesday, Apr. 16 (<a href="/8021/2021/lens.pdf" target="_blank">the cohomology ring of a lens space</a>) 
+  </li>
+  </br>
+  
+  <li><a href="https://mathoverflow.net/q/1922" target="_blank">$\mathbb{O}\mathbb{P}^n$</a>?</li></br>
+  
+  <li><a href="HW7.pdf" target="_blank">Assignment 7</a> due Tuesday, Apr. 9</li></br>
+  
+  <li>
+    As we've introduced the notion of a generalized homology theory, <a href="blind.pdf" target="_blank">here</a> is a nice article explaining the methodology of 
+    algebraic topology which you may begin to read.
+  </li>
+  </br>
+  
+  <li><a href="HW6.pdf" target="_blank">Assignment 6</a> due Tuesday, Apr. 2 (a <a href="HW6+.pdf" target="_blank">corrigendum</a>)</li></br>
+  
+  <li><a href="HW5.pdf" target="_blank">Assignment 5</a> due Tuesday, Mar. 26</li></br>
+  
+  <li><a href="HW4.pdf" target="_blank">Assignment 4</a> due Tuesday, Mar. 19</li></br>
+  
+  <li>
+    Additional topic: Persistent homology and topological data analysis 
+    <ul>
+      <li>
+        A brief introduction to persistent homology: Sec. S.2.2 <a href="ph.pdf" target="_blank">here</a> (the paper also contains a section of a general review of 
+        literature on topological data analysis and its applications) 
+      </li>
+
+      <li>
+        An informal introductory 
+        <a href="https://www.scientificamerican.com/article/how-squishy-math-is-revealing-doughnuts-in-the-brain/" target="_blank">article</a> emphasizing 
+        applications 
+      </li>
+
+      <li>
+        An earlier discovery made by persistent homology: the Klein-bottle distribution of image data, pp. 69–111 
+        <a href="https://sustech-topology.github.io/acts/20-21/Carlsson08.pdf" target="_blank">here</a> 
+      </li>
+
+      <li>
+        A subsequent advance in deep learning of image and video data, confirming and enhanced by the Klein-bottle topology: a research 
+        <a href="https://www.jmlr.org/papers/v24/21-0073.html" target="_blank">paper</a>; a survey 
+        <a href="https://doi.org/10.1007/978-3-030-43408-3_5" target="_blank">article</a>; an expository 
+        <a href="https://youtu.be/7WEOG6jL248" target="_blank">lecture</a> 
+      </li>
+    </ul>
+  </li></br>
+  
+  <li><a href="HW3.pdf" target="_blank">Assignment 3</a> due Tuesday, Mar. 12</li></br>
+  
+  <li><a href="HW2.pdf" target="_blank">Assignment 2</a> due Tuesday, Mar. 5</li></br>
+  
+  <li><a href="HW1.pdf" target="_blank">Assignment 1</a> due Tuesday, Feb. 27</li>
+</ul>
+-->
+
+<h3>Instructor</h3>
+
+<p>
+  <a href="https://faculty.sustech.edu.cn/zhuyf/en/" target="_blank">朱一飞 ZHU Yifei</a>
+</p>
+
+<p>
+  CoS-M705 
+</p>
+
+<p>
+  <a href="mailto:zhuyf@sustech.edu.cn">zhuyf@sustech.edu.cn</a>
+</p>
+
+<p>
+  Office hours: Thursdays 10:20 am–12:10 pm and by appointment 
+</p>
+
+<p>
+  Grader: <a href="12331008@mail.sustech.edu.cn">李航 LI Hang</a>
+</p>
+
+
+<h3>Prerequisites</h3>
+
+<p>Topology (MA323) or consent of the Department.</p>
+
+  
+<h3>Objectives</h3>
+
+<p>
+  Algebraic topology, especially in the form of homotopical and categorical methods, plays an increasingly vital role in many of today's central areas of study in 
+  mathematics and science, including number theory, data science, and condensed matter physics.  This is a half of the graduate compulsory courses in geometry and topology, 
+  the other half being MAT8024 Differentiable Manifolds.  The main topics are homology, cohomology, and covering spaces.  This includes acyclic models in proving the graded 
+  commutativity of cup products on cohomology, calculations with homology and cohomology of Grassmannians, an honest account of the machinery needed in the proof of 
+  Poincaré duality, and an introduction to persistent homology as a method for recognizing the <i>shape</i> of data.  
+</p>
+
+<p>
+  For undergraduate students, this is a sequel to <a href="/323" target="_blank">MA323 Topology</a>, developing further algebraic (and computable) machinery beyond the 
+  fundamental group to analyze spaces qualitatively.  
+</p>
+
+
+<h3>References</h3>
+
+The main references: 
+<ul>
+  <li>
+    Allen Hatcher, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/1u0jkqn/alma991001360111504181" target="_blank"><i>Algebraic Topology</i></a> 
+    (online version available <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank">here</a> along with additional exercises and content items), 
+    Chapters 2 and 3 
+  </li>
+
+  <li>
+    Haynes Miller, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001543214504181" target="_blank"><i>Lectures on algebraic 
+    topology</i></a> (online version available <a href="https://math.mit.edu/~hrm/papers/lectures-905-906.pdf" target="_blank">here</a>), Chapters 1–3 
+  </li>
+
+  <li>
+    姜伯驹，<a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/1u0jkqn/alma991001305909004181" target="_blank">《同调论》</a>
+  </li>
+</ul>
+Additional references:
+<ul>
+  <li>
+    John M. Lee, <a href="https://link.springer.com/book/10.1007/978-1-4419-7940-7" target="_blank"><i>Introduction to topological manifolds</i>, second edition</a> 
+    (Chapter 5, Theorem 7.21, Chapters 11 and 12 are recommended, group actions on manifolds being an active research direction such as <a 
+    href="https://www.ams.org/notices/202004/rnoti-p492.pdf" target="_blank">here</a> and <a href="https://www.ams.org/notices/202104/rnoti-p482.pdf" 
+    target="_blank">here</a>) 
+  </li>
+  
+  <li>
+    William Fulton, <a href="https://link.springer.com/book/10.1007/978-1-4612-4180-5" target="_blank"><i>Algebraic topology – A first course</i></a> (offers 
+    non-algebraic-topologist as well as historical perspectives of the subject) 
+  </li>
+
+  <li>
+    Jiacheng Liang's <a href="https://552jc.github.io/ljc552.github.io//markdown/" target="_blank">blog posts</a> (a former Master's student and TA for the course) are yet 
+    another source of informal, personal contemplation on some of the topics in the process of learning (you should not read them unless you really want to).  
+  </li>
+</ul>
+
+
+<h3>Exams</h3>
+
+<p>
+  There will be one final exam worth 50% of your final grade.  
+</p>
+
+
+<h3>Homework</h3>
+
+<p>
+  The assigned problems for each week are due each Friday in-class at 10:20 am, listed on this page.  Homework is worth 50% of your final grade.  Students must make 
+  arrangements in advance if they will not be handing in homework on time.  You may send an electronic version of your homework (TeX'd up or scanned properly, in PDF 
+  format) to the grader at the mouse-over email address from above.  
+</p>
+
+<p>
+  We encourage you to discuss homework problems with your classmates, including strategies for solving different kinds of problems.  However, when you actually write up 
+  your solutions, you must do this on your own.  
+</p>
+
+<p></p>
+
+</td></tr></tbody></table></center>
+</body></html>
