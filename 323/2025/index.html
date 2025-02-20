@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" 
+  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" 
+  crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" 
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" 
+  integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" 
+  crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" 
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>MA323, Spring 2025</title>
+</head>
+
+
+<body><center><table width="1053" align="center"><tbody><tr><td>
+
+<p></p>
+
+<h2><center>MA323 – Topology, Spring 2025</center></h2>
+
+<!--
+<ul>
+  <li>The final exam will take place on Monday, June 17, 10:30 am–12:30 pm, in Lecture Hall 3-303.</li></br>
+  
+  <li>Office hours during the final exam weeks: Thursday, June 13, 10:20 am–12:10 pm.</li></br>
+  
+  <li><a target="_blank" href="mt-sol.pdf">Here</a> is the midterm exam.</li></br>
+
+  <li>
+    Assignment 12, required but not collected: Sec. 4.3 #3; Sec. 4.4 #4, 8, 10, 11, 13; Sec. 4.5 #2, 3, 5, 8, 10.</br>
+    Reading: [Y] Secs. 4.3–4.5, Appendix A; [BBT] Sec 6.7; [M] Sec. 55.</br>
+    Optional reading: [Y] Appendix B; [M] Secs. 67–69 categorically, 56.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 11 due Tuesday, May 28: [Y] Sec. 4.2 #4, 5, 6; [M] Sec. 52 #7.</br>
+    Reading: [Y] Sec. 4.2; [BBT] Sec 6.2.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 10 due Tuesday, May 21: [Y] Sec. 4.1 #2, 3, 4, 5, 6, 7, 8.</br>
+    Reading: [M] Secs. 36, 46; [BBT] Secs. 5.1, 5.6.1, 6.1; [Y] Sec. 4.1.</br>
+    <a href="https://sustech-topology.github.io/acts/20-21/Carlsson08.pdf" target="_blank">Čech complexes</a> (p. 51 onwards) applied in topological data analysis 
+  </li>
+  </br>
+  
+  <li>
+    <a target="_blank" href="HW9.pdf">Assignment 9</a> due Tuesday, May 7.</br>
+    Reading: [Y] Secs. 3.3, 3.4; [B] Secs. 3.2, 3.4, 3.5.</br>
+    <a href="/323/2023/deform.png" target="_blank">Visualization</a> of adding handles</br>
+    <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001535915404181" target="_blank">Computational topology</a>: Computational 
+    aspects of surfaces can be found in Chapter II.</br>
+    <a href="https://mathoverflow.net/a/97019" target="_blank">TOP vs DIFF vs PL</a></br>
+    Optional reading: [B] Sec. 3.6.
+  </li>
+  </br>
+  
+  <li>Midterm exam on Friday, Apr. 19 covers [Y] Secs. 1.1–1.3, 2.1–2.6, and 3.1–3.2.</li></br>
+
+  <li>
+    Assignment 8 due Tuesday, Apr. 16: [Y] Sec. 2.5 #1, 5, 6, Sec. 2.6 #1, 3, 4, 5, Sec. 3.2 #8, 9, 14.</br>
+    Reading: [Y] Secs. 2.5, 2.6, 3.1, 3.2; [BBT] Sec. 1.3.</br>
+    Klein bottle as a distribution space for image data: discussion begins on page 96 of <a href="/surfaces.pdf" target="_blank">slides</a>; and as reflected from 
+    the <a href="cnn.pdf" target="_blank">topology</a> of convolutional neural networks.</br>
+    Hopf maps: <a href="https://nilesjohnson.net/hopf.html" target="_blank">Visualization</a> of $S^3\to S^2$; Hopf "bundles" as eigenbundles for Hamiltonians in 
+    quantum mechanics (Section 5 <a href="Roos.pdf" target="_blank">here</a>, <a href="mobius.jpeg" target="_blank">visualization</a> over $\mathbb R$).  
+  </li>
+  </br>
+  
+  <li>
+    Assignment 7 due Tuesday, Apr. 9: [Y] Sec. 2.4 #4, 5, 8, 10.</br>
+    Reading: [Y] Sec. 2.4.</br>
+    Optional reading: [M] Sec. 24.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 6 due Tuesday, Apr. 2: [Y] Sec. 2.3 #1, 2, 4, 5, 6, 7, 9, 11, 16, 18, 19.</br>
+    Reading: [Y] Sec. 2.3; [BBT] Sec. 5.5.</br>
+    Examples of compact spaces: higher-dimensional spheres
+    <ul>
+      <li>
+        <a href="/323/2022/sphere.mp4" target="_blank">How to visualize high-dimensional spheres?</a>  Recent <a target="_blank" href="packing.pdf">breakthrough</a> with 
+        the sphere packing problem combined methods from harmonic analysis (the Poisson summation formula) and number theory (modular forms), useful in error correcting 
+        codes.  
+      </li>
+      
+      <li><a href="/323/2022/Feynman.mp4" target="_blank">A balancing perspective</a>: Not all scientists care about high dimensions!</li>
+    </ul>
+    Optional reading: [M] Secs. 27, 37.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 5 due Tuesday, Mar. 26: [Y] Sec. 2.2 #1, 2, 3, 4; [M] Sec. 33 #3, Sec. 35 #7b.</br>
+    Reading: [Y] Sec. 2.2; [M] Secs. 33–35.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 4 due Tuesday, Mar. 19: [Y] Sec. 2.1 #5, 6, 12, 14, 16, 18.</br>
+    Reading: [Y] Sec. 2.1; [M] Secs. 30–32.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 3 due Tuesday, Mar. 12: [Y] Sec. 1.3 #3, 4, 6, 8, 11.</br>
+    Reading: [Y] Sec. 1.3; [BBT] Secs. 1.4, 0.3.3, 0.3.4.</br>
+    Optional reading: <a href="https://www.ams.org/journals/notices/202402/rnoti-p174.pdf" target="_blank">The structure of meaning in language: Parallel narratives in 
+    linear algebra and category theory</a> (interesting applications to Large Language Models begin in the section "Structures in the Real World" on page 6, with Figure 1, 
+    but need <i>Isbell adjunction</i> introduced in the previous section in parallel with Singular Value Decomposition for Principal Component Analysis) 
+  </li>
+  </br>
+  
+  <li>
+    Assignment 2 due Tuesday, Mar. 5: [Y] Sec. 1.2 #2 (also show that the subspace topology is in fact the coarsest topology on $B$ for which the inclusion $i$ is 
+    continuous), 4, 5, 6, 9, 10, 12, 13.</br>
+    Reading: [Y] Sec. 1.2; [BBT] Secs. 0.2.1, 0.2.2.
+  </li>
+  </br>
+  
+  <li>
+    Assignment 1 due Tuesday, Feb. 27: [Y] Sec. 1.1 #3, 7, 14, 6, 8, 13, 15.</br>
+    Reading: [Y] Introduction (set operations, map, cartesian product, equivalence relation), Sec. 1.1.</br>
+    Optional reading: [M] Secs. 20, 21, Exe. 20.8.
+  </li>
+</ul>
+-->
+
+<h3>Instructor</h3>
+
+<p>
+  <a href="https://faculty.sustech.edu.cn/zhuyf/en/" target="_blank">朱一飞 ZHU Yifei</a>
+</p>
+
+<p>
+  CoS-M705 
+</p>
+
+<p>
+  <a href="mailto:zhuyf@sustech.edu.cn">zhuyf@sustech.edu.cn</a>
+</p>
+
+<p>
+  Office hours: Thursdays 10:20 am–12:10 pm and by appointment 
+</p>
+
+<p>
+  Graders: <a href="mailto:12111918@mail.sustech.edu.cn">文子杰 WEN Zijie</a> and <a href="mailto:12431018@mail.sustech.edu.cn">殷春双 YIN Chunshuang</a>
+</p>
+
+
+<h3>Prerequisites</h3>
+
+<p>
+  Abstract Algebra (MA214/219) or consent of the Department.  
+</p>
+
+<p>
+  Although strictly (and traditionally) speaking notions such as groups and group homomorphisms will not be used until the latter half (or even later) of this course on the 
+  fundamental group(oid) of a topological space and its computation, familiarity with basic abstract algebra is necessary for acquiring a sophistication with writing proofs 
+  and for supplying examples, intuitions, and analogies.  
+</p>
+
+
+<h3>Objectives</h3>
+
+<p>
+  This course introduces basic notions, examples, and applications of topology, a subject aimed to classify "spaces" according to those of their properties that are 
+  invariant under continous deformations (in contrast to those rigid ones adhering to metrics).  
+</p>
+
+<p>
+  With the classification theorem for closed surfaces as a main goal, we will cover point-set topology systematically together with elements of geometric and algebraic 
+  topology, incorporating standard Chinese textbooks such as 尤承业《基础拓扑学讲义》, Chapters 1–4, as well as Munkres's <i>Topology</i> and Bradley, Bryson, Terilla's 
+  <i>Topology – A categorical approach</i> (2020).  This includes categories, functors and their adjunction, universal properties, and examples; compactification; 
+  topological manifolds, partition of unity, and embeddings of manifolds into Euclidean spaces; simplicial complexes, Euler characteristic, and orientation; function 
+  spaces, the compact–open topology, homotopy, and basic ideas of higher categories; projective spaces, lens spaces, Dehn surgery, and knots; glimpses of topological 
+  classifications of physical systems and of topology-enhanced machine learning.  
+</p>
+
+
+<h3>References</h3>
+
+<p>
+  [Y] 尤承业，<a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/hvjfdm/alma991001290618704181" target="_blank">基础拓扑学讲义</a>，北京大学出版社，1997.  
+  (The main textbook, minimum requirement; good organization.)  
+</p>
+
+<p>
+  [M] James R. Munkres, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001294119004181" target="_blank"><i>Topology</i></a>, 
+  Prentice Hall, Inc., Upper Saddle River, NJ, 2000, second edition of [<a href="https://mathscinet.ams.org/mathscinet/article?mr=464128" target="_blank">MR0464128</a>].  
+  (A classic textbook; many in-depth, elaborate discussions and examples; somewhat old-fashioned; mostly optional reading on selected topics and exemplary mathematical 
+  exposition in general.)  
+</p>
+  
+<p>
+  [BBT] Tai-Danae Bradley, Tyler Bryson, and John Terilla, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001401159504181" 
+  target="_blank"><i>Topology – A categorical approach</i></a>, MIT Press, Cambridge, MA, 2020. <a href="https://mathscinet.ams.org/mathscinet/article?mr=4232168" 
+  target="_blank">MR4232168</a> (A new textbook; supplementary with categorical perspectives.)  
+</p>
+  
+<p>
+  [B] 包志强，<a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001338817204181" target="_blank">点集拓扑与代数拓扑引论</a>，北京大学出版社，
+  2013.  (A relatively recent textbook; supplementary with selected topics.)  
+</p>
+  
+<p>
+  [A] Mark Anthony Armstrong, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991000402459704181" target="_blank"><i>Basic 
+  topology</i></a>, Undergraduate Texts in Mathematics, Springer-Verlag, New York-Berlin, 1983, corrected reprint of the 1979 original.  
+  <a href="https://mathscinet.ams.org/mathscinet/article?mr=705632" target="_blank">MR705632</a> (For additional perspectives.)  
+</p>
+
+  
+<h3>Exams</h3>
+
+<p>
+  There will be one in-class midterm exam, on April 19, and one final exam.  Each of these exams is worth 30% of your final grade.  
+</p>
+
+
+<h3>Homework</h3>
+
+<p>
+  The assigned problems for each week are due each Tuesday in-class at 2 pm, listed on this page.  Homework is worth 40% of your final grade.  Students must make 
+  arrangements in advance if they will not be handing in homework on time.  You may send an electronic version of your homework (TeX'd up or scanned properly, in PDF 
+  format) to the grader at the mouse-over email address from above.  
+</p>
+
+<p>
+  We encourage you to discuss homework problems with your classmates, including strategies for solving different kinds of problems.  However, when you actually write up 
+  your solutions, you must do this on your own.  
+</p>
+
+<p></p>
+
+</td></tr></tbody></table></center>
+</body></html>
