@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" 
+  integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp" 
+  crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" 
+  integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" 
+  integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" 
+  crossorigin="anonymous"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" 
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>MAT8021, Spring 2026</title>
+</head>
+
+
+<body><center><table width="1053" align="center"><tbody><tr><td>
+
+<p></p>
+
+<h2><center>MAT8021 – Algebraic Topology, Spring 2026</center></h2>
+
+<ul>
+  <li>The final exam will take place on Tuesday, June 17, 10:30 am–12:30 pm, in <a style="color:red">Lecture Hall 1</a>, Room 220.</li></br>
+  
+  <li>Office hours during the final exam weeks: Thursday, June 12, 10:20 am–12:10 pm.</li></br>
+  
+  <li><a href="HW8.pdf" target="_blank">Assignment 8</a>, required but not collected</li></br>
+  
+  <li>Some further <a href="https://www.zhihu.com/question/53353224/answer/841931389" target="_blank">discussion</a> on the method of acyclic models</li></br>
+  
+  <li><a href="HW7.pdf" target="_blank">Assignment 7</a> due Friday, May 23 (<a href="/8021/2021/lens.pdf" target="_blank">the cohomology ring of a lens space</a>)</li></br>
+  
+  <li>
+    As we've introduced the notion of a generalized homology theory, <a href="/8021/2024/blind.pdf" target="_blank">here</a> is a nice article explaining the methodology of 
+    algebraic topology.  
+  </li>
+  </br>
+  
+  <li><a href="HW6.pdf" target="_blank">Assignment 6</a> due Friday, May 9</li></br>
+  
+  <li><a href="HW5.pdf" target="_blank">Assignment 5</a> due Friday, Apr. 18</li></br>
+
+  <li><a href="HW4.pdf" target="_blank">Assignment 4</a> due Friday, Mar. 28</li></br>
+  
+  <li><a href="HW3.pdf" target="_blank">Assignment 3</a> due Friday, Mar. 21</li></br>
+  
+  <li><a href="HW2.pdf" target="_blank">Assignment 2</a> due Friday, Mar. 7</li></br>
+  
+  <li><a href="HW1.pdf" target="_blank">Assignment 1</a> due Friday, Feb. 28</li>
+</ul>
+
+
+<h3>Instructor</h3>
+
+<p>
+  <a href="https://faculty.sustech.edu.cn/zhuyf/en/" target="_blank">朱一飞 ZHU Yifei</a>
+</p>
+
+<p>
+  CoS-M705 
+</p>
+
+<p>
+  <a href="mailto:zhuyf@sustech.edu.cn">zhuyf@sustech.edu.cn</a>
+</p>
+
+<p>
+  Office hours: Thursdays 10:20 am–12:10 pm and by appointment 
+</p>
+
+<p>
+  Grader: <a href="12331008@mail.sustech.edu.cn">李航 LI Hang</a>
+</p>
+
+
+<h3>Prerequisites</h3>
+
+<p>Topology (MA323) or consent of the Department.</p>
+
+  
+<h3>Objectives</h3>
+
+<p>
+  Algebraic topology, especially in the form of homotopical and categorical methods, plays an increasingly vital role in many of today's central areas of study in 
+  mathematics and science, including number theory, data science, and condensed matter physics.  This is a half of the graduate compulsory courses in geometry and topology, 
+  the other half being MAT8024 Differentiable Manifolds.  The main topics are homology, cohomology<strike>, and covering spaces</strike>.  This includes acyclic models in proving the graded 
+  commutativity of cup products on cohomology, calculations with homology and cohomology of Grassmannians, an honest account of the machinery needed in the proof of 
+  Poincaré duality, and an introduction to persistent homology as a method for recognizing the <i>shape</i> of data.  
+</p>
+
+<p>
+  For undergraduate students, this is a sequel to <a href="/323" target="_blank">MA323 Topology</a>, developing further algebraic (and computable) machinery beyond the 
+  fundamental group to analyze spaces qualitatively.  
+</p>
+
+
+<h3>References</h3>
+
+The main references: 
+<ul>
+  <li>
+    Allen Hatcher, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/1u0jkqn/alma991001360111504181" target="_blank"><i>Algebraic Topology</i></a> 
+    (online version available <a href="https://pi.math.cornell.edu/~hatcher/AT/ATpage.html" target="_blank">here</a> along with additional exercises and content items), 
+    Chapters 2 and 3 
+  </li>
+
+  <li>
+    Haynes Miller, <a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/tcg6ar/alma991001543214504181" target="_blank"><i>Lectures on algebraic 
+    topology</i></a> (online version available <a href="https://math.mit.edu/~hrm/papers/lectures-905-906.pdf" target="_blank">here</a>), Chapters 1–3 
+  </li>
+
+  <li>
+    姜伯驹，<a href="https://sustc.primo.exlibrisgroup.com.cn/permalink/86SUSTC_INST/1u0jkqn/alma991001305909004181" target="_blank">《同调论》</a>
+  </li>
+</ul>
+Some additional references:
+<ul>
+  <li>
+    John M. Lee, <a href="https://link.springer.com/book/10.1007/978-1-4419-7940-7" target="_blank"><i>Introduction to topological manifolds</i>, second edition</a> 
+    (Chapter 5, Theorem 7.21, Chapters 11 and 12 are recommended, group actions on manifolds being an active research direction such as <a 
+    href="https://www.ams.org/notices/202004/rnoti-p492.pdf" target="_blank">here</a> and <a href="https://www.ams.org/notices/202104/rnoti-p482.pdf" 
+    target="_blank">here</a>) 
+  </li>
+  
+  <li>
+    William Fulton, <a href="https://link.springer.com/book/10.1007/978-1-4612-4180-5" target="_blank"><i>Algebraic topology – A first course</i></a> (offers 
+    non-algebraic-topologist as well as historical perspectives of the subject) 
+  </li>
+
+  <li>
+    Jiacheng Liang's <a href="https://552jc.github.io/ljc552.github.io//markdown/" target="_blank">blog posts</a> (a former Master's student and TA for the course) are yet 
+    another source of informal, personal contemplation on some of the topics in the process of learning.  You should not read them unless you really want to.  
+  </li>
+</ul>
+
+
+<h3>Exams</h3>
+
+<p>
+  There will be one final exam worth 50% of your final grade.  
+</p>
+
+
+<h3>Homework</h3>
+
+<p>
+  The assigned problems for each week are due each Friday in-class at 10:20 am, listed at the top of this page.  Homework is worth 50% of your final grade.  Students must 
+  make arrangements in advance if they will not be handing in homework on time.  You may alternatively send an electronic version of your homework (TeX'd up or scanned 
+  properly, in PDF format) to the grader at the mouse-over email address from above.  
+</p>
+
+<p>
+  We encourage you to discuss homework problems with your classmates, including strategies for solving different kinds of problems.  However, when you actually write up 
+  your solutions, you must do this on your own.  
+</p>
+
+<p></p>
+
+</td></tr></tbody></table></center>
+</body></html>
